@@ -1,0 +1,139 @@
+.vt__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 8px;
+  padding: 12px 32px;
+  border-radius: 8px;
+  background: var(--bg--btn);
+  box-shadow: var(--shadow--btn);
+  border: 0;
+  outline-width: 0;
+  outline-style: solid;
+  outline-color: var(--bg--btn);
+  color: var(--color-white);
+  font-weight: 600;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--bg--btn-active);
+    box-shadow: var(--shadow--blue);
+  }
+
+  &:active {
+    background: var(--bg--btn-active);
+    box-shadow: var(--shadow--inset);
+  }
+
+  &:focus {
+    outline-width: 3px;
+    outline-color: var(--color--btn-border-focus);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &.vt__btn--sm {
+    padding: 8px 24px;
+  }
+
+  &.vt__btn--md {
+    padding: 12px 32px;
+  }
+
+  &.vt__btn--lg {
+    padding: 18px 48px;
+  }
+
+  &.vt__btn--outline {
+    outline-width: 1px;
+
+    &:hover {
+      outline-color: var(--bg--btn-active);
+    }
+
+    &:active {
+      outline-color: var(--bg--btn-active);
+    }
+
+    &:focus {
+      outline-width: 3px;
+      outline-color: var(--bg--btn);
+
+      &.vt__btn--sm {
+        outline-width: 2px;
+      }
+
+      &.vt__btn--md {
+        outline-width: 3px;
+      }
+
+      &.vt__btn--lg {
+        outline-width: 4px;
+      }
+    }
+  }
+
+  &.vt__btn--text {
+    background: transparent;
+    outline-width: 0;
+  }
+
+  &.vt__btn--icon-left {
+    flex-direction: row;
+  }
+
+  &.vt__btn--icon-right {
+    flex-direction: row-reverse;
+  }
+
+  &.vt__btn--no_icon {
+    .icon {
+      display: none;
+    }
+  }
+
+  &.vt__btn--icon,
+  &.vt__btn--no_text {
+    padding: 12px;
+    
+    &.vt__btn--sm {
+      padding: 8px;
+    }
+
+    &.vt__btn--md {
+      padding: 12px;
+    }
+
+    &.vt__btn--lg {
+      padding: 18px;
+    }
+
+    .text {
+      display: none;
+    }
+  }
+
+  &.vt__btn--rounded-none {
+    border-radius: 0;
+  }
+
+  &.vt__btn--rounded-sm {
+    border-radius: 8;
+  }
+
+  &.vt__btn--rounded-md {
+    border-radius: 16;
+  }
+
+  &.vt__btn--rounded-lg {
+    border-radius: 32px;
+  }
+
+  &.vt__btn--rounded-full {
+    border-radius: 100px;
+  }
+}
