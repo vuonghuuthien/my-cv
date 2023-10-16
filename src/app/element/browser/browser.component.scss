@@ -1,0 +1,128 @@
+.terminal {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  padding-top: 45px;
+  margin-top: 8px;
+  overflow: hidden;
+  background-color: rgb(15, 15, 16);
+}
+
+.terminal::before {
+  content: "\2022 \2022 \2022";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: rgb(58, 58, 58);
+  color: #c2c3c4;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 0;
+  padding: 14px 0;
+  text-indent: 4px;
+}
+
+.terminal pre {
+  font-family: var(--font-dev);
+  color: white;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+.browser {
+  border-radius: 11px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow--browser);
+
+  .header {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 21px;
+    background: var(--bg--browser-header);
+    background-blend-mode: hard-light;
+    box-shadow: var(--shadow--browser-header) var(--shadow--inset--browser-header);
+    backdrop-filter: blur(40px);
+    position: relative;
+
+    > * {
+      z-index: 1;
+    }
+
+    &::after {
+      z-index: 0;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.5;
+      background: var(--bg--browser-header);
+      background-blend-mode: hard-light;
+      box-shadow: var(--shadow--inset--browser-header);
+      backdrop-filter: blur(40px);
+    }
+
+    .action-left {
+      z-index: 1;
+      display: flex;
+      gap: 8px;
+
+      .oval {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        stroke: 0.5px solid var(--color-black);
+        stroke-opacity: 0.1;
+
+        &.oval-red {
+          background: var(--color--browser-red);
+        }
+
+        &.oval-yellow {
+          background: var(--color--browser-yellow);
+        }
+
+        &.oval-green {
+          background: var(--color--browser-green);
+        }
+      }
+    }
+  }
+
+  .body {
+    flex: 1;
+    background: var(--bg--browser-body);
+    background-blend-mode: luminosity;
+    position: relative;
+    padding: 2px;
+
+    > * {
+      z-index: 1;
+    }
+
+    &::after {
+      z-index: 0;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.5;
+      background: var(--bg--browser-body);
+      background-blend-mode: luminosity;
+      backdrop-filter: blur(40px);
+    }
+  }
+}
+
+.source_code {
+  padding: 25px;
+}

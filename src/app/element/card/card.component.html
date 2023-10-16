@@ -1,0 +1,41 @@
+<div class="{{ 'vt__card-basic' + ' ' + (posCard || '') }}">
+  <div class="{{ 'vt__card' + ' ' + (posImg || '') }}">
+    <div
+      class="{{
+        'vt__card-img' + ' ' + (showImg || '') + ' ' + (styleImg || '')
+      }}"
+    >
+      <img src="{{ sampleImg }}" alt="" />
+    </div>
+    <div class="vt__card-content">
+      <div class="vt__card-content-title">Custom Software Development</div>
+      <div class="{{ 'vt__card-content-desc' + ' ' + (showDesc || '') }}">
+        New Ocean IS is a one-stop provider on software system from software to
+        hardware, from consulting service to full lifecycle software
+        development. Our accumulated experiences spread out different industries
+        and tech: Manufacturing, Telecoms, Insurance, Logistics,
+        Pharmaceuticals, Materials, Cinema, Supply Chain, Banking, IoT, Smart
+        Factories, etc.
+      </div>
+      <div class="{{ 'vt__card-content-checklist' + ' ' + (showList || '') }}">
+        <div class="vt__card-content-checklist-item">
+          <span class="check material-symbols-rounded"> check </span>
+          <div>Quality Control</div>
+        </div>
+        <div class="vt__card-content-checklist-item">
+          <span class="check material-symbols-rounded"> check </span>
+          <div>Regulatory Compliance</div>
+        </div>
+        <div class="vt__card-content-checklist-item">
+          <span class="check material-symbols-rounded"> check </span>
+          <div>Improved Efficiency</div>
+        </div>
+      </div>
+      <div class="vt__card-content-action">
+        <a class="{{ showBtn || '' }}" href="http://" target="_blank">
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

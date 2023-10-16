@@ -1,0 +1,23 @@
+<div class="terminal" [ngSwitch]="type">
+  <pre *ngSwitchDefault>ng generate component xyz</pre>
+  <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+  <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
+  <pre *ngSwitchCase="'dependency'">ng add _____</pre>
+  <pre *ngSwitchCase="'test'">ng test</pre>
+  <pre *ngSwitchCase="'build'">ng build</pre>
+</div>
+
+<div class="browser" [ngSwitch]="type">
+  <div class="header">
+    <div class="action-left">
+      <div class="oval oval-red"></div>
+      <div class="oval oval-yellow"></div>
+      <div class="oval oval-green"></div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="source_code">
+      <pre *ngSwitchDefault>ng generate component xyz</pre>
+    </div>
+  </div>
+</div>
