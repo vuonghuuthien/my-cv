@@ -49,7 +49,9 @@
   }
 
   &.vt__btn--outline {
+    background: transparent;
     outline-width: 1px;
+    color: var(--bg--btn);
 
     &:hover {
       outline-color: var(--bg--btn-active);
@@ -80,6 +82,7 @@
   &.vt__btn--text {
     background: transparent;
     outline-width: 0;
+    color: var(--bg--btn);
   }
 
   &.vt__btn--icon-left {

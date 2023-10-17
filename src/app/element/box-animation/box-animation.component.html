@@ -1,0 +1,70 @@
+<div
+  class="wrapper"
+  [style.--lc-speed]="speed"
+  [style.--lc-width]="width"
+  [style.--lc-height]="height"
+  [style.--lc-depth]="depth"
+>
+  <div class="box-base">
+    <div class="box" [ngClass]="selection">
+      <div class="box-face box-face__front">front</div>
+      <div class="box-face box-face__back">back</div>
+      <div class="box-face box-face__right">right</div>
+      <div class="box-face box-face__left">left</div>
+      <div class="box-face box-face__top">top</div>
+      <div class="box-face box-face__bottom">bottom</div>
+    </div>
+  </div>
+
+  <p class="radio-group">
+    <input
+      id="show-front"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-front"
+      checked
+      (click)="selection = 'show-front'"
+    />
+    <label for="show-front"> Front </label>
+    <input
+      id="show-right"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-right"
+      (click)="selection = 'show-right'"
+    />
+    <label for="show-right"> Right </label>
+    <input
+      id="show-back"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-back"
+      (click)="selection = 'show-back'"
+    />
+    <label for="show-back"> Back </label>
+    <input
+      id="show-left"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-left"
+      (click)="selection = 'show-left'"
+    />
+    <label for="show-left"> Left </label>
+    <input
+      id="show-top"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-top"
+      (click)="selection = 'show-top'"
+    />
+    <label for="show-top"> Top </label>
+    <input
+      id="show-bottom"
+      type="radio"
+      name="rotate-cube-side"
+      value="show-bottom"
+      (click)="selection = 'show-bottom'"
+    />
+    <label for="show-bottom"> Bottom </label>
+  </p>
+</div>

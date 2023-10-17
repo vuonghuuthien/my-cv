@@ -12,6 +12,7 @@ import { CheckboxCircleAnimationProComponent } from './checkbox-circle-animation
 import { PinAnimationComponent } from './pin-animation/pin-animation.component';
 import { ShimmerLoadingEffectComponent } from './shimmer-loading-effect/shimmer-loading-effect.component';
 import { SliderAnimationComponent } from './slider-animation/slider-animation.component';
+import { BoxAnimationComponent } from './box-animation/box-animation.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SliderAnimationComponent } from './slider-animation/slider-animation.co
     PinAnimationComponent,
     ShimmerLoadingEffectComponent,
     SliderAnimationComponent,
+    BoxAnimationComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -42,6 +44,7 @@ import { SliderAnimationComponent } from './slider-animation/slider-animation.co
     PinAnimationComponent,
     ShimmerLoadingEffectComponent,
     SliderAnimationComponent,
+    BoxAnimationComponent,
   ],
 })
 export class ElementModule {}
