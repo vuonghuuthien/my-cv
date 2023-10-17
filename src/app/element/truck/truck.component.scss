@@ -1,0 +1,531 @@
+[class*="truck"] {
+  margin-bottom: 20px;
+}
+
+$basepx: 40px;
+
+@function em($target, $context: $basepx) {
+  @if $target == 0 {
+    @return 0;
+  }
+  @return $target / $context + 0em;
+}
+
+@mixin prefix($name, $value) {
+  @each $vendor in ("-webkit-", "-moz-", "-ms-", "-o-", "") {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+.truck-1 {
+  width: em(350px, $basepx);
+  height: em(200px, $basepx);
+  position: relative;
+  // background-color: black;
+  .body {
+    position: absolute;
+    top: 0;
+    left: em(5px, $basepx);
+    width: em(220px, $basepx);
+    height: em(160px, $basepx);
+    background: #faba01;
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      bottom: 0;
+      left: em(-5px, $basepx);
+      width: em(350px, $basepx);
+      height: em(25px, $basepx);
+      background: #054052;
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      bottom: 0;
+      left: em(-5px, $basepx);
+      width: em(50px, $basepx);
+      height: em(25px, $basepx);
+      background: #faba01;
+    }
+    .lamp {
+      position: absolute;
+      left: 0;
+      bottom: em(40px, $basepx);
+      width: em(25px, $basepx);
+      height: em(20px, $basepx);
+      background: #fe4701;
+    }
+    .line {
+      position: absolute;
+      right: 0;
+      top: em(30px, $basepx);
+      width: em(100px, $basepx);
+      height: em(30px, $basepx);
+      background: #fe4701;
+      &:before {
+        content: "";
+        z-index: 2;
+        position: absolute;
+        left: em(-15px, $basepx);
+        top: 0;
+        border-bottom: em(30px, $basepx) solid #fe4701;
+        border-left: em(15px, $basepx) solid transparent;
+      }
+      &:last-of-type {
+        top: em(80px, $basepx);
+        width: em(140px, $basepx);
+      }
+    }
+  }
+  .header {
+    position: absolute;
+    top: em(160px - 60px, $basepx);
+    right: em(4px, $basepx);
+    width: em(110px, $basepx);
+    height: em(60px, $basepx);
+    background: #fe4701;
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      top: em(-80px, $basepx);
+      border-bottom: em(80px, $basepx) solid #fe4701;
+      border-right: em(40px, $basepx) solid transparent;
+      width: em(110px, $basepx);
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: em(18px, $basepx);
+      top: em(-68px, $basepx);
+      border-bottom: em(60px, $basepx) solid #fff;
+      border-right: em(30px, $basepx) solid transparent;
+      width: em(80px, $basepx);
+    }
+    .lamp {
+      position: absolute;
+      right: 0;
+      bottom: em(40px, $basepx);
+      width: em(25px, $basepx);
+      height: em(20px, $basepx);
+      background: #faba01;
+    }
+  }
+  .wheel {
+    position: absolute;
+    bottom: 0;
+    left: em(30px, $basepx);
+    width: em(80px, $basepx);
+    height: em(80px, $basepx);
+    background: #fff;
+    border-radius: 50%;
+    border: em(12px, $basepx) solid #054052;
+    z-index: 2;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: #054052;
+      width: em(32px, $basepx);
+      height: em(32px, $basepx);
+      border-radius: 50%;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:last-of-type {
+      left: auto;
+      right: em(30px, $basepx);
+    }
+  }
+}
+
+.truck-2 {
+  width: em(450px, $basepx);
+  height: em(230px, $basepx);
+  position: relative;
+  // background-color: black;
+  .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em(320px, $basepx);
+    height: em(140px, $basepx);
+    background: #447c9d;
+    border: em(8px, $basepx) solid #76accc;
+    &:before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      bottom: em(-40px, $basepx);
+      width: em(420px, $basepx);
+      height: em(25px, $basepx);
+      border-radius: 3px;
+      background: #054052;
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      bottom: 0;
+      left: em(-5px, $basepx);
+      width: em(50px, $basepx);
+      height: em(25px, $basepx);
+      background: #76accc;
+    }
+    .lamp {
+      z-index: 3;
+      position: absolute;
+      left: em(-5px, $basepx);
+      bottom: em(-5px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #8deaff;
+    }
+    .line-bot {
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      bottom: em(-45px, $basepx);
+      width: em(100px, $basepx);
+      height: em(20px, $basepx);
+      background: #8deaff;
+    }
+    .line {
+      z-index: 2;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      &:before {
+        content: "";
+        z-index: 2;
+        position: absolute;
+        bottom: em(-15px, $basepx);
+        right: em(-20px, $basepx);
+        width: em(520px, $basepx);
+        height: em(400px, $basepx);
+        border-radius: em(200px, $basepx);
+        border: em(90px, $basepx) solid #d62d40;
+      }
+      span {
+        z-index: 3;
+        position: absolute;
+        left: em(10px, $basepx);
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+  .header {
+    z-index: 2;
+    position: absolute;
+    top: em(160px - 50px, $basepx);
+    right: em(4px, $basepx);
+    width: em(110px, $basepx);
+    height: em(60px, $basepx);
+    background: #90c2e1;
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      top: em(-80px, $basepx);
+      border-bottom: em(80px, $basepx) solid #90c2e1;
+      border-right: em(40px, $basepx) solid transparent;
+      width: em(110px, $basepx);
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: em(18px, $basepx);
+      top: em(-68px, $basepx);
+      border-bottom: em(60px, $basepx) solid #8deaff;
+      border-right: em(30px, $basepx) solid transparent;
+      width: em(80px, $basepx);
+    }
+    .lamp {
+      position: absolute;
+      right: 0;
+      bottom: em(10px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #8deaff;
+    }
+  }
+  .wheel {
+    position: absolute;
+    bottom: 0;
+    left: em(100px, $basepx);
+    width: em(80px, $basepx);
+    height: em(80px, $basepx);
+    background: #254658;
+    border-radius: 50%;
+    z-index: 2;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: #96c3e6;
+      width: em(38px, $basepx);
+      height: em(38px, $basepx);
+      border-radius: 50%;
+      border: em(10px, $basepx) solid #5697be;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      width: em(95px, $basepx);
+      height: em(35px, $basepx);
+      background-color: transparent;
+      border-top-left-radius: em(35px, $basepx);
+      border-top-right-radius: em(35px, $basepx);
+      border: 5px solid #254658;
+      border-bottom: 0;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:first-of-type {
+      left: em(15px, $basepx);
+    }
+    &:last-of-type {
+      left: auto;
+      right: em(30px, $basepx);
+    }
+  }
+}
+
+.truck-3 {
+  width: em(420px, $basepx);
+  height: em(230px, $basepx);
+  position: relative;
+  .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em(300px, $basepx);
+    height: em(160px, $basepx);
+    background: #fff;
+    &:before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      bottom: em(-25px, $basepx);
+      width: em(420px, $basepx);
+      height: em(20px, $basepx);
+      border-radius: 3px;
+      background: #054052;
+    }
+    .lamp {
+      z-index: 3;
+      position: absolute;
+      left: em(-5px, $basepx);
+      bottom: em(2px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #8deaff;
+    }
+    .line-bot {
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      bottom: em(-40px, $basepx);
+      width: em(180px, $basepx);
+      height: em(10px, $basepx);
+      background: #8deaff;
+    }
+    $top-line: 20px;
+    $width-line: 210px;
+    $height-line: 50px;
+    $rotate-line: 60px;
+    .line-1 {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line, $basepx);
+      height: em($height-line, $basepx);
+      background: #f4b51a;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #f4b51a;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-temp-1 {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 14px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fff;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-2 {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 20px, $basepx);
+      height: em($height-line, $basepx);
+      background: #f8810e;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #f8810e;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-temp-2 {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 34px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fff;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-3 {
+      z-index: 3;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 40px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fe4701;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fe4701;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .text-1,
+    .text-2 {
+      z-index: 3;
+      position: absolute;
+      color: black;
+      font-weight: bold;
+    }
+    .text-1 {
+      bottom: em(12px, $basepx);
+      right: em(5px, $basepx);
+      color: #fe4701;
+      font-size: em(53px, $basepx);
+    }
+    .text-2 {
+      bottom: 0;
+      right: em(15px, $basepx);
+      color: #f4b51a;
+      font-size: em(25px, $basepx);
+    }
+  }
+  .header {
+    z-index: 2;
+    position: absolute;
+    top: em(160px - 50px, $basepx);
+    right: em(4px, $basepx);
+    width: em(110px, $basepx);
+    height: em(60px, $basepx);
+    background: #fb4108;
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      top: em(-80px, $basepx);
+      border-bottom: em(80px, $basepx) solid #fb4108;
+      border-right: em(40px, $basepx) solid transparent;
+      width: em(110px, $basepx);
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: em(18px, $basepx);
+      top: em(-68px, $basepx);
+      border-bottom: em(60px, $basepx) solid #303e41;
+      border-right: em(30px, $basepx) solid transparent;
+      width: em(80px, $basepx);
+    }
+    .lamp {
+      position: absolute;
+      right: 0;
+      bottom: em(10px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #faba01;
+    }
+  }
+  .wheel {
+    position: absolute;
+    bottom: 0;
+    left: em(30px, $basepx);
+    width: em(80px, $basepx);
+    height: em(80px, $basepx);
+    background: #254658;
+    border-radius: 50%;
+    z-index: 2;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: #254658;
+      width: em(50px, $basepx);
+      height: em(50px, $basepx);
+      border-radius: 50%;
+      border: em(15px, $basepx) solid #fff;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      width: em(95px, $basepx);
+      height: em(35px, $basepx);
+      background-color: transparent;
+      border-top-left-radius: em(35px, $basepx);
+      border-top-right-radius: em(35px, $basepx);
+      border: 5px solid #254658;
+      border-bottom: 0;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:last-of-type {
+      left: auto;
+      right: em(30px, $basepx);
+    }
+  }
+}
