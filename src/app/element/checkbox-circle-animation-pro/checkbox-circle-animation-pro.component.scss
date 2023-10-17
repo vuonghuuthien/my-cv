@@ -1,0 +1,109 @@
+$color: var(--lc-color);
+$color-checked: var(--lc-color-checked);
+$color-check: var(--lc-color-check);
+$speed: var(--lc-speed);
+$size: var(--lc-size);
+$border-size: var(--lc-border-size);
+$width-check: var(--lc-width-check);
+$height-check: var(--lc-height-check);
+$border-check-size: var(--lc-border-check-size);
+$border-check-radius: var(--lc-border-check-radius);
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  transition: all ease-out $speed;
+  background: $color;
+  display: block;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: calc($size - (2 * $border-size));
+    height: calc($size - (2 * $border-size));
+    border-radius: 100%;
+    background: white;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .line {
+    z-index: 1;
+    position: absolute;
+    bottom: 25%;
+    left: 63%;
+    -webkit-transform: translateX(-50%) rotate(225deg);
+    transform: translateX(-50%) rotate(225deg);
+    height: $height-check;
+    width: $width-check;
+    // background: linear-gradient(to right, #a0fe56, #45c954);
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      height: $border-check-size;
+      width: 0;
+      border-radius: $border-check-radius;
+      background: $color-check;
+      // transition: all ease-out $speed;
+      // animation: line-before 2s 1 forwards;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: $border-check-size;
+      border-radius: $border-check-radius;
+      outline: 4px solid white;
+      background: $color-check;
+      // transition: all $speed ease-out $speed;
+      // animation: line-after 2s 1 forwards;
+    }
+  }
+}
+
+input[type="checkbox"]:checked + label {
+  background: $color-checked;
+  .line {
+    &:before {
+      // width: $width-check;
+      animation: line-before 0.3s 1 forwards;
+    }
+    &:after {
+      // height: $height-check;
+      animation: line-after 0.3s 1 forwards;
+    }
+  }
+}
+
+@keyframes line-before {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: $width-check;
+  }
+  100% {
+    width: $width-check;
+  }
+}
+
+@keyframes line-after {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: $height-check;
+  }
+}

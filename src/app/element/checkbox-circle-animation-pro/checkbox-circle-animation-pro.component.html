@@ -1,13 +1,18 @@
 <div
   class="checkbox"
   [style.--lc-color]="color"
+  [style.--lc-color-check]="color_check"
   [style.--lc-color-checked]="color_checked"
   [style.--lc-speed]="speed"
   [style.--lc-size]="size"
   [style.--lc-border-size]="border_size"
   [style.--lc-width-check]="width_check"
   [style.--lc-height-check]="height_check"
+  [style.--lc-border-check-size]="border_check_size"
+  [style.--lc-border-check-radius]="border_check_radius"
 >
-  <input id="chk" type="checkbox" />
-  <label for="chk"></label>
+  <input id="chk-pro" type="checkbox" />
+  <label for="chk-pro">
+    <div class="line"></div>
+  </label>
 </div>

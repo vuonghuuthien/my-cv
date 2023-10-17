@@ -1,12 +1,16 @@
 $color: var(--lc-color);
 $color-checked: var(--lc-color-checked);
 $speed: var(--lc-speed);
+$size: var(--lc-size);
+$border-size: var(--lc-border-size);
+$width-check: var(--lc-width-check);
+$height-check: var(--lc-height-check);
 
 input[type='checkbox'] + label {
   position: relative;
-  width: var(--lc-size);
-  height: var(--lc-size);
-  border: var(--lc-border-size) solid $color;
+  width: $size;
+  height: $size;
+  border: $border-size solid $color;
   border-radius: 100%;
   transition: all ease-out $speed;
   display: block;
@@ -15,9 +19,9 @@ input[type='checkbox'] + label {
     content: '';
     position: absolute;
     width: 0px;
-    height: 35px;
-    border-bottom: var(--lc-border-size) solid $color-checked;
-    border-left: var(--lc-border-size) solid $color-checked;
+    height: $height-check;
+    border-bottom: $border-size solid $color-checked;
+    border-left: $border-size solid $color-checked;
     top: 10%;
     left: 50%;
     transform-origin: bottom left;
@@ -28,10 +32,10 @@ input[type='checkbox'] + label {
 }
 
 input[type='checkbox']:checked + label {
-  border: var(--lc-border-size) solid $color-checked;
+  border: $border-size solid $color-checked;
   &:after {
     opacity: 1;
-    width: 70px;
+    width: $width-check;
   }
 }
 

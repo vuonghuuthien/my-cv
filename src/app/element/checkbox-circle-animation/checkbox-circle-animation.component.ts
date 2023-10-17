@@ -11,4 +11,6 @@ export class CheckboxCircleAnimationComponent {
   @Input() speed: string = '0.2s';
   @Input() size: string = '90px';
   @Input() border_size: string = '15px';
+  @Input() width_check: string = '70px';
+  @Input() height_check: string = '35px';
 }
