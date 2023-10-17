@@ -1,0 +1,90 @@
+$speed: var(--lc-speed);
+$width: var(--lc-width);
+$height: var(--lc-height);
+
+.wrapper {
+  width: $width;
+  height: $height;
+  background: #f4f5f5;
+}
+
+.shimmer-bg {
+  display: inline-block;
+  position: relative;
+  background: #f4f5f5;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 15%,
+    rgba(255, 255, 255, 0.5) 40%,
+    rgba(255, 255, 255, 0) 85%
+  );
+  background-repeat: no-repeat;
+  background-size: 50rem 100%;
+  animation: shimmer-animation $speed linear infinite forwards;
+
+  &.shimmer-bg-2 {
+    background: #f4f5f5;
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 50rem 100%;
+  }
+}
+
+@keyframes shimmer-animation {
+  0% {
+    background-position: -78rem 0;
+  }
+
+  100% {
+    background-position: 78rem 0;
+  }
+}
+
+.shimmer-bg-light {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 1),
+      transparent
+    );
+    transform: skewX(-10deg);
+    animation: shimmer-animation-light $speed ease-out infinite forwards;
+  }
+}
+
+@keyframes shimmer-animation-light {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.shimmer-mask {
+  color: grey;
+  display:inline-block;
+  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer-animation-mask 2.5s infinite;
+  font-size: 20px;
+  max-width: 200px;
+}
+
+@keyframes shimmer-animation-mask {
+  100% {-webkit-mask-position:left}
+}
