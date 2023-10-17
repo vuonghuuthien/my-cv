@@ -7,6 +7,7 @@ import { TerminalComponent } from './terminal/terminal.component';
 import { BgBubblesComponent } from './bg-bubbles/bg-bubbles.component';
 import { TruckComponent } from './truck/truck.component';
 import { DeliveryTruckAnimationComponent } from './delivery-truck-animation/delivery-truck-animation.component';
+import { CheckboxCircleAnimationComponent } from './checkbox-circle-animation/checkbox-circle-animation.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DeliveryTruckAnimationComponent } from './delivery-truck-animation/deli
     BgBubblesComponent,
     TruckComponent,
     DeliveryTruckAnimationComponent,
+    CheckboxCircleAnimationComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -27,6 +29,7 @@ import { DeliveryTruckAnimationComponent } from './delivery-truck-animation/deli
     BgBubblesComponent,
     TruckComponent,
     DeliveryTruckAnimationComponent,
+    CheckboxCircleAnimationComponent,
   ],
 })
 export class ElementModule {}

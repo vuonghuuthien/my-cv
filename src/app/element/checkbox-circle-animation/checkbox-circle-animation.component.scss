@@ -1,0 +1,40 @@
+$color: var(--lc-color);
+$color-checked: var(--lc-color-checked);
+$speed: var(--lc-speed);
+
+input[type='checkbox'] + label {
+  position: relative;
+  width: var(--lc-size);
+  height: var(--lc-size);
+  border: var(--lc-border-size) solid $color;
+  border-radius: 100%;
+  transition: all ease-out $speed;
+  display: block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 35px;
+    border-bottom: var(--lc-border-size) solid $color-checked;
+    border-left: var(--lc-border-size) solid $color-checked;
+    top: 10%;
+    left: 50%;
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: all ease-out $speed;
+  }
+}
+
+input[type='checkbox']:checked + label {
+  border: var(--lc-border-size) solid $color-checked;
+  &:after {
+    opacity: 1;
+    width: 70px;
+  }
+}
+
+#chk {
+  display: none;
+}
