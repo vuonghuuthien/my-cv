@@ -1,0 +1,413 @@
+$basepx: 50px;
+
+@function em($target, $context: $basepx) {
+  @if $target == 0 {
+    @return 0;
+  }
+  @return $target / $context + 0em;
+}
+
+@mixin prefix($name, $value) {
+  @each $vendor in ("-webkit-", "-moz-", "-ms-", "-o-", "") {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+.truck {
+  width: em(420px, $basepx);
+  height: em(230px, $basepx);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include prefix(animation, truckMove 0.3s infinite);
+  .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em(300px, $basepx);
+    height: em(160px, $basepx);
+    background: #fff;
+    &:before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      bottom: em(-25px, $basepx);
+      width: em(420px, $basepx);
+      height: em(20px, $basepx);
+      border-radius: 3px;
+      background: #054052;
+    }
+    .lamp {
+      z-index: 3;
+      position: absolute;
+      left: em(-5px, $basepx);
+      bottom: em(2px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #8deaff;
+    }
+    .line-bot {
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      bottom: em(-40px, $basepx);
+      width: em(180px, $basepx);
+      height: em(10px, $basepx);
+      background: #8deaff;
+    }
+    $top-line: 20px;
+    $width-line: 210px;
+    $height-line: 50px;
+    $rotate-line: 60px;
+    .line-1 {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line, $basepx);
+      height: em($height-line, $basepx);
+      background: #f4b51a;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #f4b51a;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-temp-1 {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 14px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fff;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-2 {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 20px, $basepx);
+      height: em($height-line, $basepx);
+      background: #f8810e;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #f8810e;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-temp-2 {
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 34px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fff;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fff;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .line-3 {
+      z-index: 3;
+      position: absolute;
+      left: 0;
+      top: em($top-line, $basepx);
+      width: em($width-line - 40px, $basepx);
+      height: em($height-line, $basepx);
+      background: #fe4701;
+      &:before {
+        content: "";
+        position: absolute;
+        right: em(-$rotate-line, $basepx);
+        top: 0;
+        border-top: em($height-line, $basepx) solid #fe4701;
+        border-right: em($rotate-line, $basepx) solid transparent;
+      }
+    }
+    .text-1,
+    .text-2 {
+      z-index: 3;
+      position: absolute;
+      color: black;
+      font-weight: bold;
+    }
+    .text-1 {
+      bottom: em(12px, $basepx);
+      right: em(5px, $basepx);
+      color: #fe4701;
+      font-size: em(53px, $basepx);
+    }
+    .text-2 {
+      bottom: 0;
+      right: em(15px, $basepx);
+      color: #f4b51a;
+      font-size: em(25px, $basepx);
+    }
+  }
+  .header {
+    z-index: 2;
+    position: absolute;
+    top: em(160px - 50px, $basepx);
+    right: em(4px, $basepx);
+    width: em(110px, $basepx);
+    height: em(60px, $basepx);
+    background: #fb4108;
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: 0;
+      top: em(-80px, $basepx);
+      border-bottom: em(80px, $basepx) solid #fb4108;
+      border-right: em(40px, $basepx) solid transparent;
+      width: em(110px, $basepx);
+    }
+    &:after {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      right: em(18px, $basepx);
+      top: em(-68px, $basepx);
+      border-bottom: em(60px, $basepx) solid #303e41;
+      border-right: em(30px, $basepx) solid transparent;
+      width: em(80px, $basepx);
+    }
+    .lamp {
+      position: absolute;
+      right: 0;
+      bottom: em(10px, $basepx);
+      width: em(10px, $basepx);
+      height: em(20px, $basepx);
+      background: #faba01;
+    }
+  }
+  .wheel {
+    position: absolute;
+    bottom: 0;
+    left: em(30px, $basepx);
+    width: em(80px, $basepx);
+    height: em(80px, $basepx);
+    background: #254658;
+    border-radius: 50%;
+    z-index: 2;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      background: #254658;
+      width: em(50px, $basepx);
+      height: em(50px, $basepx);
+      border-radius: 50%;
+      border: em(15px, $basepx) solid #fff;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      width: em(95px, $basepx);
+      height: em(35px, $basepx);
+      background-color: transparent;
+      border-top-left-radius: em(35px, $basepx);
+      border-top-right-radius: em(35px, $basepx);
+      border: 5px solid #254658;
+      border-bottom: 0;
+      @include prefix(transform, translate(-50%, -50%));
+    }
+    &:last-of-type {
+      left: auto;
+      right: em(30px, $basepx);
+    }
+  }
+}
+
+.wind {
+  position: absolute;
+  z-index: -1;
+  right: 100%;
+  height: 100%;
+  margin-right: em(-20px, $basepx);
+  .p {
+    position: absolute;
+    background: #fff;
+    border-radius: em(10px, $basepx);
+    height: em(10px, $basepx);
+  }
+  .p1 {
+    width: em(70px, $basepx);
+    position: absolute;
+    right: 0;
+    top: em(25px, $basepx);
+    animation: wind 1s -1s linear infinite;
+  }
+  .p2 {
+    width: em(100px, $basepx);
+    right: em(40px, $basepx);
+    top: em(60px, $basepx);
+    animation: wind 1s -2s linear infinite;
+  }
+  .p3 {
+    width: em(50px, $basepx);
+    right: em(00px, $basepx);
+    top: em(105px, $basepx);
+    animation: wind 1s -1s linear infinite;
+  }
+  .p4 {
+    width: em(60px, $basepx);
+    right: em(100px, $basepx);
+    top: em(135px, $basepx);
+    animation: wind 1s 1s linear infinite;
+  }
+  .p5 {
+    width: em(70px, $basepx);
+    right: em(30px, $basepx);
+    top: em(145px, $basepx);
+    animation: wind 1s -1.5s linear infinite;
+  }
+}
+
+.truck-wrapper_inner {
+  position: relative;
+  z-index: 4;
+}
+
+@keyframes truckMove {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes wind {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-400%);
+    opacity: 0;
+  }
+}
+
+.truck_outter {
+  @include prefix(transform, translateX(-100%));
+  position: relative;
+  animation: truckDrive 5s 1s cubic-bezier(0.88, 0.08, 0.16, 1.1) infinite;
+}
+
+@keyframes truckDrive {
+  0% {
+    transform: translateX(-100%);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  70% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.package {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: em(-150px, $basepx);
+  width: em(300px, $basepx);
+  background: #f8810e;
+  animation: hidePackage 5s 1s cubic-bezier(0.88, 0.08, 0.16, 1.1) infinite;
+  .p {
+    position: absolute;
+    border-radius: em(5px, $basepx);
+  }
+  .p1 {
+    left: 5%;
+    top: em(-5px, $basepx);
+    height: em(50px, $basepx);
+    width: em(50px, $basepx);
+    background: #ffe17d;
+    animation: package 1s -1s linear infinite;
+  }
+  .p2 {
+    left: 35%;
+    top: em(20px, $basepx);
+    height: em(70px, $basepx);
+    width: em(70px, $basepx);
+    background: #ffd164;
+    animation: package 1s -2s linear infinite;
+  }
+  .p3 {
+    left: 70%;
+    top: em(-10px, $basepx);
+    height: em(40px, $basepx);
+    width: em(40px, $basepx);
+    background: #ffc350;
+    animation: package 1s -1s linear infinite;
+  }
+  .p4 {
+    left: 50%;
+    top: em(-10px, $basepx);
+    height: em(30px, $basepx);
+    width: em(30px, $basepx);
+    background: #ffd164;
+    animation: package 1s -1s linear infinite;
+  }
+}
+
+@keyframes package {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500%);
+    opacity: 0;
+  }
+}
+
+@keyframes hidePackage {
+  0% {
+    overflow: hidden;
+  }
+  25% {
+    overflow: visible;
+  }
+  69% {
+    overflow: visible;
+  }
+  70% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: hidden;
+  }
+}

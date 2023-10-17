@@ -6,6 +6,7 @@ import { CardComponent } from './card/card.component';
 import { TerminalComponent } from './terminal/terminal.component';
 import { BgBubblesComponent } from './bg-bubbles/bg-bubbles.component';
 import { TruckComponent } from './truck/truck.component';
+import { DeliveryTruckAnimationComponent } from './delivery-truck-animation/delivery-truck-animation.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TruckComponent } from './truck/truck.component';
     TerminalComponent,
     BgBubblesComponent,
     TruckComponent,
+    DeliveryTruckAnimationComponent,
   ],
   imports: [CommonModule],
   exports: [
@@ -24,6 +26,7 @@ import { TruckComponent } from './truck/truck.component';
     TerminalComponent,
     BgBubblesComponent,
     TruckComponent,
+    DeliveryTruckAnimationComponent,
   ],
 })
 export class ElementModule {}
