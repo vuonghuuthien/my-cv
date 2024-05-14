@@ -1,0 +1,38 @@
+<div
+  class="wrapper"
+  [style.--lc-speed]="speed"
+  [style.--lc-width]="width"
+  [style.--lc-height]="height"
+>
+  <div
+    id="slider-card-info"
+    (mouseover)="pauseSlider()"
+    (mouseout)="resumeSlider()"
+  >
+    <input
+      type="radio"
+      name="slider"
+      id="r1"
+      [(ngModel)]="currentSlide"
+      [value]="0"
+    />
+    <input
+      type="radio"
+      name="slider"
+      id="r2"
+      [(ngModel)]="currentSlide"
+      [value]="1"
+    />
+    <input
+      type="radio"
+      name="slider"
+      id="r3"
+      [(ngModel)]="currentSlide"
+      [value]="2"
+    />
+
+    <label for="r1" id="slider-card-info-1" (click)="setSlide(0)"></label>
+    <label for="r2" id="slider-card-info-2" (click)="setSlide(1)"></label>
+    <label for="r3" id="slider-card-info-3" (click)="setSlide(2)"></label>
+  </div>
+</div>

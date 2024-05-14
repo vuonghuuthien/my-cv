@@ -13,6 +13,14 @@ import { PinAnimationComponent } from './pin-animation/pin-animation.component';
 import { ShimmerLoadingEffectComponent } from './shimmer-loading-effect/shimmer-loading-effect.component';
 import { SliderAnimationComponent } from './slider-animation/slider-animation.component';
 import { BoxAnimationComponent } from './box-animation/box-animation.component';
+import { ParallaxThreeItemComponent } from './parallax-three-item/parallax-three-item.component';
+import { ParallaxThreeCardComponent } from './parallax-three-card/parallax-three-card.component';
+import { ScrollDownButtonComponent } from './scroll-down-button/scroll-down-button.component';
+import { RollingTextAnimationComponent } from './rolling-text-animation/rolling-text-animation.component';
+import { RotatingTextAnimationComponent } from './rotating-text-animation/rotating-text-animation.component';
+import { SliderCardInfoAnimationComponent } from './slider-card-info-animation/slider-card-info-animation.component';
+import { FormsModule } from '@angular/forms';
+import { CardWorkComponent } from './card-work/card-work.component';  // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -29,8 +37,18 @@ import { BoxAnimationComponent } from './box-animation/box-animation.component';
     ShimmerLoadingEffectComponent,
     SliderAnimationComponent,
     BoxAnimationComponent,
+    ParallaxThreeItemComponent,
+    ParallaxThreeCardComponent,
+    ScrollDownButtonComponent,
+    RollingTextAnimationComponent,
+    RotatingTextAnimationComponent,
+    SliderCardInfoAnimationComponent,
+    CardWorkComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule, // Add FormsModule here
+  ],
   exports: [
     ButtonComponent,
     BrowserComponent,
@@ -45,6 +63,13 @@ import { BoxAnimationComponent } from './box-animation/box-animation.component';
     ShimmerLoadingEffectComponent,
     SliderAnimationComponent,
     BoxAnimationComponent,
+    ParallaxThreeItemComponent,
+    ParallaxThreeCardComponent,
+    ScrollDownButtonComponent,
+    RollingTextAnimationComponent,
+    RotatingTextAnimationComponent,
+    SliderCardInfoAnimationComponent,
+    CardWorkComponent,
   ],
 })
 export class ElementModule {}

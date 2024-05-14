@@ -1,0 +1,10 @@
+<div class="rotating-container">
+  <span *ngFor="let role of roles; let roleIndex = index" class="role">
+    <span
+      *ngFor="let char of role.split(''); let charIndex = index"
+      class="char"
+      [style.width]="char === ' ' ? '16px' : ''"
+      >{{ char }}</span
+    >
+  </span>
+</div>

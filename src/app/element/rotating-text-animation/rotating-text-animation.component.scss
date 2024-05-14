@@ -1,0 +1,42 @@
+.rotating-container {
+  position: relative;
+  height: 65px; /* Adjust based on your design */
+  width: 510px;
+  overflow: hidden;
+}
+
+.role {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s;
+  text-align: left;
+}
+
+.char {
+  line-height: 65px;
+  font-size: 50px;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: inline-block;
+  // transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+.char.out {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.char.behind {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.char.in {
+  transform: translateY(0%);
+  opacity: 1;
+}
+

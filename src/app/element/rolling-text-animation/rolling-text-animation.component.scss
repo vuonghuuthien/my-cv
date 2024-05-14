@@ -1,0 +1,47 @@
+.rolling-text {
+  height: 65px;
+  overflow: hidden;
+}
+
+.rolling-text span {
+  display: block;
+  line-height: 65px;
+  font-size: 50px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+#rolling-text-1 span {
+  animation: rollText-1 6s infinite;
+}
+
+@keyframes rollText-1 {
+  0%{
+    transform: translateY(0px);
+  }
+  33%{
+    transform: translateY(-65px);
+  }
+  66%{
+    transform: translateY(-130px);
+  }
+}
+
+#rolling-text-2 span {
+  animation: rollText-2 6s infinite;
+}
+
+@keyframes rollText-2 {
+  0%{
+    transform: translateY(0px);
+  }
+  33%{
+    transform: translateY(-65px);
+  }
+  66%{
+    transform: translateY(-130px);
+  }
+  100%{
+    transform: translateY(-195px);
+  }
+}

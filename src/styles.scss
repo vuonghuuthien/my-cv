@@ -6,9 +6,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --font-family: "Montserrat", sans-serif;
+  --font-family: "Mulish", sans-serif;
+  --font-secondary: "Fraunces", serif;
+  --font-scroll-down: "Poppins", sans-serif;
 	--font-dev: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
   --font-handwriting: 'Yellowtail', cursive;
 
@@ -21,9 +24,13 @@
 	--shadow--blue: 0px 12px 24px 0px rgba(29, 78, 216, 0.32), 0px 2px 4px 0px rgba(59, 130, 246, 0.12);
 	--shadow--inset: -5px -5px 10px 0px #FFF, 5px 5px 10px 0px #BEBEBE;
 
+  --color-primary: #FF774C; 
+  --color-secondary: #242F65; 
 	--color-white: #ffffff;
-	--color-black: #000000;
+	--color-black: #2A2C32;
+	--color-black-2: #2F2F2F;
 	--color-rgb-white: 255, 255, 255;
+  --color-line: #CCCCCC;
 
 	// Browser
 	--color--browser-red: #F96057;
@@ -59,6 +66,10 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  font-family: var(--font-family);
+  font-style: normal;
+	font-weight: 500;
+	// font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 body {
@@ -66,9 +77,6 @@ body {
   min-height: 100vh;
   background: var(--color-bg);
   background-repeat: no-repeat;
-  font-family: var(--font-family);
-	font-weight: 500;
-	// font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 a {

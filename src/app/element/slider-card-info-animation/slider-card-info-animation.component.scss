@@ -1,0 +1,67 @@
+$speed: var(--lc-speed);
+$width: var(--lc-width);
+$height: var(--lc-height);
+
+[type="radio"] {
+  display: none;
+}
+
+#slider-card-info {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  height: $height;
+  width: $width;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+#slider-card-info label {
+  margin: auto;
+  width: 60%;
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transition: transform $speed ease;
+}
+
+/* Styles for each slide state (3 slides) */
+#r1:checked ~ #slider-card-info-2,
+#r2:checked ~ #slider-card-info-3,
+#r3:checked ~ #slider-card-info-1 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(15%, 0, -100px);
+}
+
+#r1:checked ~ #slider-card-info-1,
+#r2:checked ~ #slider-card-info-2,
+#r3:checked ~ #slider-card-info-3 {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+  transform: translate3d(0, 0, 0);
+}
+
+#r1:checked ~ #slider-card-info-3,
+#r2:checked ~ #slider-card-info-1,
+#r3:checked ~ #slider-card-info-2 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(-15%, 0, -100px);
+}
+
+#slider-card-info-1,
+#slider-card-info-2,
+#slider-card-info-3 {
+  background-color: vary(--slide-color); /* Use a single variable for color */
+}
+
+#slider-card-info-1 {
+  background-color: #00bcd4;
+} /* Override default color for slide 1 */
+#slider-card-info-2 {
+  background-color: #4caf50;
+} /* Override default color for slide 2 */
+#slider-card-info-3 {
+  background-color: #cddc39;
+} /* Override default color for slide 3 */
