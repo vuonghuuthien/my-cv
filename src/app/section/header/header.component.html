@@ -5,15 +5,36 @@
         <img class="logo" src="./../../../assets/Avatar.png" alt="Avatar" />
         <div class="brand-content">
           <!-- <h1 class="brand-name">Thien (David) Vuong Huu</h1> -->
-          <h1 class="brand-name">David</h1>
+          <h1 class="brand-name">david.</h1>
           <!-- <p class="brand-title">Full-Stack Developer | UX/UI Designer | Front-End Animator</p> -->
         </div>
       </div>
-      <nav>
+      <nav class="menu">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li *ngFor="let item of menuItems" (click)="setActive(item)">
+            <a [attr.href]="item.link" [class.active]="item.active">{{ item.label }}</a>
+          </li>
+        </ul>
+        <span #underline class="underline" [ngStyle]="underlineStyle"></span>
+      </nav>
+
+      <nav class="contact">
+        <ul>
+          <li>
+            <a href="">
+              <img src="./../../../assets/icons/phone.svg" alt="Phone">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="./../../../assets/icons/mail.svg" alt="Mail">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="./../../../assets/icons/map-pin.svg" alt="Map Pin">
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

@@ -5,6 +5,7 @@ import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { HeaderComponent } from './header/header.component';
 import { IntroduceSectionComponent } from './introduce-section/introduce-section.component';
 import { WorkSectionComponent } from './work-section/work-section.component';
+import { LeftBarSectionComponent } from './left-bar-section/left-bar-section.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { WorkSectionComponent } from './work-section/work-section.component';
     HeaderComponent,
     IntroduceSectionComponent,
     WorkSectionComponent,
+    LeftBarSectionComponent,
   ],
   imports: [CommonModule, ElementModule],
   exports: [
@@ -19,6 +21,7 @@ import { WorkSectionComponent } from './work-section/work-section.component';
     HeaderComponent,
     IntroduceSectionComponent,
     WorkSectionComponent,
+    LeftBarSectionComponent,
   ],
 })
 export class SectionModule {}

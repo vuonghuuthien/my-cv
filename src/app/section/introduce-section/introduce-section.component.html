@@ -1,1 +1,20 @@
-<p>introduce-section works!</p>
+<section id="introduce">
+  <div class="container">
+    <div class="background">
+      <div class="lines">
+        <div class="line" *ngFor="let item of [].constructor(5)"></div>
+      </div>
+      <div class="wrapper-content">
+        <div class="content">
+          <div class="say-hi">Hi There,</div>
+          <div class="nick-name">I'm David.</div>
+          <div class="role">
+            <p>a</p>
+            <app-rotating-text-animation></app-rotating-text-animation>
+            <!-- <app-rolling-text-animation [style]="2"></app-rolling-text-animation> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

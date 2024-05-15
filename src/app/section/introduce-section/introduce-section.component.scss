@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // background: #fffafa;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lines {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 255px;
+  display: none;
+
+  .line {
+    height: 100%;
+    width: 1px;
+    background: var(--color-line-gradient);
+    opacity: 0.1;
+  }
+}
+
+.wrapper-content {
+  width: 100%;
+  max-width: 1093px;
+}
+
+.content {
+  .say-hi {
+    font-weight: 450;
+    font-size: 22px;
+    line-height: 28px;
+
+    color: var(--color-black);
+  }
+
+  .nick-name {
+    font-weight: 900;
+    font-size: 102px;
+    line-height: 129.5%;
+    letter-spacing: -0.02em;
+    color: var(--color-black-2);
+  }
+
+  .role {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+
+    font-size: 50px;
+    text-align: center;
+    color: var(--color-black-2);
+
+    .value {
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  z-index: 100;
+  width: 0;
+  height: 0;
+}
+
+.left-bar {
+  position: absolute;
+  width: 100vh;
+  transform: rotate(-90deg) translate(-100%, 0);
+  transform-origin: left top;
+}
+
+.content {
+  padding: 29px 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roles {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  max-width: 420px;
+
+  .role {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-black);
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 32px;
+
+  .social {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-black);
+  }
+}

@@ -1,13 +1,14 @@
 .container {
   position: absolute;
+  z-index: 100;
   top: 0;
   width: 100%;
   // height: 135px;
-  padding: 45px 100px;
+  padding: 45px 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-white);
+  // background: var(--color-white);
 }
 
 .header-bar {
@@ -27,25 +28,26 @@
   /* Branding */
   display: flex;
   align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 220px;
 
   img.logo {
     /* Logo */
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     object-fit: cover;
+    display: none;
   }
 
   .brand-content {
     display: flex;
     flex-direction: column;
-    margin-left: 24px;
 
     h1.brand-name {
-      font-family: "Mulish";
       font-style: normal;
-      font-weight: 800;
       font-size: 26px;
-      color: var(--color-secondary);
+      color: var(--color-black-4);
     }
 
     p.brand-title {
@@ -58,18 +60,50 @@ nav {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
 
     li {
-      display: inline-block;
-      margin-left: 48px;
-
       a {
         text-decoration: none;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 25px;
-        color: var(--color-black-2);
       }
+    }
+  }
+}
+
+nav.menu {
+  position: relative;
+  width: 100%;
+
+  ul {
+    gap: 42px;
+
+    li a {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 22px;
+      color: var(--color-black);
+    }
+  }
+
+  .underline {
+    position: absolute;
+    height: 2px;
+    background: var(--color-black);
+    bottom: -10px;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+nav.contact {
+  ul {
+    gap: 25px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
     }
   }
 }
