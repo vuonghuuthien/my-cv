@@ -1,10 +1,4 @@
-import {
-  Component,
-  AfterViewInit,
-  Renderer2,
-  ElementRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -19,46 +13,48 @@ export class HeaderComponent implements AfterViewInit {
     { label: 'contact me', link: '#contact-me', active: false },
   ];
 
-  underlineStyle = {
-    width: '0px',
-    left: '0px',
-  };
+  underlineStyle = {};
 
-  @ViewChild('underline', { static: false }) underline!: ElementRef;
-
-  constructor(private renderer: Renderer2) {}
-
-  ngAfterViewInit() {
-    this.updateUnderline();
+  setActive(item: any) {
+    this.menuItems.forEach((i) => (i.active = false));
+    item.active = true;
+    this.updateUnderlineStyle(item);
   }
 
-  setActive(menuItem: { label: string, link: string, active: boolean }) {
-    this.menuItems.forEach(item => item.active = false);
-    menuItem.active = true;
-    this.updateUnderline();
-  }
-
-  updateUnderline() {
+  updateUnderlineStyle(item: any) {
     setTimeout(() => {
       const activeLink = document.querySelector('.menu a.active');
       const navbar = document.querySelector('.menu');
 
       if (activeLink && navbar) {
-        const linkWidth = activeLink.getBoundingClientRect().width + 3;
-        const linkLeft = activeLink.getBoundingClientRect().left - 1;
-        const navbarLeft = navbar.getBoundingClientRect().left;
+        const activeLink_Rect = activeLink.getBoundingClientRect();
+        const navbar_Rect = navbar.getBoundingClientRect();
 
-        this.renderer.setStyle(
-          this.underline.nativeElement,
-          'width',
-          `${linkWidth}px`
-        );
-        this.renderer.setStyle(
-          this.underline.nativeElement,
-          'left',
-          `${linkLeft - navbarLeft}px`
-        );
+        this.underlineStyle = {
+          width: `${activeLink_Rect.width + 3}px`,
+          left: `${activeLink_Rect.left - navbar_Rect.left - 1}px`,
+        };
       }
     }, 0); // Delay to ensure DOM update
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.menuItems.forEach((item) => {
+      const section = document.querySelector(item.link);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+          this.setActive(item);
+        }
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    const activeItem = this.menuItems.find((item) => item.active);
+    if (activeItem) {
+      this.updateUnderlineStyle(activeItem);
+    }
   }
 }
