@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+
+  .background {
+    width: 100%;
+    height: 495px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    box-shadow: 0px 15px 250px rgba(9, 20, 50, 0.1);
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+
+.avatar-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 32px 24px;
+  border-radius: 20px;
+  height: 100%;
+
+  .role {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 33px;
+      color: var(--color-white);
+    }
+
+    .experience {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0.5px;
+      color: var(--color-white);
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+
+  .skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+
+    .skill {
+      width: 32px;
+      height: 32px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .description {
+    height: 0;
+    overflow: hidden;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.5px;
+    color: var(--color-black);
+    transition: 0.5s;
+  }
+}
+
+.container:hover {
+  .background {
+    box-shadow: 0px 50px 250px rgba(9, 20, 50, 0.15);
+  }
+
+  .content {
+    .description {
+      height: 92px;
+      margin-top: 10px;
+    }
+  }
+}

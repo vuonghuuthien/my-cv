@@ -10,7 +10,7 @@
 
 :root {
   --font-family: "Circular Std", sans-serif;
-  --font-secondary: "Fraunces", serif;
+  --font-secondary: "DM Sans", serif;
   --font-scroll-down: "Poppins", sans-serif;
 	--font-dev: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
   --font-handwriting: 'Yellowtail', cursive;
@@ -32,6 +32,7 @@
 	--color-black-2: #383838;
 	--color-black-3: #414141;
 	--color-black-4: #505050;
+  --color-black-5: #545567;
   --color-line: #CCCCCC;
   --color-line-gradient: linear-gradient(180deg, #616161 0%, rgba(196, 196, 196, 0) 100%);
 
@@ -73,6 +74,9 @@
   font-style: normal;
 	font-weight: 400;
 	// font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 }
 
 body {

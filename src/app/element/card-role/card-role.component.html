@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="background">
+    <div class="avatar-wrapper" [ngStyle]="getBackgroundStyle()">
+      <div class="role">
+        <h3 class="title">{{ contentTitle }}</h3>
+        <span class="experience">{{ contentExperience }}</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="skills">
+        <div class="skill" *ngFor="let skill of skillList">
+          <img [src]="skill" alt="Skill" />
+        </div>
+      </div>
+      <div class="description">
+        {{ contentDescription }}
+      </div>
+    </div>
+  </div>
+</div>

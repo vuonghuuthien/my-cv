@@ -1,0 +1,67 @@
+<section id="about-me">
+  <div class="container">
+    <div class="roles">
+      <div
+        *ngFor="let role of roleList; let roleIndex = index"
+        class="role"
+        [class]="'role-' + (roleIndex + 1)"
+      >
+        <app-card-role
+          [linkAvatar]="role.linkAvatar"
+          [contentTitle]="role.contentTitle"
+          [contentExperience]="role.contentExperience"
+          [contentDescription]="role.contentDescription"
+          [skillList]="role.skillList"
+        ></app-card-role>
+      </div>
+    </div>
+    <section class="my-story">
+      <h2 class="title">My Story</h2>
+      <span class="description description-1">
+        Currently, I'm a Senior UX/UI Designer at New Ocean Information Systems,
+        working remotely for the past two years. I've worked with many large
+        companies and prestigious clients worldwide, helping them build engaging
+        and user-friendly digital products.
+      </span>
+      <span class="description description-2">
+        With a background in Technology, Systems Architecture, and
+        Human-Computer Interaction, I design with empathy and focus on
+        user-centered solutions. My goal is to push design boundaries while
+        maintaining high standards of usability and user experience.
+      </span>
+    </section>
+
+    <section class="work-experience-list">
+      <div class="work-experience work-experience-1">
+        <h2 class="title">WEEBPAL</h2>
+        <span class="role">Full-Stack Web Developer</span>
+        <span class="technology"> Drupal 8, PHP </span>
+      </div>
+      <div class="work-experience work-experience-2">
+        <h2 class="title">TEKY ACADEMY</h2>
+        <span class="role">Teacher</span>
+        <span class="technology">
+          I teach Robotic, Scratch, Tynker, Makecode Minecraft, Python, HTML,
+          CSS, JS, Arduino, Photoshop.
+        </span>
+      </div>
+      <div class="work-experience work-experience-3">
+        <h2 class="title">TMT TECHNOLOGY JOINT STOCK COMPANY</h2>
+        <span class="role">Full-Stack Web Developer</span>
+        <span class="technology"> Angular 2+, .NET Core </span>
+      </div>
+      <div class="work-experience work-experience-4">
+        <h2 class="title">NEW OCEAN INFORMATION SYSTEM</h2>
+        <span class="role">FE Web Developer and UX/UI Designer</span>
+        <span class="technology">
+          Wordpress, Angular 2+, PHP, HTML, SCSS, JS, Figma, Miro, Ps, Ai.
+        </span>
+      </div>
+      <div class="work-experience work-experience-5">
+        <h2 class="title">FREELANCE WORK</h2>
+        <span class="role">Freelancer</span>
+        <span class="technology"> Many Different Technologies. </span>
+      </div>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="background style-1" *ngIf="style == 1">
+    <div class="icon" *ngIf="linkIcon" [style.background]="bgIcon">
+      <img [src]="linkIcon" alt="Icon" />
+    </div>
+    <div class="avatar" *ngIf="linkAvatar">
+      <img [src]="linkAvatar" alt="Avatar" />
+    </div>
+    <div class="content">
+      <h3 class="title">{{ contentTitle }}</h3>
+      <span class="description" *ngIf="contentDescription">
+        {{ contentDescription }}
+      </span>
+      <div class="list" *ngIf="contentList.length">
+        <span *ngFor="let content of contentList" class="value">
+          {{ content }}</span
+        >
+      </div>
+      <button
+        *ngIf="contentButton"
+        type="button"
+        class="button"
+        [style.background]="bgButton"
+        [style.color]="colorButton"
+      >
+        {{ contentButton }}
+      </button>
+    </div>
+  </div>
+  <div class="background style-2" *ngIf="style == 2">
+    <div class="icon">
+      <img [src]="linkIcon" alt="Icon" />
+    </div>
+  </div>
+</div>

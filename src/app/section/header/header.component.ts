@@ -14,8 +14,8 @@ import {
 export class HeaderComponent implements AfterViewInit {
   menuItems = [
     { label: 'overview', link: '#overview', active: true },
-    { label: 'about me', link: '#about-me', active: false },
     { label: 'my work', link: '#my-work', active: false },
+    { label: 'about me', link: '#about-me', active: false },
     { label: 'contact me', link: '#contact-me', active: false },
   ];
 

@@ -1,20 +1,77 @@
 <section id="introduce">
   <div class="container">
-    <div class="background">
-      <div class="lines">
-        <div class="line" *ngFor="let item of [].constructor(5)"></div>
+    <div class="lines">
+      <div class="line" *ngFor="let item of [].constructor(5)"></div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content">
+        <h2 class="say-hi">Hi There,</h2>
+        <h1 class="nick-name">I'm David.</h1>
+        <div class="role">
+          <p>a</p>
+          <app-rotating-text-animation></app-rotating-text-animation>
+          <!-- <app-rolling-text-animation [style]="2"></app-rolling-text-animation> -->
+        </div>
       </div>
-      <div class="wrapper-content">
-        <div class="content">
-          <div class="say-hi">Hi There,</div>
-          <div class="nick-name">I'm David.</div>
-          <div class="role">
-            <p>a</p>
-            <app-rotating-text-animation></app-rotating-text-animation>
-            <!-- <app-rolling-text-animation [style]="2"></app-rolling-text-animation> -->
+      <div class="image-wrapper">
+        <img
+          class="image-interview"
+          src="/assets/images/Image Interview.png"
+          alt="Image Interview"
+        />
+        <div class="tags">
+          <div class="tag tag-1">
+            <app-card-tag
+              [linkIcon]="'/assets/icons/Star Icon.svg'"
+              [bgIcon]="'#23bdee'"
+              [contentTitle]="'7+'"
+              [contentDescription]="'Years Experience'"
+            ></app-card-tag>
+          </div>
+          <div class="tag tag-2">
+            <app-card-tag
+              [linkIcon]="'/assets/icons/Stack Overflow Icon.svg'"
+              [bgIcon]="'#f88c3d'"
+              [contentTitle]="'1,650+ Reputation'"
+              [contentDescription]="'On Stack Overflow'"
+            ></app-card-tag>
+          </div>
+          <div class="tag tag-3">
+            <app-card-tag
+              [linkIcon]="'/assets/icons/StackBlitz Icon.svg'"
+              [bgIcon]="'#23bdee'"
+              [contentTitle]="'200+ Sample'"
+              [contentDescription]="'On StackBlitz'"
+            ></app-card-tag>
+          </div>
+          <div class="tag tag-4">
+            <app-card-tag
+              [linkAvatar]="'/assets/images/thien.jpg'"
+              [contentTitle]="'I have supported'"
+              [contentList]="[
+                '70+ Students',
+                '14,000+ Designers',
+                '60,000+ Developers'
+              ]"
+              [contentButton]="'Explore'"
+              [bgButton]="'#D8587E'"
+              [colorButton]="'white'"
+            ></app-card-tag>
+          </div>
+          <div class="tag tag-5">
+            <app-card-tag
+              [style]="2"
+              [linkIcon]="'/assets/images/Quality.png'"
+            ></app-card-tag>
           </div>
         </div>
       </div>
     </div>
+    <a href="#about-me" class="scroll-down">
+      <div class="icon">
+        <img src="/assets/icons/Arrow Down.png" alt="Scroll Down Icon" />
+      </div>
+      <span class="label"> Scroll down to see my latest work </span>
+    </a>
   </div>
 </section>

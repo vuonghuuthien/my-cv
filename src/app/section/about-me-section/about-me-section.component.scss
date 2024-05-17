@@ -1,0 +1,85 @@
+section#about-me {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 120px 0;
+}
+
+.roles {
+  display: flex;
+  gap: 65px;
+
+  .role {
+    width: 100%;
+  }
+}
+
+section.my-story {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 80px;
+
+  .title {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: var(--color-black-2);
+  }
+
+  .description {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--color-black);
+
+    &.description-2 {
+      color: var(--color-black-4);
+    }
+  }
+}
+
+section.work-experience-list {
+  .work-experience {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 80px;
+
+    .title {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: -0.02em;
+      color: var(--color-black-2);
+    }
+    .role {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--color-black);
+    }
+    .technology {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--color-black-4);
+    }
+  }
+}

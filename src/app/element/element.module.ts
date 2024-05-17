@@ -20,7 +20,9 @@ import { RollingTextAnimationComponent } from './rolling-text-animation/rolling-
 import { RotatingTextAnimationComponent } from './rotating-text-animation/rotating-text-animation.component';
 import { SliderCardInfoAnimationComponent } from './slider-card-info-animation/slider-card-info-animation.component';
 import { FormsModule } from '@angular/forms';
-import { CardWorkComponent } from './card-work/card-work.component';  // Import FormsModule
+import { CardWorkComponent } from './card-work/card-work.component';
+import { CardTagComponent } from './card-tag/card-tag.component';
+import { CardRoleComponent } from './card-role/card-role.component';  // Import FormsModule
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { CardWorkComponent } from './card-work/card-work.component';  // Import 
     RotatingTextAnimationComponent,
     SliderCardInfoAnimationComponent,
     CardWorkComponent,
+    CardTagComponent,
+    CardRoleComponent,
   ],
   imports: [
     CommonModule,
@@ -70,6 +74,8 @@ import { CardWorkComponent } from './card-work/card-work.component';  // Import 
     RotatingTextAnimationComponent,
     SliderCardInfoAnimationComponent,
     CardWorkComponent,
+    CardTagComponent,
+    CardRoleComponent,
   ],
 })
 export class ElementModule {}

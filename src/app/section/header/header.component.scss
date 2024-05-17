@@ -1,14 +1,11 @@
 .container {
-  position: absolute;
-  z-index: 100;
-  top: 0;
   width: 100%;
   // height: 135px;
-  padding: 45px 45px;
+  padding: 30px 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  // background: var(--color-white);
+  background: var(--color-white);
 }
 
 .header-bar {
@@ -79,10 +76,11 @@ nav.menu {
     gap: 42px;
 
     li a {
-      font-weight: 400;
+      font-weight: medium;
       font-size: 17px;
       line-height: 22px;
       color: var(--color-black);
+      padding: 10px 0;
     }
   }
 
