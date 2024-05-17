@@ -101,3 +101,16 @@ a {
 .vt__hide {
   display: none;
 }
+
+.parallax-down {
+  /* Định nghĩa hiệu ứng Parallax khi cuộn trang xuống */
+  transition: transform 0.5s ease;
+  transform: translateY(50%);
+}
+
+.parallax-up {
+  /* Định nghĩa hiệu ứng Parallax khi cuộn trang lên */
+  transition: transform 0.5s ease;
+  transform: translateY(-50%);
+}
+

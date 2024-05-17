@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ElementModule } from './element/element.module';
 import { SectionModule } from './section/section.module';
+import { ParallaxScrollDirective } from './directive/parallax-scroll.directive';
+import { DirectiveModule } from './directive/directive.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { SectionModule } from './section/section.module';
     AppRoutingModule,
     ElementModule,
     SectionModule,
+    DirectiveModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
