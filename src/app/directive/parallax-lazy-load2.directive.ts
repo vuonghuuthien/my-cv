@@ -4,7 +4,7 @@ import {
   Input,
   OnInit,
   Renderer2,
-  OnDestroy,
+  HostListener,
 } from '@angular/core';
 
 enum ParallaxEffectStyle {
@@ -15,10 +15,10 @@ enum ParallaxEffectStyle {
 }
 
 @Directive({
-  selector: '[appParallaxLazyLoad]',
+  selector: '[appParallaxLazyLoad2]',
 })
-export class ParallaxLazyLoadDirective implements OnInit, OnDestroy {
-  @Input() threshold: number = 0.01; // 0, 0.5, 1
+export class ParallaxLazyLoad2Directive implements OnInit {
+  @Input() threshold: number = 0.01;
   @Input() offsetBottom: string = '200px';
   @Input() delay: number = 0;
   @Input() speed: number = 1;
@@ -32,48 +32,34 @@ export class ParallaxLazyLoadDirective implements OnInit, OnDestroy {
 
   private activated: boolean = false;
   private parent!: HTMLElement;
-  private observer!: IntersectionObserver;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
     this.wrapElement();
     this.setPositionDefault();
-    this.createObserver();
-  }
-
-  ngOnDestroy() {
-    if (this.observer) {
-      this.observer.disconnect();
-    }
+    this.checkScroll();
   }
 
   private wrapElement(): void {
-    // Create a new div tag with class "parallax-lazy-load"
+    // Create parent tag with class "parallax-lazy-load"
     this.parent = this.renderer.createElement('div');
     this.renderer.addClass(this.parent, 'parallax-lazy-load');
 
-    // Set width and height for new div tag
     const nativeElement = this.el.nativeElement;
     const computedStyle = getComputedStyle(nativeElement);
-    this.renderer.setStyle(
-      this.parent,
-      'width',
-      nativeElement.offsetWidth + 'px'
-    );
-    this.renderer.setStyle(
-      this.parent,
-      'height',
-      nativeElement.offsetHeight + 'px'
-    );
 
-    // Switch the margin attribute of the directive added tag to the "parallax-lazy-load" tag
+    // Set the width and height of the parent tag equal to the original size of the child tag
+    this.renderer.setStyle(this.parent, 'width', nativeElement.offsetWidth + 'px');
+    this.renderer.setStyle(this.parent, 'height', nativeElement.offsetHeight + 'px');
+
+    // Get the margin attribute of the child tag and apply it to the parent tag
     this.renderer.setStyle(this.parent, 'margin', computedStyle.margin);
 
-    // Delete the margin of the tag added to the directive
+    // Delete the margin of child tags
     this.renderer.setStyle(nativeElement, 'margin', '0');
 
-    // Place the "parallax-lazy-load" tag around the tag to which the directive is added
+    // Insert the parent tag before the child tag and move the child tag inside the parent tag
     const parentNode = nativeElement.parentNode;
     this.renderer.insertBefore(parentNode, this.parent, nativeElement);
     this.renderer.appendChild(this.parent, nativeElement);
@@ -140,38 +126,33 @@ export class ParallaxLazyLoadDirective implements OnInit, OnDestroy {
     this.activated = false;
   }
 
-  // Add parseOffsetBottom function to handle offsetBottom
   private parseOffsetBottom(offset: string): string {
     if (offset.endsWith('vh')) {
       const vh = parseFloat(offset);
-      return (window.innerHeight * vh) / 100 + 'px';
+      return (window.innerHeight * vh / 100) + 'px';
     } else if (offset.endsWith('%')) {
       const percentage = parseFloat(offset);
       const parentHeight = this.parent.offsetHeight;
-      return (parentHeight * percentage) / 100 + 'px';
+      return (parentHeight * percentage / 100) + 'px';
     }
-    return offset; // If not 'vh' or '%', return the original value
+    return offset;
   }
 
-  private createObserver(): void {
-    const offsetBottomValue = this.parseOffsetBottom(this.offsetBottom); 
-    
-    const options = {
-      root: null,
-      rootMargin: `0px 0px -${offsetBottomValue} 0px`,
-      threshold: this.threshold,
-    };
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.checkScroll();
+  }
 
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.activateParallaxEffect();
-        } else if (this.revert) {
-          this.revertParallaxEffect();
-        }
-      });
-    }, options);
+  private checkScroll() {
+    const rect = this.parent.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
 
-    this.observer.observe(this.parent);
+    const offsetBottomValue = parseFloat(this.parseOffsetBottom(this.offsetBottom));
+
+    if (rect.top >= 0 && rect.bottom <= windowHeight - offsetBottomValue) {
+      this.activateParallaxEffect();
+    } else if (this.revert) {
+      this.revertParallaxEffect();
+    }
   }
 }
