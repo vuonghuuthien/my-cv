@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnInit, HostListener } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, HostListener, Renderer2 } from '@angular/core';
 
 enum ParallaxEffectStyle {
   SlideUp = 'slide-up',
@@ -22,29 +22,42 @@ export class ParallaxLazyLoadDirective implements OnInit {
   @Input() fadeIn_trajectory: string = this.trajectory;
 
   private activated: boolean = false;
+  private parent!: HTMLElement;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit() {
+    this.wrapElement();
     this.setPositionDefault();
     this.checkScroll();
   }
 
+  private wrapElement(): void {
+    // Tạo một thẻ div mới với class "parallax-lazy-load"
+    this.parent = this.renderer.createElement('div');
+    this.renderer.addClass(this.parent, 'parallax-lazy-load');
+
+    // Set width và height cho thẻ div mới
+    const nativeElement = this.el.nativeElement;
+    const computedStyle = getComputedStyle(nativeElement);
+    this.renderer.setStyle(this.parent, 'width', nativeElement.offsetWidth + 'px');
+    this.renderer.setStyle(this.parent, 'height', nativeElement.offsetHeight + 'px');
+
+    // Chuyển thuộc tính margin của thẻ được thêm directive sang thẻ "parallax-lazy-load"
+    this.renderer.setStyle(this.parent, 'margin', computedStyle.margin);
+
+    // Xóa margin của thẻ được thêm directive
+    this.renderer.setStyle(nativeElement, 'margin', '0');
+
+    // Đặt thẻ "parallax-lazy-load" bao quanh thẻ được thêm directive
+    const parentNode = nativeElement.parentNode;
+    this.renderer.insertBefore(parentNode, this.parent, nativeElement);
+    this.renderer.appendChild(this.parent, nativeElement);
+  }
+
   private setPositionDefault(): void {
-    // Step 1: Set width và height cho phần tử
-    this.el.nativeElement.style.width = this.el.nativeElement.offsetWidth + 'px';
-    this.el.nativeElement.style.height = this.el.nativeElement.offsetHeight + 'px';
+    const childDiv = this.el.nativeElement;
 
-    // Step 2: Tạo một div mới để chứa tất cả các thẻ con
-    const container = document.createElement('div');
-    container.classList.add('parallax-lazy-load');
-    while (this.el.nativeElement.firstChild) {
-      container.appendChild(this.el.nativeElement.firstChild);
-    }
-    this.el.nativeElement.appendChild(container);
-
-    // Step 3: Áp dụng animation cho div mới tạo
-    const childDiv = this.el.nativeElement.querySelector('.parallax-lazy-load');
     switch (this.effectStyle) {
       case ParallaxEffectStyle.SlideUp:
         childDiv.style.transform = `translate(0, ${this.distance})`;
@@ -68,7 +81,7 @@ export class ParallaxLazyLoadDirective implements OnInit {
 
   private activateParallaxEffect(): void {
     const transition = `transform ${this.speed}s ${this.trajectory}, opacity ${this.fadeIn_speed}s ${this.fadeIn_trajectory}`;
-    const childDiv = this.el.nativeElement.querySelector('.parallax-lazy-load');
+    const childDiv = this.el.nativeElement;
     childDiv.style.transition = transition;
     childDiv.style.transform = 'translate(0, 0)';
     if (this.fadeIn) {
@@ -79,7 +92,7 @@ export class ParallaxLazyLoadDirective implements OnInit {
 
   private revertParallaxEffect(): void {
     const transition = `transform ${this.speed}s ${this.trajectory}, opacity ${this.fadeIn_speed}s ${this.fadeIn_trajectory}`;
-    const childDiv = this.el.nativeElement.querySelector('.parallax-lazy-load');
+    const childDiv = this.el.nativeElement;
     childDiv.style.transition = transition;
     switch (this.effectStyle) {
       case ParallaxEffectStyle.SlideUp:
@@ -109,12 +122,9 @@ export class ParallaxLazyLoadDirective implements OnInit {
   }
 
   private checkScroll() {
-    const rect = this.el.nativeElement.getBoundingClientRect();
+    const rect = this.parent.getBoundingClientRect();
     const windowHeight =
       window.innerHeight || document.documentElement.clientHeight;
-
-      console.log(rect.bottom);
-      console.log(windowHeight - parseInt(this.offsetBottom));
 
     if (rect.top >= 0 && rect.bottom <= windowHeight - parseInt(this.offsetBottom)) {
       this.activateParallaxEffect();
