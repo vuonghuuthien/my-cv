@@ -76,7 +76,12 @@
   font-smooth: never;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  overflow-x: hidden;
   height: 100%;
   min-height: 100vh;
   background: var(--color-bg);

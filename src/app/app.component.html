@@ -57,3 +57,42 @@
 <app-slider-card-info-animation></app-slider-card-info-animation>
 
 <router-outlet></router-outlet>
+
+<div class="screen screen1">Screen 1</div>
+<div class="screen screen2" appParallaxScroll [speed]="5" direction="up" [maxDistance]="200">Screen 2</div>
+<div class="screen screen3" appParallaxFadeIn [duration]="1.5">Screen 3</div>
+<div class="screen screen4" appParallaxScale [scaleTo]="2" [duration]="1">Screen 4</div>
+<div class="screen screen5" appParallaxRotate [rotationTo]="180" [duration]="2">Screen 5</div>
+<div class="screen screen6" appParallaxRotate [rotationFrom]="-90" [rotationTo]="0" [duration]="2"[transformOrigin]="'top right'" [end]="'top center'">Screen 6</div>
+<div class="screen screen7" appParallaxBlur [blurTo]="10" start="top 80%" end="bottom 20%">Screen 7</div>
+<div class="screen screen7" appParallaxBlur [blurFrom]="20" [blurTo]="0" start="top 80%" end="bottom bottom">Screen 7</div>
+<div class="screen screen8" appParallaxPinning>Screen 8</div>
+<div class="screen screen9" appParallaxStagger>
+  <span>Screen 9</span>
+  <span>Screen 9</span>
+  <span>Screen 9</span>
+  <span>Screen 9</span>
+  <span>Screen 9</span>
+</div>
+
+<div class="screen screen10" appParallaxBackground>Screen 10</div>
+<div class="screen screen11" appParallaxTextReveal>Screen 11</div>
+<div class="screen screen12" appParallaxTyping>Screen 12</div>
+
+<div class="container">
+  <div class="screen screen13" appParallaxMoving [startX]="0" [startY]="0" [endX]="100" [endY]="100" [speed]="5">
+    Element 1
+  </div>
+  <div class="screen screen14" appParallaxMoving [startX]="-50" [startY]="-50" [endX]="50" [endY]="50" [speed]="1">
+    Element 2
+  </div>
+  <div class="screen screen15" appParallaxMoving [startX]="0" [startY]="100" [endX]="200" [endY]="0" [speed]="0.3">
+    Element 3
+  </div>
+  <div class="screen screen16" appParallaxMoving [startX]="-100" [startY]="0" [endX]="0" [endY]="-100" [speed]="0.7">
+    Element 4
+  </div>
+</div>
+
+<div class="screen screen18" appScrollFullPage>Screen 12</div>
+

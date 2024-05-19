@@ -10,3 +10,36 @@
   z-index: 99;
   height: 100vh;
 }
+
+
+
+.screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  position: relative;
+}
+
+.screen1 { background: #ffd700; }  /* Gold */
+.screen2 { background: #90ee90; }  /* Light green */
+.screen3 { background: #ba55d3; }  /* Medium purple */
+.screen4 { background: #ffdab9; }  /* Peach */
+.screen5 { background: #00ffff; }  /* Aqua */
+.screen6 { background: #f08080; }  /* Light coral */
+.screen7 { background: #c71585; }  /* Deep pink */
+.screen8 { background: #ffa07a; }  /* Light salmon */
+.screen9 { background: #808080; }  /* Dark gray */
+.screen10 { background: #adff2f; }  /* Lime green */
+.screen11 { background: #4169e1; }  /* Royal blue */
+.screen12 { background: #9400d3; }  /* Dark violet */
+.screen13 { background: #a52a2a; }  /* Brown */
+.screen14 { background: #ee82ee; }  /* Violet */
+.screen15 { background: #7fff00; }  /* Lime */
+.screen16 { background: #40e0d0; }  /* Turquoise */
+.screen17 { background: #b0e0e0; }  /* Light gray */
+.screen18 { background: #ff69b4; }  /* Hot pink */
+.screen19 { background: #800000; }  /* Maroon */
+.screen20 { background: #daa520; }  /* Goldenrod */
