@@ -16,6 +16,8 @@ export class ParallaxScaleDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'power1.out';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -33,6 +35,7 @@ export class ParallaxScaleDirective implements OnInit, OnDestroy {
 
   private initScale() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(
       element,
@@ -40,10 +43,10 @@ export class ParallaxScaleDirective implements OnInit, OnDestroy {
       {
         scale: this.scaleTo,
         duration: this.duration,
-        ease: 'power1.out',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
-          toggleActions: 'play none none reverse',
+          toggleActions: toggleActions,
           start: this.start,
           end: this.end,
           scrub: this.scrub,

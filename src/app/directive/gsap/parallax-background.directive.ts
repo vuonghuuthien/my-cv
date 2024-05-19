@@ -16,6 +16,8 @@ export class ParallaxBackgroundDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top bottom';
   @Input() end: string = 'bottom top';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'none';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -39,11 +41,14 @@ export class ParallaxBackgroundDirective implements OnInit, OnDestroy {
     this.renderer.setStyle(element, 'backgroundAttachment', 'fixed');
     this.renderer.setStyle(element, 'backgroundSize', 'cover');
 
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
+
     this.animation = gsap.to(element, {
       backgroundPosition: `50% ${this.speed * 100}%`,
-      ease: 'none',
+      ease: this.ease,
       scrollTrigger: {
         trigger: element,
+        toggleActions: toggleActions,
         start: this.start,
         end: this.end,
         scrub: this.scrub,

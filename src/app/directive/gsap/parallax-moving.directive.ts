@@ -13,6 +13,10 @@ export class ParallaxMovingDirective implements OnInit, OnDestroy {
   @Input() endX: number = 100;
   @Input() endY: number = 100;
   @Input() speed: number = 0.5;
+  @Input() start: string = 'top bottom';
+  @Input() end: string = 'bottom bottom';
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'none';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -30,6 +34,7 @@ export class ParallaxMovingDirective implements OnInit, OnDestroy {
 
   private initParallax() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(
       element,
@@ -37,11 +42,12 @@ export class ParallaxMovingDirective implements OnInit, OnDestroy {
       {
         x: this.endX,
         y: this.endY,
-        ease: 'none',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
-          start: 'top bottom',
-          end: 'bottom top',
+          toggleActions: toggleActions,
+          start: this.start,
+          end: this.end,
           scrub: this.speed,
         }
       }

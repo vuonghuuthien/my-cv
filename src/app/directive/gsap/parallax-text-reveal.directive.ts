@@ -15,6 +15,8 @@ export class ParallaxTextRevealDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'power1.out';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -32,6 +34,7 @@ export class ParallaxTextRevealDirective implements OnInit, OnDestroy {
 
   private initTextReveal() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(
       element,
@@ -39,9 +42,10 @@ export class ParallaxTextRevealDirective implements OnInit, OnDestroy {
       {
         y: '0%',
         opacity: this.opacityTo,
-        ease: 'power1.out',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
+          toggleActions: toggleActions,
           start: this.start,
           end: this.end,
           scrub: this.scrub,

@@ -15,6 +15,8 @@ export class ParallaxBlurDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'none';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -32,15 +34,17 @@ export class ParallaxBlurDirective implements OnInit, OnDestroy {
 
   private initBlur() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(
       element,
       { filter: `blur(${this.blurFrom}px)` },
       {
         filter: `blur(${this.blurTo}px)`,
-        ease: 'none',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
+          toggleActions: toggleActions,
           start: this.start,
           end: this.end,
           scrub: this.scrub,

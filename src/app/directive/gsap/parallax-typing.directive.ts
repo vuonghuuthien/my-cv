@@ -11,6 +11,7 @@ export class ParallaxTypingDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
 
   private animation: gsap.core.Tween | null = null;
 
@@ -38,12 +39,15 @@ export class ParallaxTypingDirective implements OnInit, OnDestroy {
       element.appendChild(span);
     }
 
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
+
     gsap.to(element.children, {
       duration: 1,
       opacity: 1,
       stagger: 0.1,
       scrollTrigger: {
         trigger: element,
+        toggleActions: toggleActions,
         start: this.start,
         end: this.end,
         scrub: this.scrub,

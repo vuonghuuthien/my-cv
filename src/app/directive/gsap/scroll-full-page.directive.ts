@@ -5,15 +5,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 @Directive({
-  selector: '[appParallaxScroll]',
+  selector: '[appScrollFullPage]',
 })
-export class ParallaxScrollDirective implements OnInit, OnDestroy {
-  @Input() speed: number = 0.5;
-  @Input() direction: 'up' | 'down' = 'up';
-  @Input() maxDistance: number = 200;
+export class ScrollFullPageDirective implements OnInit, OnDestroy {
+  @Input() speed: number = 1;
+  @Input() direction = 'up';
   @Input() start: string = 'top bottom';
   @Input() end: string = 'bottom top';
-  @Input() scrub: boolean = true;
+  @Input() scrub: boolean = false;
   @Input() reverse: boolean = true;
   @Input() ease: string = 'none';
 
@@ -33,18 +32,8 @@ export class ParallaxScrollDirective implements OnInit, OnDestroy {
 
   private initParallax() {
     const element = this.el.nativeElement;
-
-    let directionMultiplier = 1;
-    switch (this.direction) {
-      case 'up':
-        directionMultiplier = -1;
-        break;
-      case 'down':
-        directionMultiplier = 1;
-        break;
-    }
-
-    const moveDistance = this.maxDistance * this.speed * directionMultiplier;
+    const viewportHeight = window.innerHeight;
+    const moveDistance = -viewportHeight * this.speed;
     const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(

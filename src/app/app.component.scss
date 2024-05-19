@@ -43,3 +43,33 @@
 .screen18 { background: #ff69b4; }  /* Hot pink */
 .screen19 { background: #800000; }  /* Maroon */
 .screen20 { background: #daa520; }  /* Goldenrod */
+
+.scroll-container {
+  height: 100%;
+  overflow: hidden;
+  transition: transform 1s ease;
+}
+
+.scroll-item {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+section:nth-of-type(1) {
+  background-color: #F8EDE3;
+}
+
+section:nth-of-type(2) {
+  background-color: #DFD3C3;
+}
+
+section:nth-of-type(3) {
+  background-color: #D0B8A8;
+}
+
+section:nth-of-type(4) {
+  background-color: #B89A82;
+}

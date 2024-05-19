@@ -16,6 +16,8 @@ export class ParallaxFadeInDirective implements OnInit, OnDestroy {
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'power1.out';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -33,6 +35,7 @@ export class ParallaxFadeInDirective implements OnInit, OnDestroy {
 
   private initFadeIn() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     this.animation = gsap.fromTo(
       element,
@@ -40,12 +43,12 @@ export class ParallaxFadeInDirective implements OnInit, OnDestroy {
       {
         opacity: this.opacityTo,
         duration: this.duration,
-        ease: 'power1.out',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
+          toggleActions: toggleActions,
           start: this.start,
           end: this.end,
-          toggleActions: 'play none none reverse',
           scrub: this.scrub,
         },
       }

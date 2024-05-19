@@ -22,6 +22,8 @@ export class ParallaxRotateDirective implements OnInit, OnDestroy {
     | 'bottom left'
     | 'bottom right' = 'center center';
   @Input() scrub: boolean = true;
+  @Input() reverse: boolean = true;
+  @Input() ease: string = 'power1.out';
 
   private animation: gsap.core.Tween | null = null;
 
@@ -39,6 +41,7 @@ export class ParallaxRotateDirective implements OnInit, OnDestroy {
 
   private initRotate() {
     const element = this.el.nativeElement;
+    const toggleActions = this.reverse ? 'play none none reverse' : 'play none none none';
 
     gsap.set(element, { transformOrigin: this.transformOrigin });
 
@@ -48,10 +51,10 @@ export class ParallaxRotateDirective implements OnInit, OnDestroy {
       {
         rotation: this.rotationTo,
         duration: this.duration,
-        ease: 'power1.out',
+        ease: this.ease,
         scrollTrigger: {
           trigger: element,
-          toggleActions: 'play none none reverse',
+          toggleActions: toggleActions,
           start: this.start,
           end: this.end,
           scrub: this.scrub,
