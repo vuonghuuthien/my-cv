@@ -16,6 +16,9 @@ import { ParallaxTypingDirective } from './gsap/parallax-typing.directive';
 import { ParallaxMovingDirective } from './gsap/parallax-moving.directive';
 import { ParallaxScrollFullPageDirective } from './gsap/parallax-scroll-full-page.directive';
 import { ParallaxFloatingDirective } from './gsap/parallax-floating.directive';
+import { ParallaxMouseMoveDirective } from './gsap/parallax-mouse-move.directive';
+import { FollowMouseDirective } from './follow-mouse.directive';
+import { FollowMouseInZoneDirective } from './follow-mouse-in-zone.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { ParallaxFloatingDirective } from './gsap/parallax-floating.directive';
     ParallaxMovingDirective,
     ParallaxScrollFullPageDirective,
     ParallaxFloatingDirective,
+    ParallaxMouseMoveDirective,
+    FollowMouseDirective,
+    FollowMouseInZoneDirective,
   ],
   imports: [CommonModule],
   exports: [
@@ -54,6 +60,9 @@ import { ParallaxFloatingDirective } from './gsap/parallax-floating.directive';
     ParallaxMovingDirective,
     ParallaxScrollFullPageDirective,
     ParallaxFloatingDirective,
+    ParallaxMouseMoveDirective,
+    FollowMouseDirective,
+    FollowMouseInZoneDirective,
   ],
 })
 export class DirectiveModule {}

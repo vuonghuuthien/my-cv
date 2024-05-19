@@ -58,7 +58,9 @@
 
 <router-outlet></router-outlet>
 
-<div class="screen screen1">Screen 1</div>
+<div class="screen screen1">
+  <div appFollowMouseInZone> Screen 1 </div>
+</div>
 <div class="screen screen2" appParallaxScroll [speed]="5" direction="up" [maxDistance]="200">Screen 2</div>
 <div class="screen screen3" appParallaxFadeIn [duration]="1.5">Screen 3</div>
 <div class="screen screen4" appParallaxScale [scaleTo]="2" [duration]="1">Screen 4</div>

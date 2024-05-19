@@ -18,7 +18,7 @@ export class ParallaxFloatingDirective implements OnInit, OnDestroy {
   @Input() delay: number = 0;
 
   @Input() floating_xDistance: string = '+=0';
-  @Input() floating_yDistance: string = '+=20'; // up and down 20px
+  @Input() floating_yDistance: string = '-=20'; // up and down 20px
   @Input() floating_repeat: number = -1; // infinity
   @Input() floating_yoyo: boolean = true; // revert
   @Input() floating_ease: string = 'sine.inOut';
