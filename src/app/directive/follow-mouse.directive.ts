@@ -15,7 +15,11 @@ export class FollowMouseDirective {
     | 'top-left'
     | 'top-right'
     | 'bottom-left'
-    | 'bottom-right' = 'center';
+    | 'bottom-right'
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right' = 'center';
   @Input() pointerEvents: string = 'none';
   @Input() zIndex: number | string = 110;
 
@@ -48,6 +52,22 @@ export class FollowMouseDirective {
       case 'bottom-right':
         xOffset = elementRect.width;
         yOffset = elementRect.height;
+        break;
+      case 'top':
+        xOffset = elementRect.width / 2;
+        yOffset = 0;
+        break;
+      case 'bottom':
+        xOffset = elementRect.width / 2;
+        yOffset = elementRect.height;
+        break;
+      case 'left':
+        xOffset = 0;
+        yOffset = elementRect.height / 2;
+        break;
+      case 'right':
+        xOffset = elementRect.width;
+        yOffset = elementRect.height / 2;
         break;
     }
 
