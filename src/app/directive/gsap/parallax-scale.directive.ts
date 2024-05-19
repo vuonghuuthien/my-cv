@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect will cause the element to zoom in or out when scrolled into the viewport.
 export class ParallaxScaleDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() scaleFrom: number = 1;
   @Input() scaleTo: number = 1.5;
   @Input() duration: number = 1;
@@ -44,6 +45,7 @@ export class ParallaxScaleDirective implements OnInit, OnDestroy {
         scale: this.scaleTo,
         duration: this.duration,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

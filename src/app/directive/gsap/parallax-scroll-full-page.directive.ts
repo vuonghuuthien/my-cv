@@ -5,9 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 @Directive({
-  selector: '[appScrollFullPage]',
+  selector: '[appParallaxScrollFullPage]',
 })
-export class ScrollFullPageDirective implements OnInit, OnDestroy {
+export class ParallaxScrollFullPageDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() speed: number = 1;
   @Input() direction = 'up';
   @Input() start: string = 'top bottom';
@@ -42,6 +43,7 @@ export class ScrollFullPageDirective implements OnInit, OnDestroy {
       {
         y: moveDistance,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

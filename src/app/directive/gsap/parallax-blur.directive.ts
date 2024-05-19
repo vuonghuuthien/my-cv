@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect will fade the element as it scrolls into the viewport.
 export class ParallaxBlurDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() blurFrom: number = 0;
   @Input() blurTo: number = 10;
   @Input() start: string = 'top 80%';
@@ -42,6 +43,7 @@ export class ParallaxBlurDirective implements OnInit, OnDestroy {
       {
         filter: `blur(${this.blurTo}px)`,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

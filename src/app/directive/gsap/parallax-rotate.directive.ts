@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect will cause the element to rotate when scrolled into the viewport.
 export class ParallaxRotateDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() duration: number = 1;
   @Input() rotationFrom: number = 0;
   @Input() rotationTo: number = 180;
@@ -52,6 +53,7 @@ export class ParallaxRotateDirective implements OnInit, OnDestroy {
         rotation: this.rotationTo,
         duration: this.duration,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

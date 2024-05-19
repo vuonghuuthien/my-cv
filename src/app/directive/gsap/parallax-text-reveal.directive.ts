@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect causes the text element to appear from the bottom up when scrolled into the viewport.
 export class ParallaxTextRevealDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() opacityFrom: number = 0;
   @Input() opacityTo: number = 1;
   @Input() start: string = 'top 80%';
@@ -43,6 +44,7 @@ export class ParallaxTextRevealDirective implements OnInit, OnDestroy {
         y: '0%',
         opacity: this.opacityTo,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

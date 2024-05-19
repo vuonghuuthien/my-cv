@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect applies animation to a group of elements with a delay between elements.
 export class ParallaxStaggerDirective implements AfterViewInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() stagger: number = 0.2;
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
@@ -48,6 +49,7 @@ export class ParallaxStaggerDirective implements AfterViewInit, OnDestroy {
         opacity: 1,
         y: 0,
         ease: this.ease,
+        delay: this.delay,
         stagger: this.stagger,
         scrollTrigger: {
           trigger: this.el.nativeElement,

@@ -14,7 +14,8 @@ import { ParallaxBackgroundDirective } from './gsap/parallax-background.directiv
 import { ParallaxTextRevealDirective } from './gsap/parallax-text-reveal.directive';
 import { ParallaxTypingDirective } from './gsap/parallax-typing.directive';
 import { ParallaxMovingDirective } from './gsap/parallax-moving.directive';
-import { ScrollFullPageDirective } from './gsap/scroll-full-page.directive';
+import { ParallaxScrollFullPageDirective } from './gsap/parallax-scroll-full-page.directive';
+import { ParallaxFloatingDirective } from './gsap/parallax-floating.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ScrollFullPageDirective } from './gsap/scroll-full-page.directive';
     ParallaxTextRevealDirective,
     ParallaxTypingDirective,
     ParallaxMovingDirective,
-    ScrollFullPageDirective,
+    ParallaxScrollFullPageDirective,
+    ParallaxFloatingDirective,
   ],
   imports: [CommonModule],
   exports: [
@@ -50,7 +52,8 @@ import { ScrollFullPageDirective } from './gsap/scroll-full-page.directive';
     ParallaxTextRevealDirective,
     ParallaxTypingDirective,
     ParallaxMovingDirective,
-    ScrollFullPageDirective,
+    ParallaxScrollFullPageDirective,
+    ParallaxFloatingDirective,
   ],
 })
 export class DirectiveModule {}

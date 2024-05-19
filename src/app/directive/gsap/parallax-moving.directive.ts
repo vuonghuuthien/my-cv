@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
   selector: '[appParallaxMoving]'
 })
 export class ParallaxMovingDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() startX: number = 0;
   @Input() startY: number = 0;
   @Input() endX: number = 100;
@@ -43,6 +44,7 @@ export class ParallaxMovingDirective implements OnInit, OnDestroy {
         x: this.endX,
         y: this.endY,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,

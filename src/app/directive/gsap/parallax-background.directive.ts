@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 // This effect causes the element's background image to move at a different speed than the content inside as the page scrolls, creating a parallax effect.
 
 export class ParallaxBackgroundDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() speed: number = 0.5;
   @Input() linkBG: string = '/assets/ServiceImage.png';
   @Input() start: string = 'top bottom';
@@ -46,6 +47,7 @@ export class ParallaxBackgroundDirective implements OnInit, OnDestroy {
     this.animation = gsap.to(element, {
       backgroundPosition: `50% ${this.speed * 100}%`,
       ease: this.ease,
+      delay: this.delay,
       scrollTrigger: {
         trigger: element,
         toggleActions: toggleActions,

@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
   selector: '[appParallaxTyping]',
 })
 export class ParallaxTypingDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() start: string = 'top 80%';
   @Input() end: string = 'bottom 20%';
   @Input() scrub: boolean = true;
@@ -45,6 +46,7 @@ export class ParallaxTypingDirective implements OnInit, OnDestroy {
       duration: 1,
       opacity: 1,
       stagger: 0.1,
+      delay: this.delay,
       scrollTrigger: {
         trigger: element,
         toggleActions: toggleActions,

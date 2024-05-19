@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // This effect will make the element gradually appear as it scrolls into the viewport.
 export class ParallaxFadeInDirective implements OnInit, OnDestroy {
+  @Input() delay: number = 0;
   @Input() duration: number = 1;
   @Input() opacityFrom: number = 0;
   @Input() opacityTo: number = 1;
@@ -44,6 +45,7 @@ export class ParallaxFadeInDirective implements OnInit, OnDestroy {
         opacity: this.opacityTo,
         duration: this.duration,
         ease: this.ease,
+        delay: this.delay,
         scrollTrigger: {
           trigger: element,
           toggleActions: toggleActions,
