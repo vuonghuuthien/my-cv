@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, AfterViewInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Renderer2, AfterViewInit, OnDestroy, Input, HostListener } from '@angular/core';
 import { gsap } from 'gsap';
 import { random } from 'lodash';
 
@@ -8,29 +8,45 @@ interface LineConnection {
   endElement: HTMLElement;
 }
 
+interface ParticleAttributes {
+  element: HTMLElement;
+  distance: number;
+  speed: number;
+}
+
 @Directive({
-  selector: '[appParallaxParticle]'
+  selector: '[appParallaxParticle2]'
 })
 
-// 2 effect 
+// 3 effect 
 // The effect of moving elements oscillating in place.
 // Line effect between elements.
+// Variance movement effect in the direction the user hovers the mouse.
 
-export class ParallaxParticleDirective implements AfterViewInit, OnDestroy {
+export class ParallaxParticle2Directive implements AfterViewInit, OnDestroy {
+  @Input() enableOscillation: boolean = true;
+  @Input() enableLines: boolean = true;
+  @Input() enableMouseParallax: boolean = true;
+
   private elements: HTMLElement[] = [];
+  private particleAttributes: ParticleAttributes[] = [];
   private lines: LineConnection[] = [];
   private colors = ['#8474f9', '#f4717d', '#55a5ff'];
-  // private colors = ['#C8C2F7', '#F5C1C6', '#B6D6FA'];
   private maxLines = 3;
   private lineCreationTimeouts: any[] = [];
+  private mouse = { x: 0, y: 0 };
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit() {
     this.elements = Array.from(this.el.nativeElement.children) as HTMLElement[];
-    this.initializeParticles();
-    this.startLineEffect();
-    this.startUpdatingLines();
+    if (this.enableOscillation) {
+      this.initializeParticles();
+    }
+    if (this.enableLines) {
+      this.startLineEffect();
+      this.startUpdatingLines();
+    }
   }
 
   ngOnDestroy() {
@@ -38,8 +54,22 @@ export class ParallaxParticleDirective implements AfterViewInit, OnDestroy {
     gsap.ticker.remove(this.updateLines);
   }
 
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    if (this.enableMouseParallax) {
+      const rect = this.el.nativeElement.getBoundingClientRect();
+      this.mouse.x = event.clientX - rect.left;
+      this.mouse.y = event.clientY - rect.top;
+      this.applyMouseParallax();
+    }
+  }
+
   private initializeParticles() {
     this.elements.forEach(element => {
+      const distance = random(10, 50); // Random distance factor
+      const speed = random(0.5, 2); // Random speed factor
+      this.particleAttributes.push({ element, distance, speed });
+
       gsap.to(element, {
         x: random(-20, 20),
         y: random(-20, 20),
@@ -47,6 +77,25 @@ export class ParallaxParticleDirective implements AfterViewInit, OnDestroy {
         repeat: -1,
         yoyo: true,
         ease: 'power1.inOut'
+      });
+    });
+  }
+
+  private applyMouseParallax() {
+    this.particleAttributes.forEach(({ element, distance, speed }) => {
+      const rect = element.getBoundingClientRect();
+      const parentRect = this.el.nativeElement.getBoundingClientRect();
+      const elementCenterX = rect.left + rect.width / 2 - parentRect.left;
+      const elementCenterY = rect.top + rect.height / 2 - parentRect.top;
+
+      const dx = (this.mouse.x - elementCenterX) / parentRect.width;
+      const dy = (this.mouse.y - elementCenterY) / parentRect.height;
+
+      gsap.to(element, {
+        x: dx * distance,
+        y: dy * distance,
+        duration: speed,
+        ease: 'power1.out'
       });
     });
   }
@@ -99,8 +148,8 @@ export class ParallaxParticleDirective implements AfterViewInit, OnDestroy {
   private createLineElement(startElement: HTMLElement, endElement: HTMLElement, color: string): HTMLElement {
     const line = this.renderer.createElement('div');
     this.renderer.setStyle(line, 'position', 'absolute');
-    this.renderer.setStyle(line, 'background', color);
-    this.renderer.setStyle(line, 'height', '1px');
+    this.renderer.setStyle(line, 'background-color', color);
+    this.renderer.setStyle(line, 'height', '2px');
     this.renderer.setStyle(line, 'border-radius', '2px');
     this.renderer.setStyle(line, 'z-index', -1);
 

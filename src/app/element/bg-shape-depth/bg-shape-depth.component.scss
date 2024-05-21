@@ -100,143 +100,152 @@
 }
 
 .particle-style-1 {
-  border-radius: 50%;
+  
+  .particle {
+    border-radius: 50%;
+  }
 
-  &.particle-1 {
+  .particle-1 {
     opacity: 0.2;
     background: #55a5ff;
   }
 
-  &.particle-2 {
+  .particle-2 {
     opacity: 0.3;
     background: #f4717d;
   }
 
-  &.particle-3 {
+  .particle-3 {
     opacity: 0.1;
     background: #8474f9;
   }
 
-  &.particle-4 {
+  .particle-4 {
     opacity: 0.2;
     background: #f4717d;
   }
 
-  &.particle-5 {
+  .particle-5 {
     opacity: 0.15;
     background: #8474f9;
   }
 
-  &.particle-6 {
+  .particle-6 {
     opacity: 0.15;
     background: #8474f9;
   }
 
-  &.particle-7 {
+  .particle-7 {
     opacity: 0.2;
     background: #8474f9;
   }
 
-  &.particle-8 {
+  .particle-8 {
     opacity: 0.4;
     background: #f4717d;
   }
 
-  &.particle-9 {
+  .particle-9 {
     opacity: 0.1;
     background: #55a5ff;
   }
 
-  &.particle-10 {
+  .particle-10 {
     opacity: 0.4;
     background: #55a5ff;
   }
 }
 
 .particle-style-2 {
-  background: var(--color-black);
+  .particle {
+    background: var(--color-black);
+  }
 
-  &.particle-1 {
+  .particle-1 {
     opacity: 0.2;
   }
 
-  &.particle-2 {
+  .particle-2 {
     opacity: 0.3;
   }
 
-  &.particle-3 {
+  .particle-3 {
     opacity: 0.1;
   }
 
-  &.particle-4 {
+  .particle-4 {
     opacity: 0.2;
   }
 
-  &.particle-5 {
+  .particle-5 {
     opacity: 0.15;
   }
 
-  &.particle-6 {
+  .particle-6 {
     opacity: 0.15;
   }
 
-  &.particle-7 {
+  .particle-7 {
     opacity: 0.2;
   }
 
-  &.particle-8 {
+  .particle-8 {
     opacity: 0.4;
   }
 
-  &.particle-9 {
+  .particle-9 {
     opacity: 0.1;
   }
 
-  &.particle-10 {
+  .particle-10 {
     opacity: 0.4;
   }
 }
 
 .particle-style-3 {
-  border-radius: 50%;
+  // opacity: 0.2;
 
-  &.particle-1 {
+  .particle {
+    border-radius: 50%;
+  }
+
+  .particle-1 {
     background: #55a5ff;
   }
 
-  &.particle-2 {
+  .particle-2 {
     background: #f4717d;
   }
 
-  &.particle-3 {
+  .particle-3 {
     background: #8474f9;
   }
 
-  &.particle-4 {
+  .particle-4 {
     background: #f4717d;
   }
 
-  &.particle-5 {
+  .particle-5 {
     background: #8474f9;
   }
 
-  &.particle-6 {
+  .particle-6 {
     background: #8474f9;
   }
 
-  &.particle-7 {
+  .particle-7 {
     background: #8474f9;
   }
 
-  &.particle-8 {
+  .particle-8 {
     background: #f4717d;
   }
 
-  &.particle-9 {
+  .particle-9 {
     background: #55a5ff;
   }
 
-  &.particle-10 {
+  .particle-10 {
     background: #55a5ff;
   }
 }
