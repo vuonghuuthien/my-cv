@@ -1,12 +1,34 @@
+/*
+z-index
+header 100 -> 110
+background 10 -> 20
+section 30 -> 40
+background section 50 -> 60
+content section 60 -> 70
+*/
+main {
+  padding: 0 96px;
+  display: flex;
+  justify-content: center;
+  background: #f6f6f6;
+
+  .sections {
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
 .header {
   position: fixed;
   z-index: 100;
   top: 0;
+  left: 0;
   width: 100%;
 }
 
 .left-bar-section {
   position: fixed;
+  left: 0;
   z-index: 99;
   height: 100vh;
 }

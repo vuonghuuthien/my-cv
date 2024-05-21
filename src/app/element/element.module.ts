@@ -22,7 +22,9 @@ import { SliderCardInfoAnimationComponent } from './slider-card-info-animation/s
 import { FormsModule } from '@angular/forms';
 import { CardWorkComponent } from './card-work/card-work.component';
 import { CardTagComponent } from './card-tag/card-tag.component';
-import { CardRoleComponent } from './card-role/card-role.component';  // Import FormsModule
+import { CardRoleComponent } from './card-role/card-role.component';
+import { BgShapeDepthComponent } from './bg-shape-depth/bg-shape-depth.component';  // Import FormsModule
+import { DirectiveModule } from '../directive/directive.module';
 
 @NgModule({
   declarations: [
@@ -48,10 +50,12 @@ import { CardRoleComponent } from './card-role/card-role.component';  // Import 
     CardWorkComponent,
     CardTagComponent,
     CardRoleComponent,
+    BgShapeDepthComponent,
   ],
   imports: [
     CommonModule,
     FormsModule, // Add FormsModule here
+    DirectiveModule,
   ],
   exports: [
     ButtonComponent,
@@ -76,6 +80,7 @@ import { CardRoleComponent } from './card-role/card-role.component';  // Import 
     CardWorkComponent,
     CardTagComponent,
     CardRoleComponent,
+    BgShapeDepthComponent,
   ],
 })
 export class ElementModule {}

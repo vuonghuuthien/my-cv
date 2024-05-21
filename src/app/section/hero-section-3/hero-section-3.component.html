@@ -1,0 +1,32 @@
+<section id="introduce">
+  <div class="container">
+    <div class="background">
+      <div
+        appParallaxScale
+        [scaleTo]="2"
+        [duration]="1"
+        [start]="'top 20%'"
+        [end]="'bottom top'"
+      >
+        <app-bg-shape-depth [style]="style"></app-bg-shape-depth>
+      </div>
+    </div>
+    <div
+      class="content"
+      [ngClass]="{
+        'content-style-1': style === 1,
+        'content-style-2': style === 2,
+        'content-style-3': style === 3,
+      }"
+    >
+      <h1 class="say-hi">Hi, I'm David.</h1>
+      <h2 class="location">
+        <img class="icon" src="/assets/icons/PinMap.svg" alt="Pin Location" />
+        Ho Chi Minh City, Vietnam
+      </h2>
+      <h3 class="ye">
+        {{ getYE() }}
+      </h3>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<header id="header">
+  <div class="container">
+    <div class="branding">
+      <img class="logo" src="/assets/images/Avatar.png" alt="Avatar" />
+      <h1 class="brand-name">david.</h1>
+    </div>
+    <div class="tabs">
+      <div
+        class="tab"
+        [class.active]="item.active"
+        *ngFor="let item of menuItems"
+        (click)="setActive(item)"
+      >
+        {{ item.label }}
+      </div>
+      <span #underline class="underline" [ngStyle]="underlineStyle"></span>
+    </div>
+    <div class="hamburger-button">
+      <img class="logo" src="/assets/icons/HamburgerMenu.svg" alt="Hamburger Menu" />
+    </div>
+  </div>
+</header>

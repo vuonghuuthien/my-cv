@@ -1,0 +1,17 @@
+<div *ngIf="style !== 3" class="container">
+  <div
+    [className]="'particle particle-' + (i + 1)"
+    [ngClass]="{
+      'particle-style-1': style === 1,
+      'particle-style-2': style === 2,
+    }"
+    *ngFor="let item of [].constructor(10); let i = index"
+  ></div>
+</div>
+
+<div *ngIf="style === 3" class="container" appParallaxParticle>
+  <div
+    [className]="'particle particle-' + (i + 1) + ' particle-style-3'"
+    *ngFor="let item of [].constructor(10); let i = index"
+  ></div>
+</div>

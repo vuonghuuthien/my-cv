@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-cv';
+  style: number = 1;
+
+  setStyle(style: number) {
+    this.style = style;
+  }
 }
