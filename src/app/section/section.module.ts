@@ -10,6 +10,9 @@ import { WorkSectionComponent } from './work-section/work-section.component';
 import { LeftBarSectionComponent } from './left-bar-section/left-bar-section.component';
 import { AboutMeSectionComponent } from './about-me-section/about-me-section.component';
 import { Header2Component } from './header-2/header-2.component';
+import { ProjectSectionComponent } from './project-section/project-section.component';
+import { CommunitySectionComponent } from './community-section/community-section.component';
+import { CommunityContentSectionComponent } from './community-content-section/community-content-section.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { Header2Component } from './header-2/header-2.component';
     LeftBarSectionComponent,
     AboutMeSectionComponent,
     Header2Component,
+    ProjectSectionComponent,
+    CommunitySectionComponent,
+    CommunityContentSectionComponent,
   ],
   imports: [CommonModule, ElementModule, DirectiveModule],
   exports: [
@@ -32,6 +38,9 @@ import { Header2Component } from './header-2/header-2.component';
     LeftBarSectionComponent,
     AboutMeSectionComponent,
     Header2Component,
+    ProjectSectionComponent,
+    CommunitySectionComponent,
+    CommunityContentSectionComponent,
   ],
 })
 export class SectionModule {}

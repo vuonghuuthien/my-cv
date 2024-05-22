@@ -5,6 +5,7 @@
   'particle-style-1': style === 1,
   'particle-style-2': style === 2,
 }"
+  appParallaxElementsMouseMove
 >
   <div
     [className]="'particle particle-' + (i + 1)"
@@ -12,7 +13,11 @@
   ></div>
 </div>
 
-<div *ngIf="style === 3" class="container particle-style-3" appParallaxParticle2>
+<div
+  *ngIf="style === 3"
+  class="container particle-style-3"
+  appParallaxParticle2
+>
   <div
     [className]="'particle particle-' + (i + 1)"
     *ngFor="let item of [].constructor(10); let i = index"

@@ -16,6 +16,8 @@ export class Header2Component {
 
   underlineStyle = {};
 
+  openMenu: boolean = false;
+
   setActive(item: any) {
     this.menuItems.forEach((i) => (i.active = false));
     item.active = true;

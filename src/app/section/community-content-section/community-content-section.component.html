@@ -1,0 +1,50 @@
+<section id="community-content">
+  <div class="container">
+    <h2 class="heading">With Community</h2>
+    <h5 class="heading-2">
+      <span>More than</span>
+      <span class="number">15.000</span>
+      <span>people use my design.</span>
+    </h5>
+    <div class="projects">
+      <div class="row" *ngFor="let row of projects_chunk">
+        <a
+          class="card"
+          *ngFor="let project of row"
+          [href]="project.link"
+          target="_blank"
+        >
+          <img [src]="project.urlImg" alt="Cover Project Image" />
+        </a>
+      </div>
+    </div>
+    <h5 class="and-more">and more ...</h5>
+    <div class="wrapper-list">
+      <h3 class="heading">Will release soon</h3>
+      <!-- <div class="title">With +30 types of popular Apps</div> -->
+      <div class="title">With <span>+30 types</span> of popular Apps</div>
+      <div class="apps">
+        <div class="column" *ngFor="let column of typeApps_chunk">
+          <span *ngFor="let app of column">
+            {{ app }}
+          </span>
+        </div>
+      </div>
+      <div class="title">And +20 types of popular Websites.</div>
+    </div>
+
+    <div class="wrapper-list">
+      <h3 class="heading">Product Highlights</h3>
+      <div class="highlights">
+        <div class="row" *ngFor="let row of highlights_chunk">
+          <div class="card" *ngFor="let highlight of row">
+            <div class="icon-card">
+              <img [src]="highlight.urlIcon" alt="Icon Highlight" />
+            </div>
+            <div class="title-card" [innerHTML]="highlight.title"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

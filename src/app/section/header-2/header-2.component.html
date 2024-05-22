@@ -1,12 +1,17 @@
 <header id="header">
   <div class="container">
-    <div class="branding">
-      <img class="logo" src="/assets/images/Avatar.png" alt="Avatar" />
-      <h1 class="brand-name">david.</h1>
+    <div class="wrapper_branding">
+      <div class="branding">
+        <img class="logo" src="/assets/images/Avatar.png" alt="Avatar" />
+        <h1 class="brand-name">david.</h1>
+      </div>
     </div>
     <div class="tabs">
       <div
         class="tab"
+        [class.tab-style-1]="item.style === 1"
+        [class.tab-style-2]="item.style === 2"
+        [class.tab-style-3]="item.style === 3"
         [class.active]="item.active"
         *ngFor="let item of menuItems"
         (click)="setActive(item)"
@@ -15,8 +20,14 @@
       </div>
       <span #underline class="underline" [ngStyle]="underlineStyle"></span>
     </div>
-    <div class="hamburger-button">
-      <img class="logo" src="/assets/icons/HamburgerMenu.svg" alt="Hamburger Menu" />
+    <div class="wrapper_hamburger_button">
+      <div class="hamburger-button" (click)="openMenu = !openMenu">
+        <app-hamburger-button-animation
+          [style]="1"
+          [size]="'50px'"
+          [active]="openMenu"
+        ></app-hamburger-button-animation>
+      </div>
     </div>
   </div>
 </header>

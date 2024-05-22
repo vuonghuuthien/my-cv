@@ -25,6 +25,7 @@ import { CardTagComponent } from './card-tag/card-tag.component';
 import { CardRoleComponent } from './card-role/card-role.component';
 import { BgShapeDepthComponent } from './bg-shape-depth/bg-shape-depth.component';  // Import FormsModule
 import { DirectiveModule } from '../directive/directive.module';
+import { HamburgerButtonAnimationComponent } from './hamburger-button-animation/hamburger-button-animation.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { DirectiveModule } from '../directive/directive.module';
     CardTagComponent,
     CardRoleComponent,
     BgShapeDepthComponent,
+    HamburgerButtonAnimationComponent,
   ],
   imports: [
     CommonModule,
@@ -81,6 +83,7 @@ import { DirectiveModule } from '../directive/directive.module';
     CardTagComponent,
     CardRoleComponent,
     BgShapeDepthComponent,
+    HamburgerButtonAnimationComponent,
   ],
 })
 export class ElementModule {}

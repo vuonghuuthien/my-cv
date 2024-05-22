@@ -22,6 +22,9 @@ import { FollowMouseInZoneDirective } from './follow-mouse-in-zone.directive';
 import { RandomLetterColorDirective } from './random-letter-color.directive';
 import { ParallaxParticleDirective } from './gsap/parallax-particle.directive';
 import { ParallaxParticle2Directive } from './gsap/parallax-particle-2.directive';
+import { ParallaxElementsOscillationDirective } from './gsap/parallax-elements-oscillation.directive';
+import { ParallaxElementsLineConnectionDirective } from './gsap/parallax-elements-line-connection.directive';
+import { ParallaxElementsMouseMoveDirective } from './gsap/parallax-elements-mouse-move.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { ParallaxParticle2Directive } from './gsap/parallax-particle-2.directive
     ParallaxMouseMoveDirective,
     ParallaxParticleDirective,
     ParallaxParticle2Directive,
+    ParallaxElementsOscillationDirective,
+    ParallaxElementsLineConnectionDirective,
+    ParallaxElementsMouseMoveDirective,
     FollowMouseDirective,
     FollowMouseInZoneDirective,
     RandomLetterColorDirective,
@@ -69,6 +75,9 @@ import { ParallaxParticle2Directive } from './gsap/parallax-particle-2.directive
     ParallaxMouseMoveDirective,
     ParallaxParticleDirective,
     ParallaxParticle2Directive,
+    ParallaxElementsOscillationDirective,
+    ParallaxElementsLineConnectionDirective,
+    ParallaxElementsMouseMoveDirective,
     FollowMouseDirective,
     FollowMouseInZoneDirective,
     RandomLetterColorDirective,
