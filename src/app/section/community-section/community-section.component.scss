@@ -78,10 +78,10 @@ section {
   gap: 24px;
   position: absolute;
   width: 340px;
-  right: 0;
+  right: -20px;
   bottom: 25vh;
   // bottom: 15vh;
-  background: #ffffff;
+  background: var(--color-white);
   box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
 
@@ -95,7 +95,7 @@ section {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      border: 6px solid #ffffff;
+      border: 6px solid var(--color-white);
       box-shadow: 0px 1px 104px 3px rgba(0, 0, 0, 0.1);
     }
 
@@ -132,7 +132,7 @@ section {
     text-align: center;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--color-white);
 
     &:hover,
     &:focus {

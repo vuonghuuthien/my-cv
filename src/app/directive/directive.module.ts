@@ -25,6 +25,7 @@ import { ParallaxParticle2Directive } from './gsap/parallax-particle-2.directive
 import { ParallaxElementsOscillationDirective } from './gsap/parallax-elements-oscillation.directive';
 import { ParallaxElementsLineConnectionDirective } from './gsap/parallax-elements-line-connection.directive';
 import { ParallaxElementsMouseMoveDirective } from './gsap/parallax-elements-mouse-move.directive';
+import { ParallaxLetterDirective } from './gsap/parallax-letter.directive';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ParallaxElementsMouseMoveDirective } from './gsap/parallax-elements-mou
     FollowMouseDirective,
     FollowMouseInZoneDirective,
     RandomLetterColorDirective,
+    ParallaxLetterDirective,
   ],
   imports: [CommonModule],
   exports: [
@@ -81,6 +83,7 @@ import { ParallaxElementsMouseMoveDirective } from './gsap/parallax-elements-mou
     FollowMouseDirective,
     FollowMouseInZoneDirective,
     RandomLetterColorDirective,
+    ParallaxLetterDirective,
   ],
 })
 export class DirectiveModule {}

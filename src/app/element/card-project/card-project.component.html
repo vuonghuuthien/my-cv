@@ -1,0 +1,22 @@
+<div class="container" id="card">
+  <div class="content">
+    <div class="heading">
+      <span class="company">{{ company }}</span>
+      <h5 class="name">{{ name }}</h5>
+    </div>
+    <div class="chips">
+      <div class="chip" *ngFor="let chip of chips">{{ chip }}</div>
+    </div>
+    <div class="description">
+      {{ description }}
+    </div>
+    <div class="button" id="button">
+      <span>{{ buttonTitle }}</span>
+      <img *ngIf="buttonArrow == 1" src="/assets/icons/Arrow_Right.svg" alt="" />
+      <img *ngIf="buttonArrow == 2" src="/assets/icons/Arrow_Right_Up.svg" alt="" />
+    </div>
+  </div>
+  <div class="background">
+    <img [src]="background" alt="" />
+  </div>
+</div>

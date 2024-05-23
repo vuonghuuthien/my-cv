@@ -1,0 +1,28 @@
+section {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container{
+
+}
+
+.heading{
+  font-style: italic;
+  font-weight: 900;
+  font-size: 70px;
+  line-height: 89px;
+  text-align: center;
+  letter-spacing: -0.06em;
+  color: var(--color-black-2);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 89px;
+
+  .project {
+
+  }
+}

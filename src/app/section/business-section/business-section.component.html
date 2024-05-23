@@ -1,0 +1,27 @@
+<section id="business">
+  <div class="container">
+    <h2
+      class="heading"
+      appParallaxScroll
+      [speed]="4"
+      direction="up"
+      [maxDistance]="100"
+    >
+      <span appParallaxLetter> Projects for Businesses </span>
+    </h2>
+    <div class="projects">
+      <div class="project" *ngFor="let project of projects">
+        <app-card-project 
+          [company]="project.company"
+          [name]="project.name"
+          [chips]="project.chips"
+          [description]="project.description"
+          [buttonTitle]="project.buttonTitle"
+          [buttonArrow]="project.buttonArrow"
+          [background]="project.background"
+          [color]="project.color"
+        ></app-card-project>
+      </div>
+    </div>
+  </div>
+</section>

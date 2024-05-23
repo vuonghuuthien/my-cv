@@ -1,0 +1,114 @@
+.container {
+  padding: 60px;
+  gap: 24px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+  max-width: 300px;
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    .company {
+      font-family: var(--font-third);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      color: var(--color-black);
+    }
+
+    .name {
+      font-family: var(--font-third);
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 45px;
+      color: var(--color-black);
+    }
+  }
+
+  .chips {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 16px;
+
+    .chip {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 6px 12px;
+      gap: 10px;
+      background: rgba(99, 102, 241, 0.2);
+      border-radius: 6px;
+      font-family: var(--font-third);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--color-black);
+    }
+  }
+
+  .description {
+    font-family: var(--font-third);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-black-4);
+  }
+
+  .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px 10px 32px;
+    gap: 16px;
+    background: #6366f1;
+    border-radius: 8px;
+    cursor: pointer;
+
+    span {
+      font-family: var(--font-four);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 23px;
+      /* identical to box height, or 144% */
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.background {
+  position: absolute;
+  width: 1148px;
+  height: 668px;
+  left: 434px;
+  top: 128px;
+}
