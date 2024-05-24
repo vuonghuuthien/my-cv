@@ -15,6 +15,13 @@
   width: 100%;
   max-width: 300px;
 
+  .logo {
+    position: absolute;
+    height: 40px;
+    right: 60px;
+    top: 60px;
+  }
+
   .heading {
     display: flex;
     flex-direction: column;
@@ -40,7 +47,7 @@
     }
   }
 
-  .chips {
+  .roles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -48,7 +55,7 @@
     align-content: flex-start;
     gap: 16px;
 
-    .chip {
+    .role {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -84,6 +91,11 @@
     background: #6366f1;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      gap: 20px;
+    }
 
     span {
       font-family: var(--font-four);

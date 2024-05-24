@@ -1,12 +1,12 @@
 <header id="header">
   <div class="container">
-    <div class="wrapper_branding">
+    <div class="wrapper_branding" appParallaxMouseMoveInElement>
       <div class="branding">
         <img class="logo" src="/assets/images/Avatar.png" alt="Avatar" />
         <h1 class="brand-name">david.</h1>
       </div>
     </div>
-    <div class="tabs">
+    <div class="tabs" appParallaxMouseMoveInElement>
       <div
         class="tab"
         [class.tab-style-1]="item.style === 1"
@@ -20,7 +20,7 @@
       </div>
       <span #underline class="underline" [ngStyle]="underlineStyle"></span>
     </div>
-    <div class="wrapper_hamburger_button">
+    <div class="wrapper_hamburger_button" appParallaxMouseMoveInElement>
       <div class="hamburger-button" (click)="openMenu = !openMenu">
         <app-hamburger-button-animation
           [style]="1"

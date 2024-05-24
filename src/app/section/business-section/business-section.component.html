@@ -11,15 +11,17 @@
     </h2>
     <div class="projects">
       <div class="project" *ngFor="let project of projects">
-        <app-card-project 
-          [company]="project.company"
-          [name]="project.name"
-          [chips]="project.chips"
-          [description]="project.description"
-          [buttonTitle]="project.buttonTitle"
-          [buttonArrow]="project.buttonArrow"
-          [background]="project.background"
-          [color]="project.color"
+        <app-card-project
+          [company]="project.company || ''"
+          [name]="project.name || ''"
+          [logo]="project.logo || ''"
+          [roles]="project.roles || []"
+          [description]="project.description || ''"
+          [buttonTitle]="project.buttonTitle || ''"
+          [buttonArrow]="project.buttonArrow || 1"
+          [buttonLink]="project.buttonLink || ''"
+          [background]="project.background || ''"
+          [color]="project.color || ''"
         ></app-card-project>
       </div>
     </div>

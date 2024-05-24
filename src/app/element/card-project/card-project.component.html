@@ -1,22 +1,79 @@
-<div class="container" id="card">
-  <div class="content">
+<div
+  class="container"
+  id="card"
+  appParallaxFadeIn
+  appParallaxScroll
+  [start]="'top 80%'"
+  [end]="'bottom 70%'"
+>
+  <div
+    class="content"
+    appParallaxStagger
+    [start]="'top 80%'"
+    [end]="'bottom 75%'"
+  >
+    <img class="logo" [src]="logo" alt="" />
     <div class="heading">
       <span class="company">{{ company }}</span>
       <h5 class="name">{{ name }}</h5>
     </div>
-    <div class="chips">
-      <div class="chip" *ngFor="let chip of chips">{{ chip }}</div>
+    <div class="roles">
+      <div class="role" *ngFor="let role of roles">{{ role }}</div>
     </div>
     <div class="description">
       {{ description }}
     </div>
-    <div class="button" id="button">
+    <div
+      *ngIf="!buttonLink"
+      class="button"
+      id="button"
+      appParallaxMouseMoveInElement
+    >
       <span>{{ buttonTitle }}</span>
-      <img *ngIf="buttonArrow == 1" src="/assets/icons/Arrow_Right.svg" alt="" />
-      <img *ngIf="buttonArrow == 2" src="/assets/icons/Arrow_Right_Up.svg" alt="" />
+      <img
+        *ngIf="buttonArrow == 1"
+        src="/assets/icons/Arrow_Right.svg"
+        alt=""
+      />
+      <img
+        *ngIf="buttonArrow == 2"
+        src="/assets/icons/Arrow_Right_Up.svg"
+        alt=""
+      />
     </div>
+    <a
+      *ngIf="buttonLink"
+      class="button"
+      id="button"
+      [href]="buttonLink"
+      target="_blank"
+      appParallaxMouseMoveInElement
+    >
+      <span>{{ buttonTitle }}</span>
+      <img
+        *ngIf="buttonArrow == 1"
+        src="/assets/icons/Arrow_Right.svg"
+        alt=""
+      />
+      <img
+        *ngIf="buttonArrow == 2"
+        src="/assets/icons/Arrow_Right_Up.svg"
+        alt=""
+      />
+    </a>
   </div>
-  <div class="background">
+  <div
+    class="background"
+    appParallaxMoving
+    [startX]="100"
+    [startY]="100"
+    [endX]="0"
+    [endY]="0"
+    [speed]="0.2"
+    [start]="'top bottom'"
+    [end]="'bottom 130%'"
+    [ease]="'power1.out'"
+  >
     <img [src]="background" alt="" />
   </div>
 </div>

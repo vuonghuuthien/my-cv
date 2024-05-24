@@ -17,6 +17,7 @@ import { ParallaxMovingDirective } from './gsap/parallax-moving.directive';
 import { ParallaxScrollFullPageDirective } from './gsap/parallax-scroll-full-page.directive';
 import { ParallaxFloatingDirective } from './gsap/parallax-floating.directive';
 import { ParallaxMouseMoveDirective } from './gsap/parallax-mouse-move.directive';
+import { ParallaxMouseMoveInElementDirective } from './gsap/parallax-mouse-move-in-element.directive';
 import { FollowMouseDirective } from './follow-mouse.directive';
 import { FollowMouseInZoneDirective } from './follow-mouse-in-zone.directive';
 import { RandomLetterColorDirective } from './random-letter-color.directive';
@@ -46,6 +47,7 @@ import { ParallaxLetterDirective } from './gsap/parallax-letter.directive';
     ParallaxScrollFullPageDirective,
     ParallaxFloatingDirective,
     ParallaxMouseMoveDirective,
+    ParallaxMouseMoveInElementDirective,
     ParallaxParticleDirective,
     ParallaxParticle2Directive,
     ParallaxElementsOscillationDirective,
@@ -75,6 +77,7 @@ import { ParallaxLetterDirective } from './gsap/parallax-letter.directive';
     ParallaxScrollFullPageDirective,
     ParallaxFloatingDirective,
     ParallaxMouseMoveDirective,
+    ParallaxMouseMoveInElementDirective,
     ParallaxParticleDirective,
     ParallaxParticle2Directive,
     ParallaxElementsOscillationDirective,

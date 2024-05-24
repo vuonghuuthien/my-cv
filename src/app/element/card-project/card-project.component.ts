@@ -8,7 +8,8 @@ import { Component, Input, ElementRef, AfterViewInit } from '@angular/core';
 export class CardProjectComponent implements AfterViewInit {
   @Input() company: string = 'NOIS - 2023';
   @Input() name: string = 'Onboarding System 2';
-  @Input() chips: string[] = [
+  @Input() logo: string = '';
+  @Input() roles: string[] = [
     'User Research',
     'User Experience',
     'User Interface',
@@ -17,6 +18,7 @@ export class CardProjectComponent implements AfterViewInit {
     'A software solution designed for multinational corporations to manage, guide, and evaluate employees across various offices worldwide.';
   @Input() buttonTitle: string = 'Explore';
   @Input() buttonArrow: number = 1;
+  @Input() buttonLink: string = '';
   @Input() background: string = '/assets/backgrounds/OS2.png';
   @Input() color: string = '#6366f1';
 
@@ -24,13 +26,13 @@ export class CardProjectComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const card = this.elementRef.nativeElement.querySelector('#card');
-    const chips = this.elementRef.nativeElement.querySelectorAll('.chip');
+    const roles = this.elementRef.nativeElement.querySelectorAll('.role');
     const button = this.elementRef.nativeElement.querySelector('#button');
     if (card) {
       card.style.backgroundColor = this.hexToRgba(this.color, 0.1);
     }
-    chips.forEach((chip: HTMLElement) => {
-      chip.style.backgroundColor = this.hexToRgba(this.color, 0.2);
+    roles.forEach((role: HTMLElement) => {
+      role.style.backgroundColor = this.hexToRgba(this.color, 0.2);
     });
     if (button) {
       button.style.backgroundColor = this.hexToRgba(this.color, 1);
