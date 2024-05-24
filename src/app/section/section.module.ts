@@ -15,6 +15,8 @@ import { CommunitySectionComponent } from './community-section/community-section
 import { CommunityContentSectionComponent } from './community-content-section/community-content-section.component';
 import { BusinessSectionComponent } from './business-section/business-section.component';
 import { ModalSectionComponent } from './modal-section/modal-section.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,13 @@ import { ModalSectionComponent } from './modal-section/modal-section.component';
     BusinessSectionComponent,
     ModalSectionComponent,
   ],
-  imports: [CommonModule, ElementModule, DirectiveModule],
+  imports: [
+    CommonModule,
+    ElementModule,
+    DirectiveModule,
+    BrowserModule,
+    HttpClientModule,
+  ],
   exports: [
     HeaderComponent,
     HeroSectionComponent,

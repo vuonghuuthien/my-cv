@@ -4,26 +4,16 @@
     <img class="logo" [src]="logo" alt="" />
   </div>
   <div class="wrapper-content">
-    <div class="title">
-      Project Description: 
-    </div>
-    <div class="content">
-      
-    </div>
+    <div class="title">Project Description:</div>
+    <div class="card-project-description-2" [innerHTML]="description_2"></div>
   </div>
   <div class="wrapper-content">
-    <div class="title">
-      My Role: 
-    </div>
+    <div class="title">My Role:</div>
     <div class="roles">
       <div class="role" *ngFor="let role of roles">{{ role }}</div>
     </div>
-    <div class="content">
-      
-    </div>
+    <div class="content"></div>
   </div>
-  <div class="company"></div>
-  <div class="roles"></div>
   <div class="features"></div>
   <div class="tools"></div>
   <div class="reviews"></div>

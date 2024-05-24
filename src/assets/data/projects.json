@@ -1,0 +1,131 @@
+[
+  {
+    "id": 1,
+    "company": "NOIS - 2023",
+    "name": "Onboarding System 2",
+    "logo": "",
+    "roles": ["User Research", "User Experience", "User Interface"],
+    "description": "A software solution designed for multinational corporations to manage, guide, and evaluate employees across various offices worldwide.",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/OS2.png",
+    "color": "#6366f1",
+    "description_2": "A software solution designed for multinational corporations to manage, guide, and evaluate employees across various offices worldwide. The system encompasses five main workflows: Director Country, Director Office, Manager, HR, and Employee.\n\n- Director Country: This role involves managing projects, workflows, work scenarios, and planning at a national level. Directors at this level also oversee and monitor the projects, workflows, work scenarios, and plans of the Director Offices under their jurisdiction.\n\n- Director Office: Directors at the office level manage the projects, workflows, work scenarios, and planning specific to their office. They also supervise and track the progress, workflows, work scenarios, and plans of the Managers under their supervision.\n\n- Manager: Managers are responsible for managing projects, workflows, work scenarios, and planning for their respective teams. They also oversee and monitor the progress, workflows, work scenarios, and plans of the teams and employees under their authority.\n\n- Employee: Employees perform various roles and hold different positions within the company, such as in Business, IT, Education, Marketing, and more. New employees receive supportive steps for setup and learning, making it easier for them to integrate into the company or project. These steps are scenarios created by their managers tailored to their specific roles and positions.\n\nThe software facilitates communication and task assignment, ensuring smooth and efficient operations. Additionally, it features robust reporting capabilities, providing weekly, monthly, quarterly, and annual reports."
+  },
+  {
+    "id": 2,
+    "company": "NOIS - 2022",
+    "name": "Onboarding System 1",
+    "logo": "",
+    "roles": [
+      "User Research",
+      "User Experience",
+      "User Interface",
+      "Business Analyst"
+    ],
+    "description": "A software solution designed for multinational corporations to manage, guide, and evaluate employees across various offices worldwide.",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/OS.png",
+    "color": "#0BA5EC"
+  },
+  {
+    "id": 3,
+    "company": "NOIS - 2023",
+    "name": "Line View GMI Web & App",
+    "logo": "/assets/logos/LineView.png",
+    "roles": ["User Research", "User Experience", "User Interface"],
+    "description": "A comprehensive project including website and mobile application. It is designed to manage large-scale data related to questions and answer choices.",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/LineView.png",
+    "color": "#F37322"
+  },
+  {
+    "id": 4,
+    "company": "NOIS - 2023",
+    "name": "NOIS Website",
+    "logo": "/assets/logos/NOIS.png",
+    "roles": [
+      "User Research",
+      "User Experience",
+      "User Interface",
+      "Animator",
+      "Front-End Developer"
+    ],
+    "description": "Redesign of the NOIS website. The project aims to create a fresh, dynamic, and modern look. Helping to increase brand recognition.",
+    "buttonTitle": "See the live site",
+    "buttonArrow": 2,
+    "buttonLink": "https://nois.vn/",
+    "background": "/assets/backgrounds/NOIS.png",
+    "color": "#12B76A"
+  },
+  {
+    "id": 5,
+    "company": "NOIS - 2022",
+    "name": "Appsure",
+    "logo": "/assets/logos/Appsure.png",
+    "roles": ["User Research", "User Experience", "User Interface", "Animator"],
+    "description": "Appsure insurance management application is a powerful, flexible and user-friendly system that helps insurance companies optimize their processes, enhance customer experience and manage data effectively. fruit.",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/Appsure.png",
+    "color": "#5569FF"
+  },
+  {
+    "id": 6,
+    "company": "NOIS - 2023",
+    "name": "Juicy Burger Web & App",
+    "logo": "/assets/logos/JuicyBurger.png",
+    "roles": ["UI/UX Consultant", "Front-End Developer"],
+    "description": "The project entails designing a website and mobile application for Juicy Burger, a chain of fast food restaurants with multiple branches.",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/JuicyBurger.png",
+    "color": "#FF3537"
+  },
+  {
+    "id": 7,
+    "company": "NOIS - 2023",
+    "name": "HBCF - iCare",
+    "logo": "/assets/logos/HBCF.png",
+    "roles": ["UX Designer"],
+    "description": "I have been working on the Home Building Compensation Fund (HBCF) product by iCare. The primary goal of this project is to create a user-friendly digital platform that enables homeowners to easily access information and services related to building compensation in New South Wales (NSW).",
+    "buttonTitle": "Explore",
+    "buttonArrow": 1,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/HBCF.png",
+    "color": "#00B9BD"
+  },
+  {
+    "id": 8,
+    "company": "TMTCO.ASIA - 2021",
+    "name": "TPOS",
+    "logo": "/assets/logos/TPOS.png",
+    "roles": ["UI Consultant", "Full-Stack Developer"],
+    "description": "TPos sales management software and App helps users manage all business activities in stores and online sales effectively, helping to grow sales quickly and continuously.",
+    "buttonTitle": "Register a Trial",
+    "buttonArrow": 2,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/TPOS.png",
+    "color": "#008E30"
+  },
+  {
+    "id": 9,
+    "company": "TMTCO.ASIA - 2020",
+    "name": "TDental",
+    "logo": "/assets/logos/TDental.png",
+    "roles": ["UI Consultant", "Full-Stack Developer"],
+    "description": "Software and App manage all activities at the dental clinic, from patient management, doctors, laboratories, suppliers, revenue and expenditure management, ... There is also automated customer care.",
+    "buttonTitle": "Register a Trial",
+    "buttonArrow": 2,
+    "buttonLink": "",
+    "background": "/assets/backgrounds/TDental.png",
+    "color": "#1B4FC9"
+  }
+]

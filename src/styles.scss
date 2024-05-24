@@ -111,3 +111,37 @@ a {
 .no-scroll {
   overflow: hidden;
 }
+
+.card-project-description-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  * {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--color-black);
+  }
+
+  .list-item {
+    display: flex;
+
+    .list-number {
+      padding: 0 8px;
+      font-weight: 600;
+    }
+
+    .list-content {
+      color: var(--color-black-3);
+      font-weight: 400;
+
+    }
+    
+    .list-title {
+      font-weight: 600;
+    }
+  }
+}

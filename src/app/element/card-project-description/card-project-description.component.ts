@@ -6,6 +6,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Project } from 'src/app/model/project.model';
 
 @Component({
@@ -28,8 +29,12 @@ export class CardProjectDescriptionComponent
   buttonLink = '';
   background = '';
   color = '';
+  description_2 = '';
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['project'] && changes['project'].currentValue) {
@@ -44,12 +49,15 @@ export class CardProjectDescriptionComponent
       this.buttonLink = project.buttonLink || '';
       this.background = project.background || '';
       this.color = project.color || '';
+      this.description_2 = this.formatDescription(project.description_2 || '');
       this.setColor();
+      console.log("ngOnChanges", this.project.color);
     }
   }
 
   ngAfterViewInit() {
     this.setColor();
+    console.log("ngAfterViewInit", this.project.color);
   }
 
   hexToRgba(hex: string, alpha: number): string {
@@ -79,5 +87,24 @@ export class CardProjectDescriptionComponent
     if (button) {
       button.style.backgroundColor = this.hexToRgba(this.color, 1);
     }
+  }
+
+  formatDescription(description: string): string {
+    const paragraphs = description.split('\n\n');
+    let listCounter = 1;
+
+    return paragraphs
+      .map(paragraph => {
+        if (paragraph.startsWith('- ')) {
+          const titleEndIndex = paragraph.indexOf(':') + 1;
+          const title = paragraph.substring(2, titleEndIndex).trim();
+          const content = paragraph.substring(titleEndIndex).trim();
+
+          return `<p class="list-item"><span class="list-number">${listCounter++}. </span><span class="list-content"><span class="list-title">${title}</span>&nbsp;&nbsp;${content}</span></p>`;
+        } else {
+          return `<p class="paragraph">${paragraph}</p>`;
+        }
+      })
+      .join('');
   }
 }

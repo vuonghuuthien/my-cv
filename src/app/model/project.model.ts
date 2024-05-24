@@ -9,4 +9,5 @@ export interface Project {
   buttonLink?: string;
   background?: string;
   color?: string;
+  description_2?: string;
 }
