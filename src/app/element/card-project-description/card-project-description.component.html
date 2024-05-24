@@ -25,8 +25,10 @@
   </div>
   <div class="wrapper-content">
     <div class="title">Review:</div>
-    <div class="preview">
-      <!-- <img *ngFor="let image of preview" [src]="image" alt="" /> -->
+    <div class="preview image-grid">
+      <div class="image-preview image-item" *ngFor="let image of imagePaths">
+        <img [src]="image" alt="" />
+      </div>
     </div>
   </div>
   <div class="reviews"></div>

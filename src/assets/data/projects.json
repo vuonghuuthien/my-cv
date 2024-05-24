@@ -17,7 +17,8 @@
       { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
       { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" }
     ],
-    "preview": []
+    "previewFolder": "/assets/projects/OS2",
+    "previewLength": 16
   },
   {
     "id": 2,

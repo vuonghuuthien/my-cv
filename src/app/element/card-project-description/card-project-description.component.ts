@@ -34,6 +34,8 @@ export class CardProjectDescriptionComponent
   role_2 = '';
   technologies: Technology[] = [];
   previewFolder = '';
+  previewLength = 0;
+  imagePaths: string[] = [];
 
   constructor(
     private elementRef: ElementRef,
@@ -43,6 +45,8 @@ export class CardProjectDescriptionComponent
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['project'] && changes['project'].currentValue) {
+      this.resetValues();
+
       const project = changes['project'].currentValue as Project;
       this.company = project.company || '';
       this.name = project.name || '';
@@ -58,17 +62,20 @@ export class CardProjectDescriptionComponent
       this.role_2 = this.formatDescription(project.role_2 || '');
       this.technologies = project.technologies || [];
       this.previewFolder = project.previewFolder || '';
+      this.previewLength = project.previewLength ?? 0;
+      this.loadImages();
 
-      this.ngZone.runOutsideAngular(() => {
-        setTimeout(() => this.setColor(), 0);
-      });
+      setTimeout(() => {
+        this.setColor();
+      }, 0);
     }
   }
 
   ngAfterViewInit() {
-    this.ngZone.runOutsideAngular(() => {
-      setTimeout(() => this.setColor(), 0);
-    });
+    this.loadImages();
+    setTimeout(() => {
+      this.setColor();
+    }, 0);
   }
 
   hexToRgba(hex: string, alpha: number): string {
@@ -117,5 +124,47 @@ export class CardProjectDescriptionComponent
         }
       })
       .join('');
+  }
+
+  loadImages() {
+    const numberOfImages = this.previewLength;
+
+    if (numberOfImages) {
+      for (let i = 1; i <= numberOfImages; i++) {
+        // this.imagePaths.push(`assets/projects/OS2/${i}.png`);
+        this.imagePaths.push(`${this.previewFolder}/${i}.png`);
+      }
+
+      this.setStylePreview();
+    }
+  }
+
+  setStylePreview() {
+    setTimeout(() => {
+      const images =
+        this.elementRef.nativeElement.querySelectorAll('.preview img');
+      images.forEach((img: HTMLElement) => {
+        img.style.width = '100%';
+      });
+    });
+  }
+
+  resetValues() {
+    this.company = '';
+    this.name = '';
+    this.logo = '';
+    this.roles = [];
+    this.description = '';
+    this.buttonTitle = '';
+    this.buttonArrow = 1;
+    this.buttonLink = '';
+    this.background = '';
+    this.color = '';
+    this.description_2 = '';
+    this.role_2 = '';
+    this.technologies = [];
+    this.previewFolder = '';
+    this.previewLength = 0;
+    this.imagePaths = [];
   }
 }

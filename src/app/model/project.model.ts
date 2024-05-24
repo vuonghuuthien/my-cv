@@ -18,4 +18,5 @@ export interface Project {
   role_2?: string;
   technologies?: Technology[];
   previewFolder?: string;
+  previewLength?: number;
 }

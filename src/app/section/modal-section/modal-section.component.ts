@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Project } from 'src/app/model/project.model';
 
 @Component({
@@ -9,6 +9,8 @@ import { Project } from 'src/app/model/project.model';
 export class ModalSectionComponent {
   project!: Project;
   open: boolean = false;
+
+  @ViewChild('modalElement') modalElement?: ElementRef;
   
   constructor() { }
 
@@ -20,6 +22,9 @@ export class ModalSectionComponent {
   closePopup() {
     this.open = false;
     document.body.classList.remove('no-scroll');
+    if (this.modalElement) {
+      this.modalElement.nativeElement.scrollTop = 0;
+    }
   }
 
   setProject(project: Project) {

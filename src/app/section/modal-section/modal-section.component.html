@@ -1,7 +1,7 @@
 <section id="modal">
   <div class="overlay" [class.open]="open" (click)="closePopup()"></div>
   <div class="container" [class.open]="open">
-    <div class="card">
+    <div class="card" #modalElement>
       <div class="button-close" (click)="closePopup()">
         <img src="/assets/icons/X.svg" alt="X" />
       </div>

@@ -75,7 +75,7 @@
     }
   }
 
-  .technologies{
+  .technologies {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -83,7 +83,7 @@
     justify-content: flex-start;
     gap: 16px;
 
-    .technology{
+    .technology {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -97,7 +97,7 @@
         height: 32px;
       }
 
-      .name{
+      .name {
         font-family: var(--font-third);
         font-style: normal;
         font-weight: 400;
@@ -106,7 +106,47 @@
       }
     }
   }
+
+  .review {
+    .image-preview {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
-.reviews {
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Khoảng cách giữa các hình ảnh */
+}
+
+.image-item {
+  flex: 1 1 calc(25% - 10px); /* 4 hình ảnh mỗi hàng, trừ đi khoảng cách */
+  box-sizing: border-box;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .image-item {
+    flex: 1 1 calc(33.33% - 10px); /* 3 hình ảnh mỗi hàng */
+  }
+}
+
+@media (max-width: 800px) {
+  .image-item {
+    flex: 1 1 calc(50% - 10px); /* 2 hình ảnh mỗi hàng */
+  }
+}
+
+@media (max-width: 600px) {
+  .image-item {
+    flex: 1 1 100%; /* 1 hình ảnh mỗi hàng */
+  }
 }
