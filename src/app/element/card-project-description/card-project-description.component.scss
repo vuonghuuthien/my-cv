@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 32px;
+}
+
+.header {
+  width: 100%;
+  padding: 32px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .name {
+    font-family: var(--font-third);
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 45px;
+    color: var(--color-black);
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+
+.wrapper-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #292929;
+  }
+
+  .content {
+  }
+
+  .roles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 16px;
+
+    .role {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 6px 12px;
+      gap: 10px;
+      background: rgba(99, 102, 241, 0.2);
+      border-radius: 6px;
+      font-family: var(--font-third);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: var(--color-black);
+    }
+  }
+}
+
+.company {
+}
+.description {
+}
+.roles {
+}
+.features {
+}
+.tools {
+}
+.reviews {
+}

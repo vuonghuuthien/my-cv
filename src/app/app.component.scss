@@ -1,16 +1,20 @@
 /*
 z-index
+popup section 150 -> 160
 header 100 -> 110
 background 10 -> 20
 section 30 -> 40
 background section 50 -> 60
 content section 60 -> 70
 */
+
 main {
   padding: 0 96px;
   display: flex;
   justify-content: center;
   background: #f6f6f6;
+  overflow-x: hidden;
+  width: 100vw;
 
   .sections {
     width: 100%;
@@ -33,8 +37,6 @@ main {
   height: 100vh;
 }
 
-
-
 .screen {
   height: 100vh;
   display: flex;
@@ -45,26 +47,66 @@ main {
   position: relative;
 }
 
-.screen1 { background: #ffd700; }  /* Gold */
-.screen2 { background: #90ee90; }  /* Light green */
-.screen3 { background: #ba55d3; }  /* Medium purple */
-.screen4 { background: #ffdab9; }  /* Peach */
-.screen5 { background: #00ffff; }  /* Aqua */
-.screen6 { background: #f08080; }  /* Light coral */
-.screen7 { background: #c71585; }  /* Deep pink */
-.screen8 { background: #ffa07a; }  /* Light salmon */
-.screen9 { background: #808080; }  /* Dark gray */
-.screen10 { background: #adff2f; }  /* Lime green */
-.screen11 { background: #4169e1; }  /* Royal blue */
-.screen12 { background: #9400d3; }  /* Dark violet */
-.screen13 { background: #a52a2a; }  /* Brown */
-.screen14 { background: #ee82ee; }  /* Violet */
-.screen15 { background: #7fff00; }  /* Lime */
-.screen16 { background: #40e0d0; }  /* Turquoise */
-.screen17 { background: #b0e0e0; }  /* Light gray */
-.screen18 { background: #ff69b4; }  /* Hot pink */
-.screen19 { background: #800000; }  /* Maroon */
-.screen20 { background: #daa520; }  /* Goldenrod */
+.screen1 {
+  background: #ffd700;
+} /* Gold */
+.screen2 {
+  background: #90ee90;
+} /* Light green */
+.screen3 {
+  background: #ba55d3;
+} /* Medium purple */
+.screen4 {
+  background: #ffdab9;
+} /* Peach */
+.screen5 {
+  background: #00ffff;
+} /* Aqua */
+.screen6 {
+  background: #f08080;
+} /* Light coral */
+.screen7 {
+  background: #c71585;
+} /* Deep pink */
+.screen8 {
+  background: #ffa07a;
+} /* Light salmon */
+.screen9 {
+  background: #808080;
+} /* Dark gray */
+.screen10 {
+  background: #adff2f;
+} /* Lime green */
+.screen11 {
+  background: #4169e1;
+} /* Royal blue */
+.screen12 {
+  background: #9400d3;
+} /* Dark violet */
+.screen13 {
+  background: #a52a2a;
+} /* Brown */
+.screen14 {
+  background: #ee82ee;
+} /* Violet */
+.screen15 {
+  background: #7fff00;
+} /* Lime */
+.screen16 {
+  background: #40e0d0;
+} /* Turquoise */
+.screen17 {
+  background: #b0e0e0;
+} /* Light gray */
+.screen18 {
+  background: #ff69b4;
+} /* Hot pink */
+.screen19 {
+  background: #800000;
+} /* Maroon */
+.screen20 {
+  background: #daa520;
+} /* Goldenrod */
 
 .scroll-container {
   height: 100%;
@@ -81,17 +123,17 @@ main {
 }
 
 section:nth-of-type(1) {
-  background-color: #F8EDE3;
+  background-color: #f8ede3;
 }
 
 section:nth-of-type(2) {
-  background-color: #DFD3C3;
+  background-color: #dfd3c3;
 }
 
 section:nth-of-type(3) {
-  background-color: #D0B8A8;
+  background-color: #d0b8a8;
 }
 
 section:nth-of-type(4) {
-  background-color: #B89A82;
+  background-color: #b89a82;
 }

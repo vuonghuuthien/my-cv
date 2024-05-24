@@ -1,21 +1,21 @@
 import {
-  Component,
-  Input,
-  Output,
-  ElementRef,
-  OnChanges,
   AfterViewInit,
-  EventEmitter,
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
   SimpleChanges,
 } from '@angular/core';
 import { Project } from 'src/app/model/project.model';
 
 @Component({
-  selector: 'app-card-project',
-  templateUrl: './card-project.component.html',
-  styleUrls: ['./card-project.component.scss'],
+  selector: 'app-card-project-description',
+  templateUrl: './card-project-description.component.html',
+  styleUrls: ['./card-project-description.component.scss'],
 })
-export class CardProjectComponent implements OnChanges, AfterViewInit {
+export class CardProjectDescriptionComponent
+  implements OnChanges, AfterViewInit
+{
   @Input() project!: Project;
 
   company = '';
@@ -28,8 +28,6 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
   buttonLink = '';
   background = '';
   color = '';
-
-  @Output() openModalRequest = new EventEmitter<void>();
 
   constructor(private elementRef: ElementRef) {}
 
@@ -69,11 +67,11 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
   }
 
   setColor() {
-    const card = this.elementRef.nativeElement.querySelector('#card');
+    const header = this.elementRef.nativeElement.querySelector('#header');
     const roles = this.elementRef.nativeElement.querySelectorAll('.role');
     const button = this.elementRef.nativeElement.querySelector('#button');
-    if (card) {
-      card.style.backgroundColor = this.hexToRgba(this.color, 0.1);
+    if (header) {
+      header.style.backgroundColor = this.hexToRgba(this.color, 0.1);
     }
     roles.forEach((role: HTMLElement) => {
       role.style.backgroundColor = this.hexToRgba(this.color, 0.2);
@@ -81,9 +79,5 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
     if (button) {
       button.style.backgroundColor = this.hexToRgba(this.color, 1);
     }
-  }
-
-  emitOpenModalRequest() {
-    this.openModalRequest.emit();
   }
 }

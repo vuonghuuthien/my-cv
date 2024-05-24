@@ -27,6 +27,7 @@ import { BgShapeDepthComponent } from './bg-shape-depth/bg-shape-depth.component
 import { DirectiveModule } from '../directive/directive.module';
 import { HamburgerButtonAnimationComponent } from './hamburger-button-animation/hamburger-button-animation.component';
 import { CardProjectComponent } from './card-project/card-project.component';
+import { CardProjectDescriptionComponent } from './card-project-description/card-project-description.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { CardProjectComponent } from './card-project/card-project.component';
     BgShapeDepthComponent,
     HamburgerButtonAnimationComponent,
     CardProjectComponent,
+    CardProjectDescriptionComponent,
   ],
   imports: [
     CommonModule,
@@ -87,6 +89,7 @@ import { CardProjectComponent } from './card-project/card-project.component';
     BgShapeDepthComponent,
     HamburgerButtonAnimationComponent,
     CardProjectComponent,
+    CardProjectDescriptionComponent,
   ],
 })
 export class ElementModule {}

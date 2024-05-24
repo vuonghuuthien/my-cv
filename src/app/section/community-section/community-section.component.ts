@@ -28,8 +28,6 @@ export class CommunitySectionComponent implements AfterViewInit {
       const rectWidth = rectBoundingBox.width;
       const rectHeight = rectBoundingBox.height;
 
-      console.log(rectX, rectY);
-
       // Thiết lập vị trí và kích thước cho thẻ div .screen
       this.renderer.setStyle(this.screenElement.nativeElement, 'position', 'absolute');
       this.renderer.setStyle(this.screenElement.nativeElement, 'left', `${rectX}px`);

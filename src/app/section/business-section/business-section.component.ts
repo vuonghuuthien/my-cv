@@ -1,17 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Project } from 'src/app/model/project.model';
+import { ModalSectionComponent } from '../modal-section/modal-section.component';
 
-interface Project {
-  company?: string;
-  name?: string;
-  logo?: string;
-  roles?: string[];
-  description?: string;
-  buttonTitle?: string;
-  buttonArrow?: number;
-  buttonLink?: string;
-  background?: string;
-  color?: string;
-}
 
 @Component({
   selector: 'app-business-section',
@@ -20,6 +10,8 @@ interface Project {
 })
 
 export class BusinessSectionComponent {
+  @ViewChild('modal') modal!: ModalSectionComponent;
+
   projects: Project[] = [
     {
       company: 'NOIS - 2023',
@@ -139,4 +131,9 @@ export class BusinessSectionComponent {
       color: '#1B4FC9',
     },
   ];
+
+  openModal(project: Project) {
+    this.modal.openPopup();
+    this.modal.setProject(project);
+  }
 }

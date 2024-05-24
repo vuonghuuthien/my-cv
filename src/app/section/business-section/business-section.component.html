@@ -10,20 +10,13 @@
       <span appParallaxLetter> Projects for Businesses </span>
     </h2>
     <div class="projects">
-      <div class="project" *ngFor="let project of projects">
+      <div class="project" *ngFor="let project of projects; let i = index">
         <app-card-project
-          [company]="project.company || ''"
-          [name]="project.name || ''"
-          [logo]="project.logo || ''"
-          [roles]="project.roles || []"
-          [description]="project.description || ''"
-          [buttonTitle]="project.buttonTitle || ''"
-          [buttonArrow]="project.buttonArrow || 1"
-          [buttonLink]="project.buttonLink || ''"
-          [background]="project.background || ''"
-          [color]="project.color || ''"
+          [project]="project"
+          (openModalRequest)="openModal(project)"
         ></app-card-project>
       </div>
     </div>
+    <app-modal-section #modal></app-modal-section>
   </div>
 </section>

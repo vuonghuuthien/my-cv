@@ -14,6 +14,7 @@ import { ProjectSectionComponent } from './project-section/project-section.compo
 import { CommunitySectionComponent } from './community-section/community-section.component';
 import { CommunityContentSectionComponent } from './community-content-section/community-content-section.component';
 import { BusinessSectionComponent } from './business-section/business-section.component';
+import { ModalSectionComponent } from './modal-section/modal-section.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BusinessSectionComponent } from './business-section/business-section.co
     CommunitySectionComponent,
     CommunityContentSectionComponent,
     BusinessSectionComponent,
+    ModalSectionComponent,
   ],
   imports: [CommonModule, ElementModule, DirectiveModule],
   exports: [
@@ -44,6 +46,7 @@ import { BusinessSectionComponent } from './business-section/business-section.co
     CommunitySectionComponent,
     CommunityContentSectionComponent,
     BusinessSectionComponent,
+    ModalSectionComponent,
   ],
 })
 export class SectionModule {}
