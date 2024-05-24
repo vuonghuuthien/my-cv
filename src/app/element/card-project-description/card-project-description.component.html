@@ -12,9 +12,22 @@
     <div class="roles">
       <div class="role" *ngFor="let role of roles">{{ role }}</div>
     </div>
-    <div class="content"></div>
+    <div class="card-project-description-2" [innerHTML]="role_2"></div>
   </div>
-  <div class="features"></div>
-  <div class="tools"></div>
+  <div class="wrapper-content">
+    <div class="title">Technologies and Tools I Used:</div>
+    <div class="technologies">
+      <div class="technology" *ngFor="let technology of technologies">
+        <img [src]="technology.icon" alt="" />
+        <span class="name">{{ technology.name }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-content">
+    <div class="title">Review:</div>
+    <div class="preview">
+      <!-- <img *ngFor="let image of preview" [src]="image" alt="" /> -->
+    </div>
+  </div>
   <div class="reviews"></div>
 </div>

@@ -9,10 +9,10 @@ export class CardComponent {
   posCard_list = ['vt__card__left', 'vt__card__center', 'vt__card__right'];
   showImg_list = ['vt__hide', ''];
   sampleImg_list = [
-    '../../../assets/Check Illustration Icon.svg',
-    '../../../assets/Store Illustration Icon.svg',
-    '../../../assets/Archive Illustration Icon.svg',
-    '../../../assets/Service Image.svg',
+    '/assets/images/CheckIllustrationIcon.svg',
+    '/assets/images/StoreIllustrationIcon.svg',
+    '/assets/images/ArchiveIllustrationIcon.svg',
+    '/assets/images/ServiceImage.svg',
   ];
   posImg_list = [
     'vt__card-img__top',

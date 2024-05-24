@@ -3,11 +3,12 @@ import {
   Component,
   ElementRef,
   Input,
+  NgZone,
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { Project } from 'src/app/model/project.model';
+import { Project, Technology } from 'src/app/model/project.model';
 
 @Component({
   selector: 'app-card-project-description',
@@ -30,10 +31,14 @@ export class CardProjectDescriptionComponent
   background = '';
   color = '';
   description_2 = '';
+  role_2 = '';
+  technologies: Technology[] = [];
+  previewFolder = '';
 
   constructor(
     private elementRef: ElementRef,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private ngZone: NgZone
   ) {}
 
   ngOnChanges(changes: SimpleChanges) {
@@ -50,14 +55,20 @@ export class CardProjectDescriptionComponent
       this.background = project.background || '';
       this.color = project.color || '';
       this.description_2 = this.formatDescription(project.description_2 || '');
-      this.setColor();
-      console.log("ngOnChanges", this.project.color);
+      this.role_2 = this.formatDescription(project.role_2 || '');
+      this.technologies = project.technologies || [];
+      this.previewFolder = project.previewFolder || '';
+
+      this.ngZone.runOutsideAngular(() => {
+        setTimeout(() => this.setColor(), 0);
+      });
     }
   }
 
   ngAfterViewInit() {
-    this.setColor();
-    console.log("ngAfterViewInit", this.project.color);
+    this.ngZone.runOutsideAngular(() => {
+      setTimeout(() => this.setColor(), 0);
+    });
   }
 
   hexToRgba(hex: string, alpha: number): string {
@@ -94,7 +105,7 @@ export class CardProjectDescriptionComponent
     let listCounter = 1;
 
     return paragraphs
-      .map(paragraph => {
+      .map((paragraph) => {
         if (paragraph.startsWith('- ')) {
           const titleEndIndex = paragraph.indexOf(':') + 1;
           const title = paragraph.substring(2, titleEndIndex).trim();

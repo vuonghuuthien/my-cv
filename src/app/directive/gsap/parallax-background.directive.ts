@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class ParallaxBackgroundDirective implements OnInit, OnDestroy {
   @Input() delay: number = 0;
   @Input() speed: number = 0.5;
-  @Input() linkBG: string = '/assets/ServiceImage.png';
+  @Input() linkBG: string = '/assets/images/ServiceImage.png';
   @Input() start: string = 'top bottom';
   @Input() end: string = 'bottom top';
   @Input() scrub: boolean = true;
