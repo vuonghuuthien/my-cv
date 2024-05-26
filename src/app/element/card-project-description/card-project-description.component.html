@@ -25,11 +25,23 @@
   </div>
   <div class="wrapper-content">
     <div class="title">Review:</div>
-    <div class="preview image-grid">
-      <div class="image-preview image-item" *ngFor="let image of imagePaths">
-        <img [src]="image" alt="" />
+    <div *ngIf="!isPreviewGrid" class="preview">
+      <img
+        class="preview-image"
+        *ngFor="let image of imagePaths"
+        [src]="image"
+        alt=""
+      />
+      <div class="image-preview-lock">
+        <img [src]="'/assets/icons/Lock.svg'" alt="Lock Icon" />
+        <span>{{ totalScreens }}+ Screens</span>
+        <span>{{ totalComponents }}+ Components</span>
+      </div>
+    </div>
+    <div *ngIf="isPreviewGrid" class="preview preview-grid">
+      <div class="column" *ngFor="let column of imagePaths_chunk">
+        <img *ngFor="let img of column" [src]="img" style="width: 100%" />
       </div>
     </div>
   </div>
-  <div class="reviews"></div>
 </div>

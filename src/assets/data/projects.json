@@ -18,7 +18,9 @@
       { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" }
     ],
     "previewFolder": "/assets/projects/OS2",
-    "previewLength": 16
+    "previewLength": 18,
+    "totalScreens": 300,
+    "totalComponents": 60
   },
   {
     "id": 2,
@@ -38,7 +40,15 @@
     "background": "/assets/backgrounds/OS.png",
     "color": "#0BA5EC",
     "description_2": "A software solution designed for multinational corporations to manage, guide, and evaluate employees across various offices worldwide. The system encompasses five main workflows: Director Country, Director Office, Manager, HR, and Employee.\n\n- Director Country: This role involves managing projects, workflows, work scenarios, and planning at a national level. Directors at this level also oversee and monitor the projects, workflows, work scenarios, and plans of the Director Offices under their jurisdiction.\n\n- Director Office: Directors at the office level manage the projects, workflows, work scenarios, and planning specific to their office. They also supervise and track the progress, workflows, work scenarios, and plans of the Managers under their supervision.\n\n- Manager: Managers are responsible for managing projects, workflows, work scenarios, and planning for their respective teams. They also oversee and monitor the progress, workflows, work scenarios, and plans of the teams and employees under their authority.\n\n- Employee: Employees perform various roles and hold different positions within the company, such as in Business, IT, Education, Marketing, and more. New employees receive supportive steps for setup and learning, making it easier for them to integrate into the company or project. These steps are scenarios created by their managers tailored to their specific roles and positions.\n\nThe software facilitates communication and task assignment, ensuring smooth and efficient operations. Additionally, it features robust reporting capabilities, providing weekly, monthly, quarterly, and annual reports.",
-    "role_2": "My responsibility is to ensure the company's Integration systems meet user needs and expectations.\n\n- Collect and analyze requirements from customers: Conduct meetings to understand project needs, goals and challenges.\n\n- Design user experience: Create user flows and wireframes to ensure the system is easy to use and meets user needs.\n\n- Create prototypes: Develop interactive prototypes to test and improve the user experience.\n\n- Conduct testing: Open meetings to gather feedback and improve designs based on customer feedback.\n\n- Map user journeys: Outline user journey maps to understand the overall user experience when interacting with the system.\n\n- Design interfaces: Create visually appealing and intuitive user interfaces based on developed wireframes and prototypes.\n\n- Develop design library (Design Systems): Build and maintain a design library containing standard UI components to ensure consistency throughout the system. (Called the Design Systems in Figma)\n\n- Collaborate with developers: Work closely with developers to ensure that the UI design is accurately implemented and functions as expected. Use libraries that are appropriate for the framework the developer has chosen.\n\n- Update and refine: Continuously update and refine the interface based on user feedback and testing results."
+    "role_2": "My responsibility is to ensure the company's Integration systems meet user needs and expectations.\n\n- Collect and analyze requirements from customers: Conduct meetings to understand project needs, goals and challenges.\n\n- Design user experience: Create user flows and wireframes to ensure the system is easy to use and meets user needs.\n\n- Create prototypes: Develop interactive prototypes to test and improve the user experience.\n\n- Conduct testing: Open meetings to gather feedback and improve designs based on customer feedback.\n\n- Map user journeys: Outline user journey maps to understand the overall user experience when interacting with the system.\n\n- Design interfaces: Create visually appealing and intuitive user interfaces based on developed wireframes and prototypes.\n\n- Develop design library (Design Systems): Build and maintain a design library containing standard UI components to ensure consistency throughout the system. (Called the Design Systems in Figma)\n\n- Collaborate with developers: Work closely with developers to ensure that the UI design is accurately implemented and functions as expected. Use libraries that are appropriate for the framework the developer has chosen.\n\n- Update and refine: Continuously update and refine the interface based on user feedback and testing results.",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" }
+    ],
+    "previewFolder": "/assets/projects/OS",
+    "previewLength": 10,
+    "totalScreens": 250,
+    "totalComponents": 70
   },
   {
     "id": 3,
@@ -51,7 +61,17 @@
     "buttonArrow": 1,
     "buttonLink": "",
     "background": "/assets/backgrounds/LineView.png",
-    "color": "#F37322"
+    "color": "#F37322",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" }
+    ],
+    "previewFolder": "/assets/projects/LineView",
+    "previewLength": 9,
+    "totalScreens": 100,
+    "totalComponents": 25
   },
   {
     "id": 4,
@@ -70,7 +90,18 @@
     "buttonArrow": 2,
     "buttonLink": "https://nois.vn/",
     "background": "/assets/backgrounds/NOIS.png",
-    "color": "#12B76A"
+    "color": "#12B76A",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" },
+      { "name": "Adobe Photoshop", "icon": "/assets/skills/Photoshop.svg" }
+    ],
+    "previewFolder": "/assets/projects/NOIS",
+    "previewLength": 12,
+    "totalScreens": 10,
+    "totalComponents": 30
   },
   {
     "id": 5,
@@ -83,7 +114,17 @@
     "buttonArrow": 1,
     "buttonLink": "",
     "background": "/assets/backgrounds/Appsure.png",
-    "color": "#5569FF"
+    "color": "#5569FF",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" }
+    ],
+    "previewFolder": "/assets/projects/Appsure",
+    "previewLength": 14,
+    "totalScreens": 140,
+    "totalComponents": 50
   },
   {
     "id": 6,
@@ -96,7 +137,21 @@
     "buttonArrow": 1,
     "buttonLink": "",
     "background": "/assets/backgrounds/JuicyBurger.png",
-    "color": "#FF3537"
+    "color": "#FF3537",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Adobe XD", "icon": "/assets/skills/XD.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" },
+      { "name": "React JS", "icon": "/assets/skills/ReactJS.svg" },
+      { "name": "HTML", "icon": "/assets/skills/HTML.svg" },
+      { "name": "CSS", "icon": "/assets/skills/CSS.svg" },
+      { "name": "Ordering API", "icon": "/assets/skills/Ordering.png" }
+    ],
+    "previewFolder": "/assets/projects/JuicyBurger",
+    "previewLength": 8,
+    "totalScreens": 80,
+    "totalComponents": 20
   },
   {
     "id": 7,
@@ -109,7 +164,18 @@
     "buttonArrow": 1,
     "buttonLink": "",
     "background": "/assets/backgrounds/HBCF.png",
-    "color": "#00B9BD"
+    "color": "#00B9BD",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" },
+      { "name": "Miro", "icon": "/assets/skills/Miro.svg" }
+    ],
+    "previewFolder": "/assets/projects/HBCF",
+    "previewLength": 8,
+    "totalScreens": 200,
+    "totalComponents": 0
   },
   {
     "id": 8,
@@ -122,7 +188,23 @@
     "buttonArrow": 2,
     "buttonLink": "",
     "background": "/assets/backgrounds/TPOS.png",
-    "color": "#008E30"
+    "color": "#008E30",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" },
+      { "name": "Angular 2+", "icon": "/assets/skills/Angular.svg" },
+      { "name": "SCSS", "icon": "/assets/skills/SCSS.svg" },
+      { "name": "HTML", "icon": "/assets/skills/HTML.svg" },
+      { "name": "CSS", "icon": "/assets/skills/CSS.svg" },
+      { "name": "Dot.Net", "icon": "/assets/skills/DotNet.svg" },
+      { "name": "Swagger", "icon": "/assets/skills/Swagger.svg" }
+    ],
+    "previewFolder": "/assets/projects/TPOS",
+    "previewLength": 12,
+    "totalScreens": 120,
+    "totalComponents": 50
   },
   {
     "id": 9,
@@ -135,6 +217,22 @@
     "buttonArrow": 2,
     "buttonLink": "",
     "background": "/assets/backgrounds/TDental.png",
-    "color": "#1B4FC9"
+    "color": "#1B4FC9",
+    "description_2": "",
+    "role_2": "",
+    "technologies": [
+      { "name": "Figma", "icon": "/assets/skills/Figma.svg" },
+      { "name": "Adobe Illustrator", "icon": "/assets/skills/Illustrator.svg" },
+      { "name": "Angular 2+", "icon": "/assets/skills/Angular.svg" },
+      { "name": "SCSS", "icon": "/assets/skills/SCSS.svg" },
+      { "name": "HTML", "icon": "/assets/skills/HTML.svg" },
+      { "name": "CSS", "icon": "/assets/skills/CSS.svg" },
+      { "name": "Dot.Net", "icon": "/assets/skills/DotNet.svg" },
+      { "name": "Swagger", "icon": "/assets/skills/Swagger.svg" }
+    ],
+    "previewFolder": "/assets/projects/TDental",
+    "previewLength": 12,
+    "totalScreens": 80,
+    "totalComponents": 40
   }
 ]

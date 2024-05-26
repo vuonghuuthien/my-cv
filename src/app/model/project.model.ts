@@ -19,4 +19,6 @@ export interface Project {
   technologies?: Technology[];
   previewFolder?: string;
   previewLength?: number;
+  totalScreens?: number;
+  totalComponents?: number;
 }

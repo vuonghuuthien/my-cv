@@ -35,7 +35,11 @@ export class CardProjectDescriptionComponent
   technologies: Technology[] = [];
   previewFolder = '';
   previewLength = 0;
+  totalScreens = 0;
+  totalComponents = 0;
   imagePaths: string[] = [];
+  imagePaths_chunk: string[][] = [];
+  isPreviewGrid: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
@@ -63,6 +67,8 @@ export class CardProjectDescriptionComponent
       this.technologies = project.technologies || [];
       this.previewFolder = project.previewFolder || '';
       this.previewLength = project.previewLength ?? 0;
+      this.totalScreens = project.totalScreens ?? 0;
+      this.totalComponents = project.totalComponents ?? 0;
       this.loadImages();
 
       setTimeout(() => {
@@ -131,22 +137,24 @@ export class CardProjectDescriptionComponent
 
     if (numberOfImages) {
       for (let i = 1; i <= numberOfImages; i++) {
-        // this.imagePaths.push(`assets/projects/OS2/${i}.png`);
         this.imagePaths.push(`${this.previewFolder}/${i}.png`);
       }
 
-      this.setStylePreview();
+      if (this.isPreviewGrid) {
+        this.imagePaths_chunk = this.chunkImages(this.imagePaths);
+      }
     }
   }
 
-  setStylePreview() {
-    setTimeout(() => {
-      const images =
-        this.elementRef.nativeElement.querySelectorAll('.preview img');
-      images.forEach((img: HTMLElement) => {
-        img.style.width = '100%';
-      });
-    });
+  chunkImages(images: string[]) {
+    const columnCount = 3;
+    let columns: string[][] = [];
+
+    for (let i = 0; i < columnCount; i++) {
+      columns[i] = images.filter((img, index) => index % columnCount === i);
+    }
+
+    return columns;
   }
 
   resetValues() {
@@ -166,5 +174,7 @@ export class CardProjectDescriptionComponent
     this.previewFolder = '';
     this.previewLength = 0;
     this.imagePaths = [];
+    this.totalScreens = 0;
+    this.totalComponents = 0;
   }
 }
