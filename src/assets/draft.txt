@@ -1,4 +1,4 @@
-    <app-project-section></app-project-section>
+
   
     <app-about-me-section></app-about-me-section>
   

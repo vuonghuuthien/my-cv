@@ -10,7 +10,6 @@ import { WorkSectionComponent } from './work-section/work-section.component';
 import { LeftBarSectionComponent } from './left-bar-section/left-bar-section.component';
 import { AboutMeSectionComponent } from './about-me-section/about-me-section.component';
 import { Header2Component } from './header-2/header-2.component';
-import { ProjectSectionComponent } from './project-section/project-section.component';
 import { CommunitySectionComponent } from './community-section/community-section.component';
 import { CommunityContentSectionComponent } from './community-content-section/community-content-section.component';
 import { BusinessSectionComponent } from './business-section/business-section.component';
@@ -28,7 +27,6 @@ import { HttpClientModule } from '@angular/common/http';
     LeftBarSectionComponent,
     AboutMeSectionComponent,
     Header2Component,
-    ProjectSectionComponent,
     CommunitySectionComponent,
     CommunityContentSectionComponent,
     BusinessSectionComponent,
@@ -50,7 +48,6 @@ import { HttpClientModule } from '@angular/common/http';
     LeftBarSectionComponent,
     AboutMeSectionComponent,
     Header2Component,
-    ProjectSectionComponent,
     CommunitySectionComponent,
     CommunityContentSectionComponent,
     BusinessSectionComponent,

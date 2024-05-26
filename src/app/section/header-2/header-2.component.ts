@@ -16,6 +16,7 @@ export class Header2Component {
 
   underlineStyle = {};
 
+  openMenuBranding: boolean = false;
   openMenu: boolean = false;
 
   setActive(item: any) {
