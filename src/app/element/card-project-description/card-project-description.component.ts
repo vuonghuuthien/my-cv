@@ -117,7 +117,7 @@ export class CardProjectDescriptionComponent
     const paragraphs = description.split('\n\n');
     let listCounter = 1;
     let isPreviousList = false;
-
+  
     return paragraphs
       .map((paragraph) => {
         if (paragraph.startsWith('- ')) {
@@ -126,17 +126,30 @@ export class CardProjectDescriptionComponent
             isPreviousList = true;
           }
           const titleEndIndex = paragraph.indexOf(':') + 1;
-          const title = paragraph.substring(2, titleEndIndex).trim();
-          const content = paragraph.substring(titleEndIndex).trim();
-
-          return `<p class="list-item"><span class="list-number">${listCounter++}. </span><span class="list-content"><span class="list-title">${title}</span>&nbsp;&nbsp;${content}</span></p>`;
+          let title = '';
+          let content = '';
+  
+          if (titleEndIndex > 0) {
+            // There is a title (with a colon)
+            title = paragraph.substring(2, titleEndIndex).trim();
+            content = paragraph.substring(titleEndIndex).trim();
+          } else {
+            // There is no title (no colon found)
+            content = paragraph.substring(2).trim();
+          }
+  
+          if (title) {
+            return `<p class="list-item"><span class="list-number">${listCounter++}. </span><span class="list-content"><span class="list-title">${title}</span>&nbsp;&nbsp;${content}</span></p>`;
+          } else {
+            return `<p class="list-item"><span class="list-number">${listCounter++}. </span><span class="list-content">${content}</span></p>`;
+          }
         } else {
           isPreviousList = false;
           return `<p class="paragraph">${paragraph}</p>`;
         }
       })
       .join('');
-  }
+  }  
 
   loadImages() {
     const numberOfImages = this.previewLength;
