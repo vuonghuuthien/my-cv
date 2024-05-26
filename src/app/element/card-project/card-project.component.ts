@@ -26,6 +26,9 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
   buttonTitle = '';
   buttonArrow = 1;
   buttonLink = '';
+  buttonTitle2 = '';
+  buttonArrow2 = 2;
+  buttonLink2 = '';
   background = '';
   color = '';
 
@@ -44,6 +47,9 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
       this.buttonTitle = project.buttonTitle || '';
       this.buttonArrow = project.buttonArrow ?? 1;
       this.buttonLink = project.buttonLink || '';
+      this.buttonTitle2 = project.buttonTitle2 || '';
+      this.buttonArrow2 = project.buttonArrow2 ?? 2;
+      this.buttonLink2 = project.buttonLink2 || '';
       this.background = project.background || '';
       this.color = project.color || '';
       this.setColor();
@@ -72,6 +78,8 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
     const card = this.elementRef.nativeElement.querySelector('#card');
     const roles = this.elementRef.nativeElement.querySelectorAll('.role');
     const button = this.elementRef.nativeElement.querySelector('#button');
+    const button2_span = this.elementRef.nativeElement.querySelector('#button2 span');
+    const button2_svg_paths = this.elementRef.nativeElement.querySelectorAll('#button2 svg path');
     if (card) {
       card.style.backgroundColor = this.hexToRgba(this.color, 0.1);
     }
@@ -81,6 +89,12 @@ export class CardProjectComponent implements OnChanges, AfterViewInit {
     if (button) {
       button.style.backgroundColor = this.hexToRgba(this.color, 1);
     }
+    if (button2_span) {
+      button2_span.style.color = this.hexToRgba(this.color, 1);
+    }
+    button2_svg_paths.forEach((path: HTMLElement) => {
+      path.style.fill = this.hexToRgba(this.color, 1);
+    });
   }
 
   emitOpenModalRequest() {

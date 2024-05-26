@@ -107,12 +107,24 @@
       text-align: center;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: var(--color-white);
     }
 
-    img {
+    img, svg {
       width: 24px;
       height: 24px;
+    }
+  }
+
+  .button2 {
+    background: var(--color-white);
+
+    span {
+      color: #6366f1;
+    }
+    
+    svg * {
+      fill: #6366f1;
     }
   }
 }

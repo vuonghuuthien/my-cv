@@ -116,16 +116,22 @@ export class CardProjectDescriptionComponent
   formatDescription(description: string): string {
     const paragraphs = description.split('\n\n');
     let listCounter = 1;
+    let isPreviousList = false;
 
     return paragraphs
       .map((paragraph) => {
         if (paragraph.startsWith('- ')) {
+          if (!isPreviousList) {
+            listCounter = 1; // Reset the list counter when a new list starts
+            isPreviousList = true;
+          }
           const titleEndIndex = paragraph.indexOf(':') + 1;
           const title = paragraph.substring(2, titleEndIndex).trim();
           const content = paragraph.substring(titleEndIndex).trim();
 
           return `<p class="list-item"><span class="list-number">${listCounter++}. </span><span class="list-content"><span class="list-title">${title}</span>&nbsp;&nbsp;${content}</span></p>`;
         } else {
+          isPreviousList = false;
           return `<p class="paragraph">${paragraph}</p>`;
         }
       })

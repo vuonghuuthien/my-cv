@@ -12,6 +12,9 @@ export interface Project {
   buttonTitle?: string;
   buttonArrow?: number;
   buttonLink?: string;
+  buttonTitle2?: string;
+  buttonArrow2?: number;
+  buttonLink2?: string;
   background?: string;
   color?: string;
   description_2?: string;
