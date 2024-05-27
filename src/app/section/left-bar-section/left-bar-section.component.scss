@@ -35,3 +35,10 @@ section#left-bar {
     }
   }
 }
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
