@@ -16,6 +16,7 @@ import { BusinessSectionComponent } from './business-section/business-section.co
 import { ModalSectionComponent } from './modal-section/modal-section.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     DirectiveModule,
     BrowserModule,
     HttpClientModule,
+    RouterModule,
   ],
   exports: [
     HeaderComponent,

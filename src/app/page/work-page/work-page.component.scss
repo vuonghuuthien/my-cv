@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.left-bar-section {
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  height: 100vh;
+}
+
+.sections {
+  width: 100%;
+  max-width: 1200px;
+}

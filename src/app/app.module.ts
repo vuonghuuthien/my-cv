@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ElementModule } from './element/element.module';
 import { SectionModule } from './section/section.module';
 import { DirectiveModule } from './directive/directive.module';
+import { PageModule } from './page/page.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DirectiveModule } from './directive/directive.module';
     ElementModule,
     SectionModule,
     DirectiveModule,
+    PageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

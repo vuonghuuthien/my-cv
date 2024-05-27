@@ -28,6 +28,7 @@ import { DirectiveModule } from '../directive/directive.module';
 import { HamburgerButtonAnimationComponent } from './hamburger-button-animation/hamburger-button-animation.component';
 import { CardProjectComponent } from './card-project/card-project.component';
 import { CardProjectDescriptionComponent } from './card-project-description/card-project-description.component';
+import { TabRoleElementComponent } from './tab-role-element/tab-role-element.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CardProjectDescriptionComponent } from './card-project-description/card
     HamburgerButtonAnimationComponent,
     CardProjectComponent,
     CardProjectDescriptionComponent,
+    TabRoleElementComponent,
   ],
   imports: [
     CommonModule,
@@ -90,6 +92,7 @@ import { CardProjectDescriptionComponent } from './card-project-description/card
     HamburgerButtonAnimationComponent,
     CardProjectComponent,
     CardProjectDescriptionComponent,
+    TabRoleElementComponent,
   ],
 })
 export class ElementModule {}

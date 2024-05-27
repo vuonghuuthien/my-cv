@@ -44,7 +44,7 @@
         [class.tab-style-2]="item.style === 2"
         [class.tab-style-3]="item.style === 3"
         [class.active]="item.active"
-        *ngFor="let item of menuItems"
+        *ngFor="let item of tabItems"
         (click)="setActive(item)"
       >
         {{ item.label }}
@@ -69,15 +69,15 @@
         appParallaxMouseMoveInElement
       >
         <div class="menu-popup" [class.menu-popup-open]="openMenu">
-          <a class="item" href="/">
+          <a class="item" href="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
             <img src="/assets/icons/Work.svg" alt="Work Icon" />
             <span>Work</span>
           </a>
-          <a class="item" href="/about">
+          <a class="item" href="/about-me" routerLinkActive="active">
             <img src="/assets/icons/User.svg" alt="User Icon" />
             <span>About</span>
           </a>
-          <a class="item" href="/my-cv">
+          <a class="item" href="/my-cv" routerLinkActive="active">
             <img src="/assets/icons/Notebook.svg" alt="Notebook Icon" />
             <span>My CV</span>
             <div class="download-button">

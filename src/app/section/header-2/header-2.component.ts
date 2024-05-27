@@ -8,7 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class Header2Component {
   @Output() output_style = new EventEmitter<number>();
 
-  menuItems = [
+  tabItems = [
     { label: 'ux/ui designer', style: 1, active: true },
     { label: 'full-stack developer', style: 2, active: false },
     { label: 'front-end animator', style: 3, active: false },
@@ -20,7 +20,7 @@ export class Header2Component {
   openMenu: boolean = false;
 
   setActive(item: any) {
-    this.menuItems.forEach((i) => (i.active = false));
+    this.tabItems.forEach((i) => (i.active = false));
     item.active = true;
     this.updateUnderlineStyle(item);
     this.sendStyle(item.style);
@@ -44,7 +44,7 @@ export class Header2Component {
   }
 
   ngAfterViewInit() {
-    const activeItem = this.menuItems.find((item) => item.active);
+    const activeItem = this.tabItems.find((item) => item.active);
     if (activeItem) {
       this.updateUnderlineStyle(activeItem);
       this.sendStyle(activeItem.style);
