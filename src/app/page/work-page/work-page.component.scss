@@ -1,16 +1,9 @@
-.header {
-  position: fixed;
+.tab-role-element {
   z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.left-bar-section {
   position: fixed;
-  left: 0;
-  z-index: 99;
-  height: 100vh;
+  left: 50%;
+  top: 41px;
+  transform: translateX(-50%);
 }
 
 .sections {

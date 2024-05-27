@@ -17,3 +17,27 @@ main {
   width: 100vw;
   min-height: 100vh;
 }
+
+.menu-left, .menu-right {
+  width: fit-content;
+  height: 60px;
+  position: fixed;
+  z-index: 100;
+}
+
+.menu-left {
+  left: 50px;
+  top: 41px;
+}
+
+.menu-right {
+  right: 50px;
+  top: 41px;
+}
+
+.left-bar-section {
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  height: 100vh;
+}

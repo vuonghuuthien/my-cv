@@ -29,6 +29,8 @@ import { HamburgerButtonAnimationComponent } from './hamburger-button-animation/
 import { CardProjectComponent } from './card-project/card-project.component';
 import { CardProjectDescriptionComponent } from './card-project-description/card-project-description.component';
 import { TabRoleElementComponent } from './tab-role-element/tab-role-element.component';
+import { MenuElementComponent } from './menu-element/menu-element.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -59,11 +61,13 @@ import { TabRoleElementComponent } from './tab-role-element/tab-role-element.com
     CardProjectComponent,
     CardProjectDescriptionComponent,
     TabRoleElementComponent,
+    MenuElementComponent,
   ],
   imports: [
     CommonModule,
     FormsModule, // Add FormsModule here
     DirectiveModule,
+    RouterModule,
   ],
   exports: [
     ButtonComponent,
@@ -93,6 +97,7 @@ import { TabRoleElementComponent } from './tab-role-element/tab-role-element.com
     CardProjectComponent,
     CardProjectDescriptionComponent,
     TabRoleElementComponent,
+    MenuElementComponent,
   ],
 })
 export class ElementModule {}

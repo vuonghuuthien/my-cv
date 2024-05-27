@@ -1,0 +1,91 @@
+<div *ngIf="menuPos == 1" class="wrapper_branding">
+  <div
+    class="branding"
+    (click)="openMenuBranding = !openMenuBranding"
+    appParallaxMouseMoveInElement
+  >
+    <img class="logo" src="/assets/images/Avatar.png" alt="Avatar" />
+    <h1 class="brand-name">david.</h1>
+  </div>
+  <!-- <div
+    class="wrapper-menu-popup"
+    [class.wrapper-menu-popup-open]="openMenuBranding"
+    appParallaxMouseMoveInElement
+  >
+    <div class="menu-popup" [class.menu-popup-open]="openMenuBranding">
+      <a class="item" href="/about">
+        <img src="/assets/icons/User.svg" alt="User Icon" />
+        <span>About</span>
+      </a>
+      <a class="item" href="/my-cv">
+        <img src="/assets/icons/Notebook.svg" alt="Notebook Icon" />
+        <span>My CV</span>
+        <div class="download-button">
+          <img src="/assets/icons/Download.svg" alt="Download Icon" />
+        </div>
+      </a>
+      <a
+        class="item"
+        href="mailto:vuonghuuthientk@gmail.com?subject=Mail to David Thien Vuong"
+        target="_blank"
+      >
+        <img src="/assets/icons/Letter.svg" alt="Letter Icon" />
+        <span>vuonghuuthientk@gmailcom</span>
+      </a>
+    </div>
+  </div> -->
+</div>
+
+<div *ngIf="menuPos == 2" class="wrapper_hamburger_button">
+  <div
+    class="hamburger-button"
+    (click)="openMenu = !openMenu"
+    appParallaxMouseMoveInElement
+  >
+    <app-hamburger-button-animation
+      [style]="1"
+      [size]="'50px'"
+      [active]="openMenu"
+    ></app-hamburger-button-animation>
+  </div>
+  <div
+    class="wrapper-menu-popup"
+    [class.wrapper-menu-popup-open]="openMenu"
+    appParallaxMouseMoveInElement
+  >
+    <div class="menu-popup" [class.menu-popup-open]="openMenu">
+      <a
+        class="item"
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <img src="/assets/icons/Work.svg" alt="Work Icon" />
+        <span>Work</span>
+      </a>
+      <a class="item" routerLink="about-me" routerLinkActive="active">
+        <img src="/assets/icons/User.svg" alt="User Icon" />
+        <span>About</span>
+      </a>
+      <a class="item" routerLink="my-cv" routerLinkActive="active">
+        <img src="/assets/icons/Notebook.svg" alt="Notebook Icon" />
+        <span>My CV</span>
+        <div class="download-button">
+          <img src="/assets/icons/Download.svg" alt="Download Icon" />
+        </div>
+      </a>
+      <a
+        class="item"
+        href="mailto:vuonghuuthientk@gmail.com?subject=Mail to David Thien Vuong"
+        target="_blank"
+      >
+        <img src="/assets/icons/Letter.svg" alt="Letter Icon" />
+        <span>Mail</span>
+      </a>
+      <a class="item" href="tel:+84905045730" target="_blank">
+        <img src="/assets/icons/Phone2.svg" alt="Phone Icon" />
+        <span>Phone</span>
+      </a>
+    </div>
+  </div>
+</div>

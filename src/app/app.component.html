@@ -1,3 +1,14 @@
 <main>
+  <div class="menu-left">
+    <app-menu-element></app-menu-element>
+  </div>
+
+  <div class="menu-right">
+    <app-menu-element [menuPos]="2"></app-menu-element>
+  </div>
+
+  <div class="left-bar-section">
+    <app-left-bar-section></app-left-bar-section>
+  </div>
   <router-outlet></router-outlet>
 </main>
