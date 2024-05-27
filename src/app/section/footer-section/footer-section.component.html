@@ -1,0 +1,55 @@
+<footer>
+  <div class="container">
+    <div class="contacts">
+      <div class="wrapper-contact">
+        <a
+          class="contact"
+          href="mailto:vuonghuuthientk@gmail.com?subject=Mail to David Thien Vuong"
+          target="_blank"
+          
+        >
+          <img src="/assets/icons/Letter.svg" alt="Letter Icon" />
+          <span>vuonghuuthientk@gmail.com</span>
+        </a>
+        <img
+          class="button-copy"
+          src="/assets/icons/Copy.svg"
+          alt="Copy Icon"
+          appParallaxMouseMoveInElement
+        />
+      </div>
+      <div class="wrapper-contact">
+        <a
+          class="contact"
+          href="tel:+84905045730"
+          target="_blank"
+          
+        >
+          <img src="/assets/icons/Phone2.svg" alt="Phone Icon" />
+          <span>(+84) 905 045 730</span>
+        </a>`
+        <img
+          class="button-copy"
+          src="/assets/icons/Copy.svg"
+          alt="Copy Icon"
+          appParallaxMouseMoveInElement
+        />
+      </div>
+    </div>
+    <div class="socials">
+      <div class="wrapper-social" *ngFor="let social of socials">
+        <a
+          class="social"
+          [href]="social.link"
+          target="_blank"
+          appParallaxMouseMoveInElement
+        >
+          <img [src]="social.icon" alt="figma" />
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      Copyright © 2024 Thien (David) Vuong Huu. All rights reserved.
+    </div>
+  </div>
+</footer>

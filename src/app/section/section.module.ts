@@ -13,6 +13,7 @@ import { CommunitySectionComponent } from './community-section/community-section
 import { CommunityContentSectionComponent } from './community-content-section/community-content-section.component';
 import { BusinessSectionComponent } from './business-section/business-section.component';
 import { ModalSectionComponent } from './modal-section/modal-section.component';
+import { FooterSectionComponent } from './footer-section/footer-section.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommunityContentSectionComponent,
     BusinessSectionComponent,
     ModalSectionComponent,
+    FooterSectionComponent,
   ],
   imports: [
     CommonModule,
@@ -49,6 +51,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommunityContentSectionComponent,
     BusinessSectionComponent,
     ModalSectionComponent,
+    FooterSectionComponent,
   ],
 })
 export class SectionModule {}
