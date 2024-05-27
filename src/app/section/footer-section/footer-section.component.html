@@ -6,34 +6,30 @@
           class="contact"
           href="mailto:vuonghuuthientk@gmail.com?subject=Mail to David Thien Vuong"
           target="_blank"
-          
         >
           <img src="/assets/icons/Letter.svg" alt="Letter Icon" />
-          <span>vuonghuuthientk@gmail.com</span>
+          <span>{{ email }}</span>
         </a>
-        <img
+        <div
           class="button-copy"
-          src="/assets/icons/Copy.svg"
-          alt="Copy Icon"
           appParallaxMouseMoveInElement
-        />
+          (click)="copyText(email)"
+        >
+          <img src="/assets/icons/Copy.svg" alt="Copy Icon" />
+        </div>
       </div>
       <div class="wrapper-contact">
-        <a
-          class="contact"
-          href="tel:+84905045730"
-          target="_blank"
-          
-        >
+        <a class="contact" href="tel:+84905045730" target="_blank">
           <img src="/assets/icons/Phone2.svg" alt="Phone Icon" />
           <span>(+84) 905 045 730</span>
-        </a>`
-        <img
+        </a>
+        <div
           class="button-copy"
-          src="/assets/icons/Copy.svg"
-          alt="Copy Icon"
           appParallaxMouseMoveInElement
-        />
+          (click)="copyText(phone)"
+        >
+          <img src="/assets/icons/Copy.svg" alt="Copy Icon" />
+        </div>
       </div>
     </div>
     <div class="socials">
@@ -44,7 +40,7 @@
           target="_blank"
           appParallaxMouseMoveInElement
         >
-          <img [src]="social.icon" alt="figma" />
+          <img [src]="social.icon" [alt]="social.title" />
         </a>
       </div>
     </div>

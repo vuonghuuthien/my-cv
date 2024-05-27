@@ -1,0 +1,128 @@
+.container {
+  background: var(--color-black-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .wrapper-contact {
+    border-radius: 14px;
+    position: relative;
+    transition: 0.2s;
+
+    .contact {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      gap: 16px;
+      border-radius: 14px;
+      width: 100%;
+      position: relative;
+      user-select: none;
+      transition: 0.2s;
+  
+      > img {
+        width: 20px;
+        height: 20px;
+      }
+  
+      > span {
+        font-family: "Poppins";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--color-black-2);
+        white-space: nowrap;
+      }
+  
+      &:hover {
+        background: var(--color-white);
+      }
+    }
+
+    .button-copy {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--color-white);
+      top: 50%;
+      right: -50px;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      opacity: 0;
+      cursor: pointer;
+      box-shadow: 0px 50px 250px rgba(9, 20, 50, 0.15);
+
+      > img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+
+      .button-copy {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 32px;
+
+  .wrapper-social {
+    width: 40px;
+    height: 40px;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    .social {
+      width: 100%;
+      height: 100%;
+      -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+      opacity: 0.3;
+      cursor: pointer;
+      display: block;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:hover {
+        -webkit-filter: none; /* Safari 6.0 - 9.0 */
+        filter: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.copyright {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  color: var(--color-black-4);
+}
