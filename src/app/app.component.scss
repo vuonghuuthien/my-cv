@@ -42,9 +42,28 @@ main {
   height: 100vh;
 }
 
-/* Medium Devices (Tablets) */
-@media (max-width: 1024px) {
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
   .menu-left {
-    
+    left: 32px;
+    top: 32px;
+  }
+  
+  .menu-right {
+    right: 32px;
+    top: 32px;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .menu-left {
+    left: 16px;
+    top: 16px;
+  }
+  
+  .menu-right {
+    right: 16px;
+    top: 16px;
   }
 }

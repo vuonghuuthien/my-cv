@@ -17,3 +17,17 @@
 
   }
 }
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .tab-role-element {
+    top: 32px;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .tab-role-element {
+    top: 16px;
+  }
+}
