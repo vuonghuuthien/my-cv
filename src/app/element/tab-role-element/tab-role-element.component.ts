@@ -1,20 +1,50 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-tab-role-element',
   templateUrl: './tab-role-element.component.html',
   styleUrls: ['./tab-role-element.component.scss'],
 })
-export class TabRoleElementComponent {
+export class TabRoleElementComponent implements OnInit, OnDestroy {
   @Output() output_style = new EventEmitter<number>();
 
   tabItems = [
-    { label: 'ux/ui designer', style: 1, active: true },
-    { label: 'full-stack developer', style: 2, active: false },
-    { label: 'front-end animator', style: 3, active: false },
+    {
+      label: 'ux/ui designer',
+      icon: '/assets/skills/Designer-Role.svg',
+      style: 1,
+      active: true,
+    },
+    {
+      label: 'full-stack developer',
+      icon: '/assets/skills/Developer-Role.svg',
+      style: 2,
+      active: false,
+    },
+    {
+      label: 'front-end animator',
+      icon: '/assets/skills/Animator-Role.svg',
+      style: 3,
+      active: false,
+    },
   ];
 
   underlineStyle = {};
+
+  ngOnInit() {
+    window.addEventListener('resize', this.onResize.bind(this));
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.onResize.bind(this));
+  }
+
+  onResize() {
+    const activeItem = this.tabItems.find((item) => item.active);
+    if (activeItem) {
+      this.updateUnderlineStyle(activeItem);
+    }
+  }
 
   setActive(item: any) {
     this.tabItems.forEach((i) => (i.active = false));
@@ -33,8 +63,8 @@ export class TabRoleElementComponent {
         const navbar_Rect = navbar.getBoundingClientRect();
 
         this.underlineStyle = {
-          width: `${activeLink_Rect.width + 3}px`,
-          left: `${activeLink_Rect.left - navbar_Rect.left - 1}px`,
+          width: `${activeLink_Rect.width}px`,
+          left: `${activeLink_Rect.left - navbar_Rect.left}px`,
         };
       }
     }, 0); // Delay to ensure DOM update
