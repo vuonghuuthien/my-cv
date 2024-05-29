@@ -7,6 +7,14 @@
   overflow: hidden;
 }
 
+.logo {
+  position: absolute;
+  height: 40px;
+  right: 60px;
+  top: 60px;
+  margin-bottom: 24px;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -14,13 +22,8 @@
   gap: 24px;
   width: 100%;
   max-width: 300px;
-
-  .logo {
-    position: absolute;
-    height: 40px;
-    right: 60px;
-    top: 60px;
-  }
+  position: relative;
+  z-index: 31;
 
   .heading {
     display: flex;
@@ -135,4 +138,32 @@
   height: 668px;
   left: 434px;
   top: 128px;
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .logo {
+    position: relative;
+    height: auto;
+    right: auto;
+    top: auto;
+  }
+
+  .background {
+    left: 240px;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 40px;
+  }
+}
+
+/* Extra Extra Small Devices (Phones) */
+@media (max-width: 380px) {
+  .container {
+    padding: 32px;
+  }
 }
