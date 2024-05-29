@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header" id="header">
     <h5 class="name">{{ name }}</h5>
-    <img class="logo" [src]="logo" alt="" />
+    <img *ngIf="logo" class="logo" [src]="logo" alt="" />
   </div>
   <div class="wrapper-content">
     <div class="title">Project Description:</div>

@@ -175,3 +175,18 @@
     }
   }
 }
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .header {
+    padding: 24px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 16px;
+
+    .name {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+}
