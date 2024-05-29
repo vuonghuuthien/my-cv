@@ -3,11 +3,10 @@ section {
   min-height: 100vh;
 }
 
-.container{
-
+.container {
 }
 
-.heading{
+.heading {
   font-style: italic;
   font-weight: 900;
   font-size: 70px;
@@ -15,6 +14,10 @@ section {
   text-align: center;
   letter-spacing: -0.06em;
   color: var(--color-black-2);
+
+  .text-screen-small {
+    display: none;
+  }
 }
 
 .projects {
@@ -23,7 +26,6 @@ section {
   gap: 89px;
 
   .project {
-
   }
 
   .project-lock {
@@ -58,5 +60,18 @@ section {
     letter-spacing: -0.06em;
     text-align: center;
     color: #8075ff;
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .heading {
+    .text-screen-big {
+      display: none;
+    }
+
+    .text-screen-small {
+      display: block;
+    }
   }
 }

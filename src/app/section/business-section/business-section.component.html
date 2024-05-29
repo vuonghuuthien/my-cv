@@ -7,7 +7,11 @@
       direction="up"
       [maxDistance]="100"
     >
-      <span appParallaxLetter> Projects for Businesses </span>
+      <span appParallaxLetter class="text-screen-big"> Projects for Businesses </span>
+      <span class="text-screen-small">
+        <div appParallaxLetter>Projects for</div>
+        <div appParallaxLetter>Businesses</div>
+      </span>
     </h2>
     <div class="projects">
       <div class="project" *ngFor="let project of projects; let i = index">
