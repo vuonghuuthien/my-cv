@@ -47,24 +47,29 @@ section {
     display: flex;
     gap: 16px;
 
-    .icon path {
+    .icon {
       width: 24px;
       height: 24px;
     }
   }
-  
+
   .ye {
     margin-top: 24px;
     font-weight: 500;
     font-size: 24px;
-    line-height: 30px;
+    line-height: 36px;
     text-align: center;
     letter-spacing: 0.5px;
+
+    span {
+      white-space: nowrap;
+    }
   }
 }
 
 .content-style-1 {
-  .say-hi, .ye {
+  .say-hi,
+  .ye {
     background: linear-gradient(141deg, #adf1e0 0%, #8075ff 28%, #ff7171 98%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -74,8 +79,9 @@ section {
 }
 
 .content-style-2 {
-  .say-hi, .ye {
-    background: linear-gradient(141deg, #969699 0%, #1E1E22 100%);
+  .say-hi,
+  .ye {
+    background: linear-gradient(141deg, #969699 0%, #1e1e22 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -84,11 +90,39 @@ section {
 }
 
 .content-style-3 {
-  .say-hi, .ye {
-    background: linear-gradient(141deg, #969699 0%, #1E1E22 100%);
+  .say-hi,
+  .ye {
+    background: linear-gradient(141deg, #969699 0%, #1e1e22 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .content {
+    .say-hi {
+      font-size: 50px;
+      line-height: normal;
+      letter-spacing: -0.06em;
+    }
+
+    .location {
+      font-size: 18px;
+      line-height: normal;
+      gap: 12px;
+
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .ye {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 }

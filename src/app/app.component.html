@@ -1,16 +1,22 @@
 <main>
-  <div class="menu-left">
-    <app-menu-element></app-menu-element>
-  </div>
+  <div class="wrapper-main">
+    <div class="menu-left">
+      <app-menu-element></app-menu-element>
+    </div>
+  
+    <div class="menu-right">
+      <app-menu-element [menuPos]="2"></app-menu-element>
+    </div>
+  
+    <div class="left-bar-section">
+      <app-left-bar-section></app-left-bar-section>
+    </div>
 
-  <div class="menu-right">
-    <app-menu-element [menuPos]="2"></app-menu-element>
+    <div class="page-section">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-
-  <div class="left-bar-section">
-    <app-left-bar-section></app-left-bar-section>
+  <div class="footer-section">
+    <app-footer-section></app-footer-section>
   </div>
-  <router-outlet></router-outlet>
 </main>
-
-<app-footer-section></app-footer-section>

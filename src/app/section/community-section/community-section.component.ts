@@ -1,11 +1,11 @@
-import { Component, AfterViewInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, Renderer2, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-community-section',
   templateUrl: './community-section.component.html',
   styleUrls: ['./community-section.component.scss']
 })
-export class CommunitySectionComponent implements AfterViewInit {
+export class CommunitySectionComponent implements AfterViewInit, OnDestroy {
 
   linkFigma: string = "https://www.figma.com/@vuonghuuthien";
 
@@ -16,6 +16,15 @@ export class CommunitySectionComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit() {
+    this.updateScreenElement();
+    window.addEventListener('resize', this.updateScreenElement.bind(this));
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.updateScreenElement.bind(this));
+  }
+
+  updateScreenElement() {
     const svgDoc = this.svgElement.nativeElement;
     const targetRect = svgDoc.getElementById('target-rect');
 

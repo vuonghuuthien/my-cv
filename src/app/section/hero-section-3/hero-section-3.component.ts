@@ -9,16 +9,8 @@ export class HeroSection3Component {
   @Input() style: number = 1;
 
   changeContents = [
-    { ye: '4+ Year of experience as a UX/UI designer', style: 1 },
-    { ye: '3+ Year of experience as a Full-stack developer', style: 2 },
-    { ye: '1+ Year of experience as a Front-end animator', style: 3 },
+    { ye: '4+', role: "UX/UI designer", style: 1 },
+    { ye: '3+', role: "Full-stack developer", style: 2 },
+    { ye: '1+', role: "Front-end animator", style: 3 },
   ];
-
-  getYE() {
-    const item = this.changeContents.find((item) => item.style === this.style);
-    if (item && item.ye) {
-      return item.ye;
-    }
-    return '';
-  }
 }
