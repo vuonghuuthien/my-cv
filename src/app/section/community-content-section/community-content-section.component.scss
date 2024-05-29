@@ -173,3 +173,50 @@
     }
   }
 }
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .container {
+  
+    > .heading-2 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .container {
+    padding: 32px;
+  
+    > .heading-2 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+  }
+
+  .wrapper-list {
+    margin-top: 0;
+    gap: 20px;
+
+    > .heading {
+      margin-top: 40px;
+      font-size: 40px;
+      line-height: normal;
+    }
+
+    .highlights {
+      gap: 0;
+    }
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px;
+  }
+}

@@ -139,3 +139,41 @@ section {
     }
   }
 }
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  section {
+    // height: auto;
+  }
+
+  .mockup {
+    svg {
+      display: none;
+    }
+
+    .screen {
+      position: relative;
+      height: 70vh;
+      border-radius: 8px;
+      outline: none;
+      border: 4px solid rgba(128, 117, 255, 0.4);
+    }
+  }
+
+  .card-quote {
+    left: 0;
+  }
+
+  .card-user {
+    right: 0;
+    bottom: 10vh;
+  }
+}
+
+/* Extra Extra Small Devices (Phones) */
+@media (max-width: 380px) {
+  .card-user {
+    width: 100%;
+  }
+}
+

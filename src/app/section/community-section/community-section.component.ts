@@ -29,20 +29,29 @@ export class CommunitySectionComponent implements AfterViewInit, OnDestroy {
     const targetRect = svgDoc.getElementById('target-rect');
 
     if (targetRect) {
-      const rectBoundingBox = targetRect.getBoundingClientRect();
-      const parentBoundingBox = this.mockupElement.nativeElement.getBoundingClientRect();
+      if (window.innerWidth <= 767) {
+        // Xóa các style đã thiết lập khi width nhỏ hơn hoặc bằng 767px
+        this.renderer.removeStyle(this.screenElement.nativeElement, 'position');
+        this.renderer.removeStyle(this.screenElement.nativeElement, 'left');
+        this.renderer.removeStyle(this.screenElement.nativeElement, 'top');
+        this.renderer.removeStyle(this.screenElement.nativeElement, 'width');
+        this.renderer.removeStyle(this.screenElement.nativeElement, 'height');
+      } else {
+        // Thiết lập lại vị trí và kích thước cho thẻ div .screen
+        const rectBoundingBox = targetRect.getBoundingClientRect();
+        const parentBoundingBox = this.mockupElement.nativeElement.getBoundingClientRect();
 
-      const rectX = rectBoundingBox.left - parentBoundingBox.left;
-      const rectY = rectBoundingBox.top - parentBoundingBox.top;
-      const rectWidth = rectBoundingBox.width;
-      const rectHeight = rectBoundingBox.height;
+        const rectX = rectBoundingBox.left - parentBoundingBox.left;
+        const rectY = rectBoundingBox.top - parentBoundingBox.top;
+        const rectWidth = rectBoundingBox.width;
+        const rectHeight = rectBoundingBox.height;
 
-      // Thiết lập vị trí và kích thước cho thẻ div .screen
-      this.renderer.setStyle(this.screenElement.nativeElement, 'position', 'absolute');
-      this.renderer.setStyle(this.screenElement.nativeElement, 'left', `${rectX}px`);
-      this.renderer.setStyle(this.screenElement.nativeElement, 'top', `${rectY}px`);
-      this.renderer.setStyle(this.screenElement.nativeElement, 'width', `${rectWidth}px`);
-      this.renderer.setStyle(this.screenElement.nativeElement, 'height', `${rectHeight}px`);
+        this.renderer.setStyle(this.screenElement.nativeElement, 'position', 'absolute');
+        this.renderer.setStyle(this.screenElement.nativeElement, 'left', `${rectX}px`);
+        this.renderer.setStyle(this.screenElement.nativeElement, 'top', `${rectY}px`);
+        this.renderer.setStyle(this.screenElement.nativeElement, 'width', `${rectWidth}px`);
+        this.renderer.setStyle(this.screenElement.nativeElement, 'height', `${rectHeight}px`);
+      }
     }
   }
 }

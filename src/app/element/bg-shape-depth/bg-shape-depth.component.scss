@@ -249,3 +249,17 @@
     background: #55a5ff;
   }
 }
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .container {
+    scale: 0.8;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .container {
+    scale: 0.6;
+  }
+}

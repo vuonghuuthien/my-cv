@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-community-content-section',
@@ -170,9 +170,33 @@ export class CommunityContentSectionComponent implements OnInit {
   highlights_chunk: any[][] = [];
 
   ngOnInit() {
-    this.projects_chunk = this.chunkProjects(3);
-    this.typeApps_chunk = this.chunkTypeApps(4);
-    this.highlights_chunk = this.chunkHighlights(4);
+    this.updateChunks(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    const target = event.target as Window;
+    this.updateChunks(target.innerWidth);
+  }
+
+  updateChunks(width: number) {
+    if (width <= 380) {
+      this.projects_chunk = this.chunkProjects(1);
+      this.typeApps_chunk = this.chunkTypeApps(1);
+      this.highlights_chunk = this.chunkHighlights(1);
+    } else if (width <= 480) {
+      this.projects_chunk = this.chunkProjects(1);
+      this.typeApps_chunk = this.chunkTypeApps(2);
+      this.highlights_chunk = this.chunkHighlights(2);
+    } else if (width <= 767) {
+      this.projects_chunk = this.chunkProjects(2);
+      this.typeApps_chunk = this.chunkTypeApps(3);
+      this.highlights_chunk = this.chunkHighlights(3);
+    } else {
+      this.projects_chunk = this.chunkProjects(3);
+      this.typeApps_chunk = this.chunkTypeApps(4);
+      this.highlights_chunk = this.chunkHighlights(4);
+    }
   }
 
   chunkProjects(chunkSize: number): any[][] {
