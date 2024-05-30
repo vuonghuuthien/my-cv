@@ -113,7 +113,8 @@
       color: var(--color-white);
     }
 
-    img, svg {
+    img,
+    svg {
       width: 24px;
       height: 24px;
     }
@@ -125,7 +126,7 @@
     span {
       color: #6366f1;
     }
-    
+
     svg * {
       fill: #6366f1;
     }

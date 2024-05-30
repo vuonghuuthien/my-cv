@@ -1,7 +1,19 @@
 <div class="my-cv">
   <div class="sections">
-    <div class="community">
-      <app-community-section></app-community-section>
+    <div class="wrapper-button-download">
+      <div
+        class="button-download"
+        (click)="downloadCV()"
+        appParallaxMouseMoveInElement
+      >
+        <span><span class="text-download">Download</span> CV</span>
+        <div class="icon">
+          <img src="/assets/icons/Download.svg" alt="Download Icon" />
+        </div>
+      </div>
+    </div>
+    <div class="image-section">
+      <img [src]="imgSrc" alt="" />
     </div>
   </div>
 </div>

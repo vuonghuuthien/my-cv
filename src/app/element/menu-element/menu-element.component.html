@@ -59,20 +59,31 @@
         routerLink=""
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
+        (click)="openMenu = false"
       >
         <img src="/assets/icons/Work.svg" alt="Work Icon" />
         <span>Work</span>
       </a>
-      <a class="item" routerLink="about-me" routerLinkActive="active">
+      <a
+        class="item"
+        routerLink="about-me"
+        routerLinkActive="active"
+        (click)="openMenu = false"
+      >
         <img src="/assets/icons/User.svg" alt="User Icon" />
         <span>About</span>
       </a>
-      <a class="item" routerLink="my-cv" routerLinkActive="active">
+      <a
+        class="item"
+        routerLink="my-cv"
+        routerLinkActive="active"
+        (click)="openMenu = false"
+      >
         <img src="/assets/icons/Notebook.svg" alt="Notebook Icon" />
         <span>My CV</span>
-        <div class="download-button">
+        <!-- <div class="download-button">
           <img src="/assets/icons/Download.svg" alt="Download Icon" />
-        </div>
+        </div> -->
       </a>
       <a
         class="item"

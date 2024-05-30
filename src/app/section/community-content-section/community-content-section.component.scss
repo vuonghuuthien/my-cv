@@ -177,7 +177,6 @@
 /* Medium Devices (Tablets) */
 @media (max-width: 1024px) {
   .container {
-  
     > .heading-2 {
       flex-direction: column;
       align-items: flex-start;
@@ -190,7 +189,7 @@
 @media (max-width: 767px) {
   .container {
     padding: 32px;
-  
+
     > .heading-2 {
       flex-direction: column;
       align-items: flex-start;
