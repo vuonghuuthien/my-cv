@@ -36,8 +36,8 @@ section#left-bar {
   }
 }
 
-/* Medium Devices (Tablets) */
-@media (max-width: 1024px) {
+/* Large Devices (Desktops) */
+@media (max-width: 1200px) {
   .container {
     display: none;
   }
