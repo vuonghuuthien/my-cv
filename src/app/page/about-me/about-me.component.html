@@ -1,1 +1,34 @@
-<p>about-me works!</p>
+<div class="about-me">
+  <div class="sections">
+    <div class="image-section">
+      <div class="images">
+        <img
+          *ngFor="let image of images; let i = index"
+          [className]="'img img-' + (i + 1)"
+          [src]="image"
+          alt=""
+          appParallaxMouseMoveInElement
+        />
+      </div>
+    </div>
+    <div class="info-section">
+      <img class="avatar" src="/assets/images/avatar.jpg" alt="">
+      <h5 class="title">About me</h5>
+      <span> I'm <span class="bold">Vuong Huu Thien</span>. </span>
+      <span> Can you call me is <span class="bold">David</span>. </span>
+      <span>
+        A passionate and dedicated Full-Stack Developer, UX/UI Designer, and
+        Front-End Animator from Vietnam.
+      </span>
+      <span>
+        With over 7 years of experience in the industry, I specialize in
+        creating innovative and user-friendly designs and solutions for a
+        variety of platforms including mobile apps, tablets, and websites.
+      </span>
+      <span
+        >My work also extends to community support projects that aim to make
+        design and development more accessible.</span
+      >
+    </div>
+  </div>
+</div>

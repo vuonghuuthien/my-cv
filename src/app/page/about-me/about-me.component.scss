@@ -1,0 +1,131 @@
+.about-me {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sections {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-section {
+  width: 100%;
+  margin-top: 160px;
+  display: flex;
+  justify-content: center;
+
+  .images {
+    width: 477px;
+    height: 545px;
+    position: relative;
+
+    .img {
+      &.img-1 {
+        z-index: 31;
+        position: absolute;
+        width: 212px;
+        height: 214px;
+        left: 126px;
+        top: 331px;
+        box-shadow: 0px 15px 250px rgba(9, 20, 50, 0.1);
+        border-radius: 20px;
+      }
+
+      &.img-2 {
+        z-index: 31;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        left: 0px;
+        top: 0px;
+        border-radius: 20px;
+        box-shadow: 0px 50px 250px rgba(9, 20, 50, 0.15);
+      }
+
+      &.img-3 {
+        z-index: 30;
+        position: absolute;
+        width: 259px;
+        height: 194px;
+        right: 0px;
+        top: 192px;
+        border-radius: 20px;
+        box-shadow: 0px 50px 250px rgba(9, 20, 50, 0.15);
+      }
+    }
+  }
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin-top: 110px;
+  margin-bottom: 110px;
+  box-shadow: 0px 50px 250px rgba(9, 20, 50, 0.15);
+
+  .avatar {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 14px;
+    display: none;
+  }
+
+  h5.title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 52px;
+    letter-spacing: -0.01em;
+    color: var(--color-black);
+  }
+
+  span {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: var(--color-black);
+
+    &.bold {
+      font-weight: 600;
+    }
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 767px) {
+  .image-section {
+    display: none;
+  }
+
+  .info-section {
+    .avatar {
+      display: block;
+    }
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+  .info-section {
+    padding: 24px;
+
+    .avatar {
+      max-width: none;
+    }
+  }
+}

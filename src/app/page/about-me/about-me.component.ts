@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {
-
+  images = [
+    "/assets/images/thien.jpg",
+    "/assets/images/avatar.jpg",
+    "/assets/images/my-image.jpg",
+  ]
 }

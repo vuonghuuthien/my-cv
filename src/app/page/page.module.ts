@@ -5,24 +5,11 @@ import { SectionModule } from '../section/section.module';
 import { ElementModule } from '../element/element.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MyCVComponent } from './my-cv/my-cv.component';
-
-
+import { DirectiveModule } from '../directive/directive.module';
 
 @NgModule({
-  declarations: [
-    WorkPageComponent,
-    AboutMeComponent,
-    MyCVComponent
-  ],
-  imports: [
-    CommonModule,
-    SectionModule,
-    ElementModule
-  ],
-  exports: [
-    WorkPageComponent,
-    AboutMeComponent,
-    MyCVComponent
-  ]
+  declarations: [WorkPageComponent, AboutMeComponent, MyCVComponent],
+  imports: [CommonModule, SectionModule, ElementModule, DirectiveModule],
+  exports: [WorkPageComponent, AboutMeComponent, MyCVComponent],
 })
-export class PageModule { }
+export class PageModule {}
