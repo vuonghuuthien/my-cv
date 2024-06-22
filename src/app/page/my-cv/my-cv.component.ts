@@ -7,13 +7,17 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./my-cv.component.scss'],
 })
 export class MyCVComponent {
-  imgSrc = '/assets/cv/MyCV.png';
-  pdfSrc = '/assets/cv/MyCV.pdf';
+  imgSrcList = [
+    '/assets/cv/CV_1.png',
+    '/assets/cv/CV_2.png',
+    '/assets/cv/CV_3.png',
+  ];
+  pdfSrc = '/assets/cv/Thien (David) Vuong Huu  - CV.pdf';
 
   downloadCV() {
     const link = document.createElement('a');
     link.href = this.pdfSrc;
-    link.download = 'MyCV.pdf';
+    link.download = 'Thien (David) Vuong Huu  - CV.pdf';
     link.click();
   }
 }

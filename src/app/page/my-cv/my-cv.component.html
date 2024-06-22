@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="image-section">
-      <img [src]="imgSrc" alt="" />
+      <img [src]="imgSrc" alt="" *ngFor="let imgSrc of imgSrcList" />
     </div>
   </div>
 </div>
